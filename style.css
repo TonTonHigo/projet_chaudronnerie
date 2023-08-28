@@ -39,7 +39,7 @@ body {
 }
 
 
-.logo img {
+.navbar .logo img {
     max-width: 35%;
 }
 
@@ -73,6 +73,7 @@ body {
 /* footer */
 footer {
     text-align: center;
+    padding: 5px 0;
 }
 
 footer a {

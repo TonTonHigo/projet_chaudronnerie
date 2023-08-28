@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
+<header>
     <div class="navbar">
         <div class="logo">
             <a href="#"><img src="image\Logo.png" alt="Logo"></a>
@@ -23,7 +12,4 @@
             <a href="#">Contact</a>
         </div>
     </div>
-
-</body>
-
-</html>
+</header>
