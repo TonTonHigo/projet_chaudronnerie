@@ -49,6 +49,25 @@ CREATE TABLE `Commentaire` (
 	PRIMARY KEY (`id_commentaire`)
 );
 
+CREATE TABLE `Tutoriel` (
+	`id_tutoriel` INT NOT NULL AUTO_INCREMENT,
+	`id_tutoriel` INT NOT NULL AUTO_INCREMENT,
+	`titre` varchar(100) NOT NULL,
+	`contenu` TEXT(5000) NOT NULL,
+	`image` varchar(200) NOT NULL,
+	`image2` varchar(200) NOT NULL,
+	PRIMARY KEY (`id_tutoriel`,`id_tutoriel`)
+);
+
+CREATE TABLE `Commentaire_1` (
+	`id_commentaire` INT NOT NULL AUTO_INCREMENT,
+	`id_commentaire` INT NOT NULL AUTO_INCREMENT,
+	`message` INT NOT NULL,
+	`id_tutoriel` INT NOT NULL,
+	`id_utilisateur` INT NOT NULL,
+	PRIMARY KEY (`id_commentaire`,`id_commentaire`)
+);
+
 ALTER TABLE `Contact` ADD CONSTRAINT `Contact_fk0` FOREIGN KEY (`id_utilisateur`) REFERENCES `Utilisateur`(`id_utilisateur`);
 
 ALTER TABLE `Utilisateur` ADD CONSTRAINT `Utilisateur_fk0` FOREIGN KEY (`id_role`) REFERENCES `Role`(`id_role`);
@@ -56,6 +75,12 @@ ALTER TABLE `Utilisateur` ADD CONSTRAINT `Utilisateur_fk0` FOREIGN KEY (`id_role
 ALTER TABLE `Commentaire` ADD CONSTRAINT `Commentaire_fk0` FOREIGN KEY (`id_article`) REFERENCES `Article`(`id_article`);
 
 ALTER TABLE `Commentaire` ADD CONSTRAINT `Commentaire_fk1` FOREIGN KEY (`id_utilisateur`) REFERENCES `Utilisateur`(`id_utilisateur`);
+
+ALTER TABLE `Commentaire_1` ADD CONSTRAINT `Commentaire_1_fk0` FOREIGN KEY (`id_tutoriel`) REFERENCES `Tutoriel`(`id_tutoriel`);
+
+ALTER TABLE `Commentaire_1` ADD CONSTRAINT `Commentaire_1_fk1` FOREIGN KEY (`id_utilisateur`) REFERENCES `Utilisateur`(`id_utilisateur`);
+
+
 
 
 
