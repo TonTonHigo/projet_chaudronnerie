@@ -65,7 +65,16 @@ body {
 }
 
 /* main */
-
+#propos{
+    background: url("image/image7.png");
+    filter: brightness(70%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#propos div{
+    text-align: center;
+    color: white;
+}
 
 /* footer */
 footer{
