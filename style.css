@@ -14,3 +14,18 @@ font-family: 'Wallpoet', cursive;
 body{
     background-color: #FFEBCD;
 }
+
+/* header */
+
+
+/* main */
+
+
+/* footer */
+footer{
+    text-align: center;
+}
+footer a{
+    text-decoration: none;
+    color: #FF6347;
+}
