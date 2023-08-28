@@ -1,0 +1,16 @@
+/* 
+Couleurs:
+Font-Color (Couleur du texte principal) : #2C2C2C (Gris foncé chaud)
+Font-Color-Secondary (Couleur du texte secondaire) : #6C6C6C (Gris chaud)
+Background-Color (Couleur de fond principal) : #FFEBCD (Blé)
+Background-Color-Secondary (Couleur de fond secondaire) :   (Orange sandy)
+Button (Couleur des boutons) : #FF6347 (Tomate) 
+
+Typos:
+font-family: 'Wallpoet', cursive;
+
+*/
+
+body{
+    background-color: #FFEBCD;
+}
