@@ -15,9 +15,9 @@
             <a href="#"><img src="image\Logo.png" alt="Logo"></a>
         </div>
         <div class="centered-links">
-            <a href="archive.html">Archive</a>
-            <a href="tutoriel.html">Tutoriel</a>
-            <a href="galerie.html">Galerie</a>
+            <a href="archive.php">Archive</a>
+            <a href="tutoriel.php">Tutoriel</a>
+            <a href="galerie.php">Galerie</a>
         </div>
         <div class="contact">
             <a href="#">Contact</a>
