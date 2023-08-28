@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'introduction</title>
     
+    <!-- fichier css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,8 +17,10 @@
     include "main.php";
 
     include "footer.php";
-    
+
 ?>
-    
+  
+  <!-- fichier js -->
+  <script src="script.js"></script>
 </body>
 </html>
