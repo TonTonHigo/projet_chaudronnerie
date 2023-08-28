@@ -51,21 +51,19 @@ CREATE TABLE `Commentaire` (
 
 CREATE TABLE `Tutoriel` (
 	`id_tutoriel` INT NOT NULL AUTO_INCREMENT,
-	`id_tutoriel` INT NOT NULL AUTO_INCREMENT,
 	`titre` varchar(100) NOT NULL,
 	`contenu` TEXT(5000) NOT NULL,
 	`image` varchar(200) NOT NULL,
 	`image2` varchar(200) NOT NULL,
-	PRIMARY KEY (`id_tutoriel`,`id_tutoriel`)
+	PRIMARY KEY (`id_tutoriel`)
 );
 
 CREATE TABLE `Commentaire_1` (
-	`id_commentaire` INT NOT NULL AUTO_INCREMENT,
-	`id_commentaire` INT NOT NULL AUTO_INCREMENT,
+	`id_commentaire_1` INT NOT NULL AUTO_INCREMENT,
 	`message` INT NOT NULL,
 	`id_tutoriel` INT NOT NULL,
 	`id_utilisateur` INT NOT NULL,
-	PRIMARY KEY (`id_commentaire`,`id_commentaire`)
+	PRIMARY KEY (`id_commentaire_1`)
 );
 
 ALTER TABLE `Contact` ADD CONSTRAINT `Contact_fk0` FOREIGN KEY (`id_utilisateur`) REFERENCES `Utilisateur`(`id_utilisateur`);

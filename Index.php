@@ -12,11 +12,11 @@
 
 <?php
 
-    include "header.php";
+    include "composants/header.php";
 
-    include "main.php";
+    include "composants/main.php";
 
-    include "footer.php";
+    include "composants/footer.php";
 
 ?>
   
