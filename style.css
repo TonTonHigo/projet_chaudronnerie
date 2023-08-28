@@ -24,9 +24,9 @@ body {
     background-color: #6C6C6C;
     overflow: hidden;
     display: flex;
-    align-items: center;    
+    align-items: center;
     padding: 10px 20px;
-    
+
 }
 
 .navbar a {
@@ -34,20 +34,13 @@ body {
     text-align: center;
     text-decoration: none;
     font-family: 'Wallpoet';
-    font-size: 2em;            
+    font-size: 2em;
     padding: 10px 20px;
 }
 
 
-
-.navbar .logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
-
-.navbar .logo img {
-    max-width: 25%;
+.logo img {
+    max-width: 35%;
 }
 
 .navbar .centered-links {
@@ -60,28 +53,29 @@ body {
 .navbar .contact {
     flex: 1;
     text-align: right;
-    padding-right: 20px;            
+    padding-right: 20px;
 }
 
 /* main */
-#propos{
-    background: url("image/image7.png");
+#propos {
+    background: url("image/image7a.JPG");
     filter: brightness(70%);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 5% 5%;
 }
-#propos div{
+
+#propos div {
     text-align: center;
     color: white;
 }
 
 /* footer */
-footer{
+footer {
     text-align: center;
 }
-footer a{
+
+footer a {
     text-decoration: none;
     color: #FF6347;
 }
-
-
