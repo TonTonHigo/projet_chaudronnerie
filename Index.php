@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
   <div id="preload">
     <div id="logopreload">
       <img src="image/Logo.png" alt="">

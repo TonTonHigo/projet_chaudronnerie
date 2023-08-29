@@ -61,6 +61,10 @@ body {
     padding: 10px 20px;
 }
 
+.navbar .logo {
+    position: relative;
+    overflow: hidden;
+}
 
 .navbar .logo img {
     max-width: 35%;
@@ -84,8 +88,8 @@ body {
 
 /* main */
 #propos {
-    background: url("image/image7a.JPG");
-    filter: brightness(70%);
+    background: url("image/image7a.png");
+    filter: brightness(70px);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5% 5%;
@@ -100,12 +104,12 @@ body {
 
 
 /* footer */
-footer{
+footer {
     text-align: center;
     padding: 10px;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: #FF6347;
 }
