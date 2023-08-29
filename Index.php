@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'introduction</title>
+    <title>Twin Multiservices</title>
     
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,14 +14,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="preload">
+    <div id="logopreload">
+      <img src="image/Logo.png" alt="">
+      <h1>TWIN MULTISERVICES</h1>
+    </div>
+  </div>
 
 <?php
 
-    include "composants/header.php";
+include "composants/header.php";
 
-    include "composants/main.php";
+include "composants/main.php";
 
-    include "composants/footer.php";
+include "composants/footer.php";
 
 ?>
   
