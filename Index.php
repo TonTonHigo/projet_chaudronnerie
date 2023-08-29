@@ -18,8 +18,8 @@
   <div class="preload"></div>
   <div class="containerlogo">
     <div id="logopreload">
-      <img class="cachepreload" src="image/Logo.png" alt="">
-      <h1 class="cachepreload">TWIN MULTISERVICES</h1>
+      <img class="cachepreload logowow" src="image/Logo.png" alt="">
+      <h1 class="cachepreload textintro">TWIN MULTISERVICES</h1>
     </div>
   </div>
     
