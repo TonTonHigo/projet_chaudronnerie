@@ -1,7 +1,7 @@
 <header>
     <div class="navbar">
         <div class="logo">
-            <a href="introduction.php"><img src="image\Logo.png" alt="Logo"></a>
+            <a href="index.php"><img src="image\Logo.png" alt="Logo"></a>
         </div>
         <div class="centered-links">
             <a href="archive.php">Archive</a>

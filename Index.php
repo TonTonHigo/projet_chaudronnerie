@@ -15,11 +15,11 @@
 </head>
 <body>
 
-  <div id="preload"></div>
-  <div id="containerlogo">
+  <div class="preload"></div>
+  <div class="containerlogo">
     <div id="logopreload">
-      <img src="image/Logo.png" alt="">
-      <a href=""><h1>TWIN MULTISERVICES</h1></a>
+      <img class="cachepreload" src="image/Logo.png" alt="">
+      <h1 class="cachepreload">TWIN MULTISERVICES</h1>
     </div>
   </div>
     
