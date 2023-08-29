@@ -14,14 +14,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <div id="preload">
+
+  <div id="preload"></div>
+  <div id="containerlogo">
     <div id="logopreload">
       <img src="image/Logo.png" alt="">
-      <h1>TWIN MULTISERVICES</h1>
+      <a href=""><h1>TWIN MULTISERVICES</h1></a>
     </div>
   </div>
-
+    
 <?php
 
 include "composants/header.php";
