@@ -18,10 +18,12 @@
 
 <main>
     <form id="contact_form">
-      <input type="text" placeholder="Pseudonyme">
-      <input type="text" placeholder="Email">
-      <input type="text" placeholder="Sujet">
-      <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+      <input name="form" id="form" type="text" value="contact" hidden>
+      <input name="pseudonyme" id="pseudonyme" type="text" placeholder="Pseudonyme">
+      <input name="email" id="email" type="text" placeholder="Email">
+      <input name="sujet" id="sujet" type="text" placeholder="Sujet">
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+      <button id="send_contact">Envoyer</button>
     </form>
 </main>
 
