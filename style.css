@@ -116,7 +116,18 @@ body {
     text-align: center;
     color: white;
 }
-
+#contact_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contact_form input{
+    background-color: #F4A460;
+}
+#contact_form textarea{
+    background-color: #F4A460;
+}
 
 /* footer */
 footer {

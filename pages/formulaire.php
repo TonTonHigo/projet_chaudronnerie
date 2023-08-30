@@ -17,7 +17,12 @@
 <?php include "../composants/header.php" ?>
 
 <main>
-    
+    <form id="contact_form">
+      <input type="text" placeholder="Pseudonyme">
+      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Sujet">
+      <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+    </form>
 </main>
 
 
@@ -25,6 +30,6 @@
 
  <!-- fichier js -->
  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="../script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

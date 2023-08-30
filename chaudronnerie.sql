@@ -9,16 +9,16 @@ CREATE TABLE `Role` (
 
 CREATE TABLE `Article` (
 	`id_article` INT NOT NULL AUTO_INCREMENT,
-	`titre` INT NOT NULL,
-	`contenu` INT NOT NULL,
-	`image` INT NOT NULL,
+	`titre` varchar(100) NOT NULL,
+	`contenu` TEXT(10000) NOT NULL,
+	`image` varchar(200) NOT NULL,
 	PRIMARY KEY (`id_article`)
 );
 
 CREATE TABLE `Galerie` (
 	`id_galerie` INT NOT NULL AUTO_INCREMENT,
 	`photo` varchar(100) NOT NULL,
-	`descriptif` TEXT(1000) NOT NULL,
+	`descriptif` TEXT(5000) NOT NULL,
 	PRIMARY KEY (`id_galerie`)
 );
 
@@ -43,7 +43,7 @@ CREATE TABLE `Utilisateur` (
 
 CREATE TABLE `Commentaire` (
 	`id_commentaire` INT NOT NULL AUTO_INCREMENT,
-	`message` INT NOT NULL,
+	`message` TEXT(1000) NOT NULL,
 	`id_article` INT NOT NULL,
 	`id_utilisateur` INT NOT NULL,
 	PRIMARY KEY (`id_commentaire`)
@@ -60,7 +60,7 @@ CREATE TABLE `Tutoriel` (
 
 CREATE TABLE `Commentaire_1` (
 	`id_commentaire_1` INT NOT NULL AUTO_INCREMENT,
-	`message` INT NOT NULL,
+	`message` TEXT(1000) NOT NULL,
 	`id_tutoriel` INT NOT NULL,
 	`id_utilisateur` INT NOT NULL,
 	PRIMARY KEY (`id_commentaire_1`)
