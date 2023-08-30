@@ -23,15 +23,106 @@
     </div>
   </div>
     
-<?php
+<?php include "composants/header.php"; ?>
 
-include "composants/header.php";
+<main>
 
-include "composants/main.php";
+    <section  id="propos">
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor expedita dolorem nobis tenetur ad impedit sequi quas aliquam unde eligendi quaerat vero commodi totam, quo eum inventore sit quam quisquam!</p>
+        </div>
+    </section>
 
-include "composants/footer.php";
+</main>
 
-?>
+<?php include "composants/footer.php"; ?>
   
   <!-- fichier js -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
