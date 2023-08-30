@@ -21,8 +21,7 @@
     <?php include "../composants/header.php" ?>
 
     <main>
-    
-    <div class="image-grid image-grid-highlight">          
+        <div class="image-grid image-grid-highlight">
             <div class="image-container" onclick="">
                 <img src="../image/image13.jpg" alt="Image 1">
             </div>
@@ -42,7 +41,7 @@
                 <img src="../image/image11a.jpg" alt="Image 6">
             </div>
         </div>
-       
+
     </main>
 
     <?php include "../composants/footer.php" ?>
