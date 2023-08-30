@@ -165,22 +165,26 @@ footer a {
 }
 
 /* archive */
-
+.image-grid-highlight {
+    background-color: #FF6347;
+    position: relative;
+    z-index: 0;    
+    padding: 10em;
+   
+}
 .image-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 30px;
-    margin: 30px auto;     
-    max-width: 50%; /*  largeur maximale comme souhaité */
+    justify-content: space-around;    
+    gap: 7em;
+    margin: 6em auto;     
+    max-width: 50em; 
 }
 
 .image-container {
-    width: calc(33.33% - 50px);
-    /* 3 images en largeur avec un espace de 20px */
-    overflow: hidden;
-    border: 1px solid #121212;
+    width: calc(33.33% - 5em);
+    overflow: hidden;  
+    border: 3px solid #2C2C2C;
     box-sizing: border-box;
 }
 
@@ -190,8 +194,3 @@ footer a {
     object-fit: cover;
 }
 
-.explication {
-    width: 100%;
-    text-align: center;
-    clear: both; /* Pour que la mise en page ne soit pas perturbée */
-}
