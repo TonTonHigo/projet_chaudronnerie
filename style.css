@@ -18,7 +18,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.preload{
+.preload {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -27,7 +27,8 @@ body {
     filter: blur(5px) brightness(80%);
     z-index: 1;
 }
-.containerlogo{
+
+.containerlogo {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -37,22 +38,26 @@ body {
     z-index: 2;
 }
 
-#logopreload{
+#logopreload {
     text-align: center;
     color: #FF6347;
     font-family: 'Wallpoet', cursive;
     text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
-                 1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+        1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
 }
-#logopreload img{
+
+#logopreload img {
     width: 350px;
 }
-#logopreload img:hover{
+
+#logopreload img:hover {
     cursor: pointer;
 }
-#logopreload h1:hover{
+
+#logopreload h1:hover {
     cursor: pointer;
 }
+
 /* header */
 
 .navbar {
@@ -124,4 +129,32 @@ footer {
 footer a {
     text-decoration: none;
     color: #FF6347;
+}
+
+/* archive */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.grid-item {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.explication {
+    width: 100%;
+    text-align: center;
 }
