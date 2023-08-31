@@ -159,6 +159,17 @@ body {
     color: #F4A460;
 }
 
+/* footer */
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #FF6347;
+}
+
 /* archive */
 .image-grid-highlight {
     background-color: #F4A460;
@@ -193,6 +204,7 @@ body {
     object-fit: cover;
 }
 
+
 @keyframes drydry {
     0%, 100% {
         box-shadow: 0 0 10px #2C2C2C, 0 0 20px #2C2C2C, 0 0 30px #2C2C2C;
@@ -201,14 +213,3 @@ body {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
 }
-/* footer */
-footer {
-    text-align: center;
-    padding: 10px;
-}
-
-footer a {
-    text-decoration: none;
-    color: #FF6347;
-}
-
