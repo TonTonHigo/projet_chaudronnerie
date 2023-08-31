@@ -105,18 +105,20 @@ body {
 
 /* main */
 /* fond sandy */
-.container-sandy{
+.container-sandy {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80%;
     padding: 0 5em;
 }
-.fond-sandy{
+
+.fond-sandy {
     height: 60em;
     padding: 10em;
     background-color: #F4A460;
 }
+
 /* à propos */
 #propos {
     background: url("image/image7a.png");
@@ -175,13 +177,14 @@ body {
 }
 
 /* galerie */
-#grid-galerie{
+#grid-galerie {
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto auto;
     gap: 50px;
 }
-.text-galerie{
+
+.text-galerie {
     color: white;
 }
 
@@ -199,6 +202,8 @@ footer a {
 /* archive */
 .image-grid-highlight {
     background-color: #F4A460;
+    width: 90em;
+    height: 90em;
     position: relative;
     z-index: 0;
     padding: 10em;
@@ -206,9 +211,9 @@ footer a {
 }
 
 .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
     gap: 7em;
     margin: 6em auto;
     max-width: 50em;
@@ -241,39 +246,4 @@ footer a {
     50% {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
-}
-
-/* Style de la boîte modale */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Fond semi-transparent */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    /* Assure que la boîte modale est au-dessus du contenu */
-    overflow: hidden;
-    /* Empêche le défilement lorsque la boîte modale est affichée */
-}
-
-/* Contenu de la boîte modale */
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
-    /* Largeur maximale de la boîte modale */
-}
-
-/* Style pour l'image à l'intérieur de la boîte modale */
-.modal-content img {
-    max-width: 100%;
-    /* Assure que l'image s'adapte à la largeur de la boîte modale */
-    height: auto;
 }
