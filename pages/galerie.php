@@ -1,3 +1,4 @@
+<?php include "../composants/connexion.php"; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,6 +49,45 @@
         </div>
         </div>
     </div>
+
+    <div class="container-sandy">
+        <div class="fond-sandy">
+            <div id="grid-galerie">
+            <?php
+                $galerie = $connexion -> select("*","galerie");
+                foreach($galerie as $cartes){
+                    $maxContentLength = 100; // Maximum de caractère a afficher 
+
+                    // Raccourci le contenu trop long pour donner un effet prévu
+                    $truncatedContent = (strlen($cartes['descriptif']) > $maxContentLength) ?
+                    substr($cartes['descriptif'], 0, $maxContentLength) . "..." :
+                    $cartes['descriptif'];
+                        
+                    echo '                   
+                        
+                    <div id="id-photo'. $cartes["id_galerie"] .'">
+                        <h2 id="text-galerie'. $cartes["id_galerie"] .'" class="text-galerie">' . $truncatedContent . '</h2>
+                    </div>                 
+                     
+                    <style>
+                        #id-photo'. $cartes["id_galerie"] .'{
+                            background: url("'. $cartes["photo"] .'");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position:center;
+                            width:300px;
+                            height: 571px;
+                            display: flex;
+                            align-items: end;
+                        }
+                    </style>
+                    ';
+                }
+            ?>
+            </div>
+        </div>
+
+    </div>
 </main>
 
 
@@ -56,6 +96,20 @@
     <!-- fichier js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script>
+        $(document).ready(function(){
+            // galerie
+            $('.text-galerie').hide();
+
+            $('#id-photo1').hover(function(){
+                $('#text-galerie1').slideDown("slow");
+
+            }, function(){
+                $('#text-galerie1').slideUp("slow");
+
+            });
+
+        });
+    </script>
 </body>
 </html>
