@@ -177,7 +177,7 @@ body {
 }
 
 /* galerie */
-#grid-galerie {
+.grid-galerie{
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto auto;
@@ -186,6 +186,17 @@ body {
 
 .text-galerie {
     color: white;
+    font-size: 24px;
+}
+.cadre-photo{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    width:300px;
+    height: 571px;
+    display: flex;
+    align-items: end;
+    backdrop-filter: brightness(80%);
 }
 
 /* footer */
