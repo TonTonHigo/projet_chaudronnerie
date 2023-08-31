@@ -1,3 +1,4 @@
+<?php include "../composants/connexion.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,27 +23,44 @@
 
     <main>
 
+        <?php
+
+        $articles = $connexion->select("*", "article");
+
+        if (!empty($articles)) {
+            foreach ($articles as $article) {
+                echo '<div class="image-container" onclick="showArticleDetails(this)">
+                            <h2>' . $article["titre"] . '</h2>
+                            <p>' . $article["contenu"] . '</p>
+                            <img src="' . $article["image"] . '">
+                          </div>';
+            }
+        } else {
+            echo "Aucun article trouvé.";
+        }
+         ?>
+        <!--
         <div class="image-grid image-grid-highlight">
-            <div class="image-container" onclick="">
+            <div class="image-container" onclick="showArticleDetails(this)">
                 <img src="../image/image13.jpg" alt="Image 1">
             </div>
-            <div class="image-container" onclick="">
+            <div class="image-container" onclick="showArticleDetails(this)">
                 <img src="../image/image14.jpg" alt="Image 2">
             </div>
-            <div class="image-container" onclick="">
+            <div class="image-container" onclick="showArticleDetails(this)">
                 <img src="../image/image15.jpg" alt="Image 3">
             </div>
-            <div class="image-container" onclick="">
+            <div class="image-container" onclick="showArticleDetails(this)">
                 <img src="../image/image16.jpg" alt="Image 4">
             </div>
-            <div class="image-container" onclick="">
+            <div class="image-container" onclick="showArticleDetails(this)">
                 <img src="../image/image18.png" alt="Image 5">
             </div>
-            <div class="image-container" onclick="">
+            <div class="image-container" onclick="showArticleDetails(this)">
                 <img src="../image/image11a.jpg" alt="Image 6">
             </div>
         </div>
-
+         -->
 
     </main>
 
@@ -50,7 +68,7 @@
 
     <!-- fichier js -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    
 
 
 </body>

@@ -206,10 +206,48 @@ footer a {
 
 
 @keyframes drydry {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 10px #2C2C2C, 0 0 20px #2C2C2C, 0 0 30px #2C2C2C;
     }
+
     50% {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
+}
+
+/* Style de la boîte modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fond semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Assure que la boîte modale est au-dessus du contenu */
+    overflow: hidden;
+    /* Empêche le défilement lorsque la boîte modale est affichée */
+}
+
+/* Contenu de la boîte modale */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    /* Largeur maximale de la boîte modale */
+}
+
+/* Style pour l'image à l'intérieur de la boîte modale */
+.modal-content img {
+    max-width: 100%;
+    /* Assure que l'image s'adapte à la largeur de la boîte modale */
+    height: auto;
 }
