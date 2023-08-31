@@ -23,35 +23,29 @@
 
     <main>
 
-        <div class="container-sandy">
-            <div class="fond-sandy">
-                <div class="grid-galerie">
-                    <?php
-                    $archive = $connexion->select("*", "article");
-                    foreach ($archive as $cartes) {
-                        $maxContentLength = 100; // Maximum de caractère a afficher 
+        <div class="image-grid-highlight">
+            <div class="image-grid">
 
-                        // Raccourci le contenu trop long pour donner un effet prévu
-                        $truncatedContent = (strlen($cartes['contenu']) > $maxContentLength) ?
-                            substr($cartes['contenu'], 0, $maxContentLength) . "..." :
-                            $cartes['contenu'];
+                <?php
+                $archive = $connexion->select("*", "article");
+                foreach ($archive as $cartes) {
+                    $maxContentLength = 100; // Maximum de caractère a afficher 
 
-                        echo '                   
-                        
-                    <div class="cadre-photo" style="background-image: url(' . $cartes["image"] . ')">
-                        <h2 id="text-galerie' . $cartes["id_article"] . '" class="text-galerie">' . $truncatedContent . '</h2>
-                    </div>                 
-                    ';
-                    }
-                    ?>
-                </div>
+                    // Raccourci le contenu trop long pour donner un effet prévu
+                    $truncatedContent = (strlen($cartes['titre']) > $maxContentLength) ?
+                        substr($cartes['titre'], 0, $maxContentLength) . "..." :
+                        $cartes['titre'];
+
+                    echo
+                    '<div class="cadre-photo" style="background-image: url(' . $cartes["image"] . ')">
+                                   <h2 id="text-galerie' . $cartes["id_article"] . '" class="text-galerie">' . $truncatedContent . '</h2>
+                                   </div>';
+                }
+                ?>
+
+
             </div>
-
         </div>
-
-
-
-
 
     </main>
 
