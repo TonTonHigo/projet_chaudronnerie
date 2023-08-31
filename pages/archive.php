@@ -70,6 +70,37 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         
+    // Fonction pour afficher les détails de l'article
+    function showArticleDetails(imageContainer) {
+        var title = imageContainer.getAttribute("data-title");
+        var content = imageContainer.getAttribute("data-content");
+        var imageSrc = imageContainer.querySelector("img").getAttribute("src");
+
+        // Afficher les détails de l'article dans une boîte modale
+        var modalContent = '<h2>' + title + '</h2>' +
+            '<p>' + content + '</p>' +
+            '<img src="' + imageSrc + '" alt="Image de l\'article">';
+
+        // Créer une boîte modale et ajouter le contenu
+        var modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.innerHTML = modalContent;
+
+        // Ajouter la boîte modale à la page
+        document.body.appendChild(modal);
+
+        // Ajouter un écouteur pour fermer la boîte modale lorsqu'on clique dessus
+        modal.addEventListener('click', function () {
+            document.body.removeChild(modal);
+        });
+    }
+
+    // Associer la fonction aux éléments d'article
+    $(".article.image-container").click(function () {
+        showArticleDetails(this);
+    });
+
+
     </script>
 
 
