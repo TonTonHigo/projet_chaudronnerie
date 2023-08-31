@@ -33,9 +33,9 @@ $(document).ready(function () {
 
 
     // AJAX 
-    $('#send_contact').click(function () {
-        // récupère les valeurs des inputs
-        var formData = {
+    $('#send_contact').click(function(){
+         // récupère les valeurs des inputs
+         var formData = {
             form: $("#form").val(),
             pseudonyme: $("#pseudonyme").val(),
             email: $("#email").val(),

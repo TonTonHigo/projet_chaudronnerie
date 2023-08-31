@@ -104,6 +104,20 @@ body {
 
 
 /* main */
+/* fond sandy */
+.container-sandy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding: 0 5em;
+}
+.fond-sandy{
+    height: 60em;
+    padding: 10em;
+    background-color: #F4A460;
+}
+/* à propos */
 #propos {
     background: url("image/image7a.png");
     filter: brightness(70px);
@@ -117,6 +131,7 @@ body {
     color: white;
 }
 
+/* contact form */
 #contact_form {
     display: flex;
     flex-direction: column;
@@ -157,6 +172,17 @@ body {
     border-radius: 5px;
     background-color: #6C6C6C;
     color: #F4A460;
+}
+
+/* galerie */
+#grid-galerie{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+}
+.text-galerie{
+    color: white;
 }
 
 /* footer */

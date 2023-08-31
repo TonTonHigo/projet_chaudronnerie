@@ -32,6 +32,43 @@
 
  <!-- fichier js -->
  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script>
+     // AJAX 
+     $('#send_contact').click(function(){
+         // récupère les valeurs des inputs
+         var formData = {
+            form: $("#form").val(),
+            pseudonyme: $("#pseudonyme").val(),
+            email: $("#email").val(),
+            sujet: $("#sujet").val(),
+            message: $("#message").val(),
+        };
+
+        // vide les inputs
+        $('#pseudonyme').val('');
+        $('#email').val('');
+        $('#sujet').val('');
+        $('#message').val('');
+
+        var type = "POST";
+        var ajaxurl = "controller.php";
+
+        $.ajax({
+            type: type,
+            // en minuscule url
+            url: ajaxurl,
+            dataType: 'json',
+            data: formData,
+            success: function (data) {
+                alert("Votre message a bien été envoyé!\nNous vous répondrons au plus vite.");
+            },
+            error: function (xhr, status, error) {
+                console.log("Erreur AJAX : " + error);
+                console.log("Erreur AJAX : " + status);
+                console.log("Erreur AJAX : " + xhr);
+            },
+        });
+    });
+  </script>
 </body>
 </html>
