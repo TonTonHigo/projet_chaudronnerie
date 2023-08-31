@@ -24,7 +24,7 @@
 
     <div class="container-sandy">
         <div class="fond-sandy">
-            <div id="grid-galerie">
+            <div class="grid-galerie">
             <?php
                 $galerie = $connexion -> select("*","galerie");
                 foreach($galerie as $cartes){
