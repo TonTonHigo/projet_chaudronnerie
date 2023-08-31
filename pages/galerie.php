@@ -21,34 +21,6 @@
 <?php include "../composants/header.php" ?>
 
 <main>
-    <div>
-                <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Ajouter une image à la galerie
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Nouvelle image</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <input name="image" type="text" placeholder="image">
-                    <textarea name="descriptif" id="" cols="30" rows="10" placeholder="descriptif"></textarea>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="button" class="btn btn-primary">Envoyer</button>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
 
     <div class="container-sandy">
         <div class="fond-sandy">
@@ -65,22 +37,9 @@
                         
                     echo '                   
                         
-                    <div id="id-photo'. $cartes["id_galerie"] .'">
+                    <div class="cadre-photo" style="background-image: url(' . $cartes["photo"] . ')">
                         <h2 id="text-galerie'. $cartes["id_galerie"] .'" class="text-galerie">' . $truncatedContent . '</h2>
                     </div>                 
-                     
-                    <style>
-                        #id-photo'. $cartes["id_galerie"] .'{
-                            background: url("'. $cartes["photo"] .'");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position:center;
-                            width:300px;
-                            height: 571px;
-                            display: flex;
-                            align-items: end;
-                        }
-                    </style>
                     ';
                 }
             ?>
@@ -101,14 +60,11 @@
             // galerie
             $('.text-galerie').hide();
 
-            $('#id-photo1').hover(function(){
-                $('#text-galerie1').slideDown("slow");
-
+            $('.cadre-photo').hover(function(){
+                $(this).find('.text-galerie').slideDown("slow");
             }, function(){
-                $('#text-galerie1').slideUp("slow");
-
+                $(this).find('.text-galerie').slideUp("slow");
             });
-
         });
     </script>
 </body>
