@@ -161,7 +161,7 @@ body {
 
 /* archive */
 .image-grid-highlight {
-    background-color: #FF6347;
+    background-color: #F4A460;
     position: relative;
     z-index: 0;
     padding: 10em;
@@ -192,7 +192,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
 
 @keyframes drydry {
     0%, 100% {
