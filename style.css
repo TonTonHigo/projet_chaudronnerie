@@ -213,12 +213,12 @@ footer a {
 /* archive */
 .image-grid-highlight {
     background-color: #F4A460;
-    width: auto 10em;
-    height: 10em auto;
+    width: 50em 10em;
+    height: 10em 50em;
     position: relative;
     z-index: 0;
     padding: 10em;
-    border-radius: 10px;
+  
 }
 
 .image-grid {
