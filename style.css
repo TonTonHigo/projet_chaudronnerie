@@ -106,19 +106,6 @@ body {
 /* main */
 
 /* fond sandy */
-.container-sandy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    padding: 0 5em;
-}
-
-.fond-sandy {
-    height: 60em;
-    padding: 10em;
-    background-color: #F4A460;
-}
 
 /* à propos */
 #propos {
@@ -182,7 +169,9 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto auto;
-    gap: 50px;
+    gap: 10em;
+    height: 60em;
+    margin: 10em;
 }
 
 .text-galerie {
@@ -194,15 +183,30 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 300px;
+    width: 400px;
     height: 571px;
+    border-radius: 10px;
     display: flex;
     align-items: end;
     backdrop-filter: brightness(80%);
+    animation: gogo 4s linear infinite;
 }
+@keyframes gogo {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #2C2C2C, 0 0 20px #2C2C2C, 0 0 30px #2C2C2C;
+    }
+
+    50% {
+        box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
+    }
+}
+
 
 /* footer */
 footer {
+    background-color: #FFEBCD;
     text-align: center;
     padding: 10px;
 }
