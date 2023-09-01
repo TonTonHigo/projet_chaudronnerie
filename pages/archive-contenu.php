@@ -23,18 +23,23 @@
 
     <main>
 
-
         <?php
+
         $post = $_POST['resume'];
         $archivecontenu = $connexion->select_where($post);
-        foreach ($archivecontenu as $cartes) 
-        
-        {
-            echo '<img src="'.$cartes["image"] .'">' ;
-            echo '<h1>'.$cartes["titre"].'</h1>';
-            echo '<p>'.$cartes["contenu"].'</p>';
+        foreach ($archivecontenu as $cartes) {
+            echo '<div class="archive-contenu-grid">';
+            echo '<img src="' . $cartes["image"] . '" class="cadre-archive-contenu">';
+            echo '<div class="card-body">';
+            echo '<h1 class="archive-contenu-titre">' . $cartes["titre"] . '</h1>';
+            echo '<div class="archive-contenu-text">';
+            echo '<p class="card-text">' . $cartes["contenu"] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
         }
         ?>
+
 
     </main>
 

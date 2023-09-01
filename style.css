@@ -7,7 +7,7 @@ Background-Color-Secondary (Couleur de fond secondaire) : #F4A460  (Orange sandy
 Button (Couleur des boutons) : #FF6347 (Tomate) 
 
 Typos:
-font-family: 'Wallpoet', cursive;
+font-family: 'Wallpoet', 'Segoe UI', 'Helvetica',  
 
 */
 
@@ -104,6 +104,19 @@ body {
 /* main */
 
 /* fond sandy */
+.container-sandy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding: 0 5em;
+}
+
+.fond-sandy {
+    height: 60em;
+    padding: 10em;
+    background-color: #F4A460;
+}
 
 /* à propos */
 #propos {
@@ -167,9 +180,7 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto auto;
-    gap: 10em;
-    height: 60em;
-    margin: 10em;
+    gap: 50px;
 }
 
 .text-galerie {
@@ -181,32 +192,21 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 400px;
+    width: 300px;
     height: 571px;
-    border-radius: 10px;
     display: flex;
     align-items: end;
     backdrop-filter: brightness(80%);
-    animation: gogo 4s linear infinite;
 }
-@keyframes gogo {
-
-    0%,
-    100% {
-        box-shadow: 0 0 10px #2C2C2C, 0 0 20px #2C2C2C, 0 0 30px #2C2C2C;
-    }
-
-    50% {
-        box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
-    }
-}
-
 
 /* footer */
+
 footer {
-    background-color: #FFEBCD;
     text-align: center;
     padding: 10px;
+    width: auto;
+    height: auto;
+    background-color: #FFEBCD;
 }
 
 footer a {
@@ -251,10 +251,56 @@ footer a {
 }
 
 .text-archive {
-    margin: 2%;
+    margin: 4% auto;
     color: #FFEBCD;
     font-size: 24px;
 }
 
 /* archive contenu */
 
+.cadre-archive-contenu {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: end;
+    backdrop-filter: brightness(80%);
+    animation: drydry 4s linear infinite;
+    border: 2px solid #2C2C2C;
+    border-radius: 10px;
+}
+
+@keyframes drydry {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #2C2C2C, 0 0 20px #2C2C2C, 0 0 30px #2C2C2C;
+    }
+
+    50% {
+        box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
+    }
+}
+
+.archive-contenu-grid {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-around;
+    gap: 5em;
+    margin: 6em;
+}
+
+.archive-contenu-titre {
+    font-family: 'Helvetica';
+    color: #2C2C2C;
+
+
+}
+
+.archive-contenu-text {
+    font-family: 'Segoe UI';
+    color: #6C6C6C;
+    font-weight: bold;
+}
