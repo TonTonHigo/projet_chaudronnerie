@@ -23,30 +23,35 @@
 
     <main>
 
-        <div class="image-grid-highlight">
-            <div class="image-grid">
+        <div class="image-grid">
 
-                <?php
-                $archive = $connexion->select("*", "article");
-                foreach ($archive as $cartes) {
-                    $maxContentLength = 100; // Maximum de caractère a afficher 
+            <?php
+            $archive = $connexion->select("*", "article");
+            foreach ($archive as $cartes) {
+                $maxContentLength = 4500; // Maximum de caractère a afficher 
 
-                    // Raccourci le contenu trop long pour donner un effet prévu
-                    $truncatedContent = (strlen($cartes['titre']) > $maxContentLength) ?
-                        substr($cartes['titre'], 0, $maxContentLength) . "..." :
-                        $cartes['titre'];
+                // Raccourci le contenu trop long pour donner un effet prévu
+                $truncatedContent = (strlen($cartes['titre']) > $maxContentLength) ?
+                    substr($cartes['titre'], 0, $maxContentLength) . "..." :
+                    $cartes['titre'];
 
-                    echo
-                    '<div class="cadre-photo" style="background-image: url(' . $cartes["image"] . ')">
-                                   <h2 id="text-galerie' . $cartes["id_article"] . '" class="text-galerie">' . $truncatedContent . '</h2>
-                                   </div>';
-                }
-                ?>
+                echo
+                '<div class="cadre-archive" style="background-image: url(' . $cartes["image"] . ')">
+                    <h2 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h2>
+                </div>';
 
+                $truncatedContent = (strlen($cartes['contenu']) > $maxContentLength) ?
+                    substr($cartes['contenu'], 0, $maxContentLength) . "..." :
+                    $cartes['contenu'];
 
-            </div>
+                echo
+                '<div class="cadre-archive" style="background-image: url(' . $cartes["titre"] . ')">
+                <h3 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h3>
+                </div>';
+            }
+            ?>
+
         </div>
-
     </main>
 
     <?php include "../composants/footer.php" ?>
@@ -57,16 +62,17 @@
 
     <script>
         $(document).ready(function() {
-            // galerie
-            $('.text-galerie').hide();
+            //archive
+            $('.text-archive').hide();
 
-            $('.cadre-photo').hover(function() {
-                $(this).find('.text-galerie').slideDown("slow");
+            $('.cadre-archive').hover(function() {
+                $(this).find('.text-archive').slideDown("slow");
             }, function() {
-                $(this).find('.text-galerie').slideUp("slow");
+                $(this).find('.text-archive').slideUp("slow");
             });
         });
     </script>
+
 </body>
 
 </html>

@@ -13,7 +13,7 @@ font-family: 'Wallpoet', cursive;
 
 
 body {
-    background-color: #FFEBCD;
+    background-color: #F4A460;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -104,6 +104,7 @@ body {
 
 
 /* main */
+
 /* fond sandy */
 .container-sandy {
     display: flex;
@@ -143,7 +144,7 @@ body {
 }
 
 #contact_form input {
-    background-color: #F4A460;
+    background-color: #FFEBCD;
     border: none;
     padding: 20px;
     width: 1000px;
@@ -159,7 +160,7 @@ body {
     padding: 20px;
     width: 1000px;
     margin-bottom: 100px;
-    background-color: #F4A460;
+    background-color: #FFEBCD;
 }
 
 #contact_form textarea::placeholder {
@@ -173,11 +174,11 @@ body {
     width: 150px;
     border-radius: 5px;
     background-color: #6C6C6C;
-    color: #F4A460;
+    color: #FFEBCD;
 }
 
 /* galerie */
-.grid-galerie{
+.grid-galerie {
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto auto;
@@ -188,11 +189,12 @@ body {
     color: white;
     font-size: 24px;
 }
-.cadre-photo{
+
+.cadre-photo {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:center;
-    width:300px;
+    background-position: center;
+    width: 300px;
     height: 571px;
     display: flex;
     align-items: end;
@@ -211,42 +213,28 @@ footer a {
 }
 
 /* archive */
-.image-grid-highlight {
-    background-color: #F4A460;
-    width: 50em 10em;
-    height: 10em 50em;
-    position: relative;
-    z-index: 0;
-    padding: 10em;
-  
-}
 
 .image-grid {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-around;
-    gap: 7em;
-    margin: 6em auto;
-    max-width: 50em;
+    gap: 5em;
+    margin: 6em;
 }
 
-/*
-.image-container {
-    width: calc(33.33% - 5em);
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: transparent;
+.cadre-archive {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 500px;
+    height: 571px;
+    display: flex;
+    align-items: end;
+    backdrop-filter: brightness(80%);
     animation: drydry 4s linear infinite;
     border: 2px solid #2C2C2C;
-    box-sizing: border-box;
+    border-radius: 10px;
 }
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 @keyframes drydry {
 
@@ -259,4 +247,11 @@ footer a {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
 }
-*/
+
+.text-archive {
+    margin: 2%;
+    color:#FFEBCD;
+    font-size: 24px;
+}
+
+.archive-contenu {}
