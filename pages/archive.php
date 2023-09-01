@@ -37,16 +37,10 @@
 
                 echo
                 '<div class="cadre-archive" style="background-image: url(' . $cartes["image"] . ')">
-                    <h2 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h2>
-                </div>';
-
-                $truncatedContent = (strlen($cartes['contenu']) > $maxContentLength) ?
-                    substr($cartes['contenu'], 0, $maxContentLength) . "..." :
-                    $cartes['contenu'];
-
-                echo
-                '<div class="cadre-archive" style="background-image: url(' . $cartes["titre"] . ')">
-                <h3 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h3>
+                <form action="archive-contenu.php" method="post">                
+                    <input name="resume" type="hidden" value="'. $cartes["id_article"] .'"> 
+                    <button type="submit" class="btn btn-primary text-archive "><h2 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h2></button>
+                </form>                 
                 </div>';
             }
             ?>

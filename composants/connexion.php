@@ -52,7 +52,23 @@ class ma_connexion{
 
         }
     }
+    public function select_where($id){
+        try {
 
+            $select = "SELECT * FROM article WHERE id_article=$id";
+
+            $requete = $this -> connexionPDO -> prepare($select);
+            $requete -> execute();
+            $afficher = $requete -> fetchAll(PDO::FETCH_ASSOC);
+
+            return $afficher;
+
+        } catch (PDOException $e) {
+
+            echo "Erreur : " . $e->getMessage();
+
+        }
+    }
 
 
     // INSERTION 
