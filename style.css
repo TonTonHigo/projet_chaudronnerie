@@ -101,8 +101,6 @@ body {
 }
 
 
-
-
 /* main */
 
 /* fond sandy */
@@ -250,8 +248,8 @@ footer a {
 
 .text-archive {
     margin: 2%;
-    color:#FFEBCD;
+    color: #FFEBCD;
     font-size: 24px;
 }
 
-.archive-contenu {}
+/* archive contenu */
