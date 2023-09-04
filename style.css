@@ -215,6 +215,12 @@ body {
     align-items: center;
     color: #2C2C2C;
 }
+.validation-error {
+    display: none;
+    color: #2C2C2C;
+    font-size: 14px;
+    text-transform: uppercase;
+}
 /* galerie */
 .ajout-photo {
     background-color: #2C2C2C;
