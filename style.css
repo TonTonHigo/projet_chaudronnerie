@@ -197,7 +197,6 @@ body {
 
 #contact_form textarea::placeholder {
     color: #2C2C2C;
-
 }
 
 #contact_form button {
@@ -220,6 +219,7 @@ body {
     color: #2C2C2C;
     font-size: 14px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 /* galerie */
 .ajout-photo {
