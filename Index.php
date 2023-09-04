@@ -30,7 +30,7 @@
   <main>
 
     <section id="propos">
-      <div>
+      <div class="intro">
         <p>
           Bienvenue dans le monde fascinant de la chaudronnerie, un art ancien qui a façonné notre histoire depuis des siècles.
         </p>
