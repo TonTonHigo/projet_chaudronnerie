@@ -241,6 +241,7 @@ body {
 .ajout-photo{
     background-color: #2C2C2C;
     color: #FFEBCD;
+    transition: .5s ease;
 }
 .ajout-photo:hover{
     background-color: #6C6C6C;
