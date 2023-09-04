@@ -354,3 +354,37 @@ footer a {
     font-weight: bold;
 }
 
+/* à propos */
+
+/* paragraphes */
+p {
+    color: #FFEBCD;
+    font-size: 25px;
+    line-height: 1.5;
+    /* margin-bottom: 20px; */
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* histoire */
+.histoire {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*  citations */
+.citation {
+    font-style: italic;
+    color: #FF6347;
+}
+
+/* contact */
+.btn-contact {
+    display: inline-block;
+    background-color: transparent;
+    color: #FFEBCD;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
