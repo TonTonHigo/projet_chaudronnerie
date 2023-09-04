@@ -26,9 +26,11 @@ $(document).ready(function () {
         $(this).animate({ fontSize: '70px' }, 400);
     });
 
+    $('main').hide();
     $('.cachepreload').click(function () {
         $('.preload').fadeOut('slow');
         $('.containerlogo').fadeOut('slow');
+        $('main').show();
     });
 });
 
