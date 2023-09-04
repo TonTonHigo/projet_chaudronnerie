@@ -180,7 +180,8 @@ body {
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto auto;
-    gap: 50px;
+    gap: 10em;
+    margin: 20em 0;
 }
 
 .text-galerie {
@@ -188,15 +189,29 @@ body {
     font-size: 24px;
 }
 
+
 .cadre-photo {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 300px;
+    width: 400px;
     height: 571px;
     display: flex;
     align-items: end;
     backdrop-filter: brightness(80%);
+    border-radius: 10px;
+    animation: gogo 4s linear infinite;
+}
+@keyframes gogo {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #2C2C2C, 0 0 20px #2C2C2C, 0 0 30px #2C2C2C;
+    }
+
+    50% {
+        box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
+    }
 }
 
 /* footer */
@@ -204,8 +219,6 @@ body {
 footer {
     text-align: center;
     padding: 10px;
-    width: auto;
-    height: auto;
     background-color: #FFEBCD;
 }
 
@@ -314,7 +327,7 @@ h1 {
 p {
     font-size: 25px;
     line-height: 1.5;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
