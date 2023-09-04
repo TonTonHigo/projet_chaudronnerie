@@ -117,6 +117,7 @@ body {
     padding: 10em;
     background-color: #F4A460;
 }
+
 /* archive */
 
 .image-grid {
@@ -198,12 +199,17 @@ body {
 .archive-contenu-titre {
     font-family: 'Helvetica';
     color: #2C2C2C;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #FF6347;
+
 }
+
 
 .archive-contenu-text {
     font-family: 'Segoe UI';
     color: #6C6C6C;
     font-weight: bold;
+    -webkit-text-stroke: 1px #2C2C2C;
 }
 
 
@@ -219,13 +225,15 @@ body {
 
 #propos div {
     text-align: center;
-   
+
 }
+
 #propos p {
     font-size: 25px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
+
 .introduction {
     max-width: 800px;
     margin: 0 auto;
@@ -253,6 +261,8 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     margin-top: 20px;
+    border: 2px solid #2C2C2C;
+    border-radius: 10px;
 }
 
 .btn-contact:hover {
@@ -329,6 +339,7 @@ body {
     border-radius: 10px;
     animation: gogo 4s linear infinite;
 }
+
 @keyframes gogo {
 
     0%,
@@ -353,6 +364,3 @@ footer a {
     text-decoration: none;
     color: #FF6347;
 }
-
-
-
