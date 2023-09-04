@@ -305,19 +305,14 @@ footer a {
 
 /* à propos */
 
-/* principal */
-h1 {
-    font-size: 36px;
-}
-
 /* paragraphes */
 p {
+    color: #FFEBCD;
     font-size: 25px;
     line-height: 1.5;
     margin-bottom: 20px;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
 
 
 /* histoire */
@@ -325,7 +320,6 @@ p {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    border-radius: 10px;
 }
 
 /*  citations */
@@ -341,7 +335,6 @@ p {
     color: #FFEBCD;
     text-decoration: none;
     padding: 10px 20px;
-    border-radius: 5px;
     margin-top: 20px;
 }
 

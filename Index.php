@@ -30,7 +30,7 @@
   <main>
 
     <section id="propos">
-      <div class="introduction">
+      <div>
         <p>
           Bienvenue dans le monde fascinant de la chaudronnerie, un art ancien qui a façonné notre histoire depuis des siècles.
         </p>
@@ -54,6 +54,7 @@
           <strong>L'Héritage du Passé :</strong>
           De génération en génération, cet art précieux a été transmis. Les secrets de la chaudronnerie, les techniques et le savoir-faire se sont perpétués.
         </p>
+        <br>
         <p class="citation">
           "Chaque pièce de métal a une histoire à raconter, un rêve à réaliser."
         </p>
