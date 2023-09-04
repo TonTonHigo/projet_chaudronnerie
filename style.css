@@ -150,6 +150,8 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     margin-top: 20px;
+    border: 2px solid #2C2C2C;
+    border-radius: 10px; 
 }
 
 .btn-contact:hover {
@@ -203,7 +205,6 @@ body {
 .ajout-photo {
     background-color: #2C2C2C;
     color: #FFEBCD;
-    transition: .5s ease;
 }
 
 .ajout-photo:hover {
@@ -392,24 +393,6 @@ body {
     font-weight: bold;
     -webkit-text-stroke: 1px #2C2C2C;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* footer */
 
