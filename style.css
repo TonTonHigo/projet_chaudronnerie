@@ -214,6 +214,53 @@ body {
 }
 
 /* galerie */
+.ajout-photo{
+    background-color: #2C2C2C;
+    color: #FFEBCD;
+}
+.ajout-photo:hover{
+    background-color: #6C6C6C;
+    color: #FFEBCD;
+}
+.modal-galerie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.modal-header{
+    color: #FF6347;
+    background-color: #2C2C2C;
+    border: none;
+}
+.modal-body{
+    background-color: #F4A460;
+}
+.modal-footer{
+    background-color: #FFEBCD;
+}
+.modal-footer .annuler{
+    background-color: #6C6C6C;
+    color: #FFEBCD;
+}
+.modal-footer .enregistrer{
+    background-color: #2C2C2C;
+    color: #FFEBCD;
+}
+#send-photo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#send-photo input{
+    background-color: #FFEBCD;
+    margin-bottom: 10px;
+    border:none;
+}
+#send-photo textarea{
+    background-color: #FFEBCD;
+    border:none;
+}
 .grid-galerie {
     display: grid;
     justify-content: center;
@@ -223,8 +270,10 @@ body {
 }
 
 .text-galerie {
-    color: white;
+    text-align: center;
+    color: #FFEBCD;
     font-size: 24px;
+    background-color: #2C2C2C;
 }
 
 

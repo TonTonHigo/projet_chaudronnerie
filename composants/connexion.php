@@ -71,18 +71,38 @@ class ma_connexion{
     }
 
 
-    // INSERTION 
-    public function insert($nom, $prenom, $email , $age){ 
+    // INSERTION contact 
+    public function insert_contact($pseudonyme, $email, $sujet , $message){ 
 
             try {
 
-                $insert = "INSERT INTO  `contacts`(nom, prenom, email , age)  VALUES (?, ?, ?, ?)";
+                $insert = "INSERT INTO  `contact`(pseudonyme, email, sujet , message)  VALUES (?, ?, ?, ?)";
     
                 $requete = $this -> connexionPDO -> prepare($insert);
-                $requete->bindValue(1, $nom, PDO::PARAM_STR);
-                $requete->bindValue(2, $prenom, PDO::PARAM_STR);
-                $requete->bindValue(3, $email, PDO::PARAM_STR);
-                $requete->bindValue(4, $age, PDO::PARAM_INT);
+                $requete->bindValue(1, $pseudonyme, PDO::PARAM_STR);
+                $requete->bindValue(2, $email, PDO::PARAM_STR);
+                $requete->bindValue(3, $sujet, PDO::PARAM_STR);
+                $requete->bindValue(4, $message, PDO::PARAM_STR);
+    
+            
+                $requete->execute();
+    
+            } catch (PDOException $e) {
+    
+                echo "Erreur : " . $e->getMessage();
+    
+            }
+    }
+    // INSERTION galerie 
+    public function insert_galerie($photo, $descriptif){ 
+
+            try {
+
+                $insert = "INSERT INTO  `galerie`( photo, descriptif)  VALUES (?, ?)";
+    
+                $requete = $this -> connexionPDO -> prepare($insert);
+                $requete->bindValue(1, $photo, PDO::PARAM_STR);
+                $requete->bindValue(2, $descriptif, PDO::PARAM_STR);
     
             
                 $requete->execute();
