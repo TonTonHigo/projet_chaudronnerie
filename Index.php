@@ -38,6 +38,7 @@
         <p>
           Imaginez un atelier empli du doux crépitement de la forge, où le métal chaud prend forme sous les mains habiles d'un chaudronnier passionné.
         </p>
+        <br>
         <p>
           C'est ici que commence notre histoire.</strong>
         </p>
