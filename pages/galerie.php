@@ -57,17 +57,17 @@
     <?php
         $galerie = $connexion -> select("*","galerie");
         foreach($galerie as $cartes){
-            $maxContentLength = 100; // Maximum de caractère a afficher 
+            // $maxContentLength = 100; // Maximum de caractère a afficher 
 
             // Raccourci le contenu trop long pour donner un effet prévu
-            $truncatedContent = (strlen($cartes['descriptif']) > $maxContentLength) ?
-            substr($cartes['descriptif'], 0, $maxContentLength) . "..." :
-            $cartes['descriptif'];
+            // $truncatedContent = (strlen($cartes['descriptif']) > $maxContentLength) ?
+            // substr($cartes['descriptif'], 0, $maxContentLength) . "..." :
+            // $cartes['descriptif'];
                 
             echo '                   
                 
             <div class="cadre-photo" style="background-image: url(' . $cartes["photo"] . ')">
-                <h2 id="text-galerie'. $cartes["id_galerie"] .'" class="text-galerie">' . $truncatedContent . '</h2>
+                <p id="text-galerie'. $cartes["id_galerie"] .'" class="text-galerie">' . $cartes['descriptif'] . '</p>
             </div>                 
             ';
         }
