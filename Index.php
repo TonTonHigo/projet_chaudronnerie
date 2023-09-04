@@ -30,16 +30,18 @@
   <main>
 
     <section id="propos">
-      <div class="intro">
+
+      <div class="introduction">
         <p>
-          Bienvenue dans le monde fascinant de la chaudronnerie, un art ancien qui a façonné notre histoire depuis des siècles.
+          <strong> Dans le monde fascinant de la chaudronnerie, un art ancien qui a façonné notre histoire depuis des siècles.
         </p>
         <p>
           Imaginez un atelier empli du doux crépitement de la forge, où le métal chaud prend forme sous les mains habiles d'un chaudronnier passionné.
         </p>
         <p>
-          C'est ici que commence notre histoire.
+          C'est ici que commence notre histoire.</strong>
         </p>
+        <br>
       </div>
       <div class="histoire">
         <p>
@@ -58,6 +60,7 @@
         <p class="citation">
           "Chaque pièce de métal a une histoire à raconter, un rêve à réaliser."
         </p>
+        <br>
         <p>
           <strong>Un Art Vivant Aujourd'hui :</strong>
           Aujourd'hui, la chaudronnerie est plus vivante que jamais. Les artisans contemporains repoussent les limites de la créativité en combinant tradition et modernité.
@@ -82,4 +85,3 @@
 </body>
 
 </html>
-

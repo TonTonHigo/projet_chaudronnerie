@@ -132,6 +132,47 @@ body {
     color: white;
 }
 
+.introduction {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* paragraphes */
+p {
+    color: #FFEBCD;
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* histoire */
+.histoire {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* citations */
+.citation {
+    font-style: italic;
+    color: #FF6347;
+}
+
+/* contact */
+.btn-contact {
+    display: inline-block;
+    background-color: transparent;
+    color: #FFEBCD;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.btn-contact:hover {
+    background-color: transparent;
+}
+
 /* contact form */
 #contact_form {
     display: flex;
