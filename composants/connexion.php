@@ -72,26 +72,18 @@ class ma_connexion{
 
 
     // INSERTION contact 
-    public function insert_contact($pseudonyme, $email, $sujet , $message){ 
-
-            try {
-
-                $insert = "INSERT INTO  `contact`(pseudonyme, email, sujet , message)  VALUES (?, ?, ?, ?)";
-    
-                $requete = $this -> connexionPDO -> prepare($insert);
-                $requete->bindValue(1, $pseudonyme, PDO::PARAM_STR);
-                $requete->bindValue(2, $email, PDO::PARAM_STR);
-                $requete->bindValue(3, $sujet, PDO::PARAM_STR);
-                $requete->bindValue(4, $message, PDO::PARAM_STR);
-    
-            
-                $requete->execute();
-    
-            } catch (PDOException $e) {
-    
-                echo "Erreur : " . $e->getMessage();
-    
-            }
+    public function insert_contact($pseudonyme, $email, $sujet, $message) { 
+        try {
+            $insert = "INSERT INTO `contact` (pseudonyme, email, sujet, message) VALUES (?, ?, ?, ?)";
+            $requete = $this->connexionPDO->prepare($insert);
+            $requete->bindValue(1, $pseudonyme, PDO::PARAM_STR);
+            $requete->bindValue(2, $email, PDO::PARAM_STR);
+            $requete->bindValue(3, $sujet, PDO::PARAM_STR);
+            $requete->bindValue(4, $message, PDO::PARAM_STR);
+            $requete->execute();
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        } 
     }
     // INSERTION galerie 
     public function insert_galerie($photo, $descriptif){ 

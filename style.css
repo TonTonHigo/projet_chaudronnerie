@@ -157,17 +157,23 @@ body {
 }
 
 /* contact form */
+#titre-contact{
+    text-align: center;
+    margin-top: 5%;
+}
+
 #contact_form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    margin: 5% 0;
 }
 
 #contact_form input {
     background-color: #FFEBCD;
     border: none;
+    border-radius: 10px;
     padding: 20px;
     width: 1000px;
     margin-bottom: 100px;
@@ -179,6 +185,7 @@ body {
 
 #contact_form textarea {
     border: none;
+    border-radius: 10px;
     padding: 20px;
     width: 1000px;
     margin-bottom: 100px;
@@ -198,7 +205,13 @@ body {
     background-color: #6C6C6C;
     color: #FFEBCD;
 }
-
+#merci-contact{
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2C2C2C;
+}
 /* galerie */
 .ajout-photo {
     background-color: #2C2C2C;

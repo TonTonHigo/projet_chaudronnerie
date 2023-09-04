@@ -16,15 +16,20 @@
    
 <?php include "../composants/header.php" ?>
 
+<h1 id="titre-contact">Contactez-moi</h1>
+
 <main>
     <form id="contact_form">
-      <input name="form" id="form" type="text" value="contact" hidden>
-      <input name="pseudonyme" id="pseudonyme" type="text" placeholder="Pseudonyme">
-      <input name="email" id="email" type="text" placeholder="Email">
-      <input name="sujet" id="sujet" type="text" placeholder="Sujet">
-      <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-      <button id="send_contact">Envoyer</button>
+        <input name="pseudonyme" id="pseudonyme" type="text" placeholder="Pseudonyme">
+        <input name="email" id="email" type="text" placeholder="Email">
+        <input name="sujet" id="sujet" type="text" placeholder="Sujet">
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+        <button type="button" id="send_contact">Envoyer</button>
     </form>
+
+    <div id="merci-contact">
+        <h2>Merci pour votre message, je vous répondrez au plus vite!!!</h2>
+    </div>
 </main>
 
 
@@ -33,42 +38,40 @@
  <!-- fichier js -->
  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <script>
-     // AJAX 
-     $('#send_contact').click(function(){
-         // récupère les valeurs des inputs
-         var formData = {
-            form: $("#form").val(),
-            pseudonyme: $("#pseudonyme").val(),
-            email: $("#email").val(),
-            sujet: $("#sujet").val(),
-            message: $("#message").val(),
-        };
+    
+    $(document).ready(function () {
+        $('#merci-contact').hide();
 
-        // vide les inputs
-        $('#pseudonyme').val('');
-        $('#email').val('');
-        $('#sujet').val('');
-        $('#message').val('');
+        $('#send_contact').click(function () {
+            // Gather form data
+            var formData = {
+                pseudonyme: $('#pseudonyme').val(),
+                email: $('#email').val(),
+                sujet: $('#sujet').val(),
+                message: $('#message').val(),
+                form: 'contact' // Add the form field
+            };
 
-        var type = "POST";
-        var ajaxurl = "controller.php";
-
-        $.ajax({
-            type: type,
-            // en minuscule url
-            url: ajaxurl,
-            dataType: 'json',
-            data: formData,
-            success: function (data) {
-                alert("Votre message a bien été envoyé!\nNous vous répondrons au plus vite.");
-            },
-            error: function (xhr, status, error) {
-                console.log("Erreur AJAX : " + error);
-                console.log("Erreur AJAX : " + status);
-                console.log("Erreur AJAX : " + xhr);
-            },
+            // Send AJAX request
+            $.ajax({
+                type: 'POST',
+                url: '../controller.php', // Update the URL to your PHP script
+                data: formData,
+                dataType: 'json', // You can specify the data type based on your server's response
+                success: function (response) {
+                    // Hide the form and display the "Thank you" message
+                    $("#titre-contact").slideUp("slow");
+                    $("#contact_form").slideUp("slow");
+                    $('#merci-contact').show("slide", {direction: "top"},1000);
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors here
+                    console.error(error);
+                }
+            });
         });
     });
+
   </script>
 </body>
 </html>
