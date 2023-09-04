@@ -58,19 +58,6 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* header */
 
 .navbar {
@@ -113,24 +100,6 @@ body {
     padding-right: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* main */
 
 /* à propos */
@@ -145,13 +114,15 @@ body {
 
 #propos div {
     text-align: center;
-   
+
 }
+
 #propos p {
     font-size: 25px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
+
 .introduction {
     max-width: 800px;
     margin: 0 auto;
@@ -184,10 +155,6 @@ body {
 .btn-contact:hover {
     background-color: transparent;
 }
-
-
-
-
 
 /* contact form */
 #contact_form {
@@ -232,60 +199,66 @@ body {
     color: #FFEBCD;
 }
 
-
-
-
-
-
 /* galerie */
-.ajout-photo{
+.ajout-photo {
     background-color: #2C2C2C;
     color: #FFEBCD;
     transition: .5s ease;
 }
-.ajout-photo:hover{
+
+.ajout-photo:hover {
     background-color: #6C6C6C;
     color: #FFEBCD;
 }
-.modal-galerie{
+
+.modal-galerie {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
-.modal-header{
+
+.modal-header {
     color: #FF6347;
     background-color: #2C2C2C;
     border: none;
 }
-.modal-body{
+
+.modal-body {
     background-color: #F4A460;
 }
-.modal-footer{
+
+.modal-footer {
     background-color: #FFEBCD;
 }
-.modal-footer .annuler{
+
+.modal-footer .annuler {
     background-color: #6C6C6C;
     color: #FFEBCD;
 }
-.modal-footer .enregistrer{
+
+.modal-footer .enregistrer {
     background-color: #2C2C2C;
     color: #FFEBCD;
 }
-#send-photo{
+
+#send-photo {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-#send-photo input{
+
+#send-photo input {
     background-color: #FFEBCD;
     margin-bottom: 10px;
-    border:none;
+    border: none;
 }
-#send-photo textarea{
+
+#send-photo textarea {
     background-color: #FFEBCD;
-    border:none;
+    border: none;
 }
+
 .grid-galerie {
     display: grid;
     justify-content: center;
@@ -314,6 +287,7 @@ body {
     border-radius: 10px;
     animation: gogo 4s linear infinite;
 }
+
 @keyframes gogo {
 
     0%,
@@ -325,11 +299,6 @@ body {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
 }
-
-
-
-
-
 
 /* archive */
 
@@ -372,11 +341,6 @@ body {
     color: #FFEBCD;
     font-size: 24px;
 }
-
-
-
-
-
 
 /* archive contenu */
 
@@ -421,7 +385,6 @@ body {
     -webkit-text-stroke: 1px #FF6347;
 
 }
-
 
 .archive-contenu-text {
     font-family: 'Segoe UI';
