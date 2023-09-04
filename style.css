@@ -212,7 +212,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #2C2C2C;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #FFEBCD;
+    font-family: 'Wallpoet';
 }
 .validation-error {
     display: none;
@@ -403,7 +406,7 @@ body {
     font-family: 'Helvetica';
     color: #2C2C2C;
     font-weight: bold;
-    -webkit-text-stroke: 1px #FF6347;
+    
 
 }
 

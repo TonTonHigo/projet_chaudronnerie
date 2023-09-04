@@ -36,7 +36,7 @@
     </form>
 
     <div id="merci-contact">
-        <h2>Merci pour votre message, je vous répondrez au plus vite!!!</h2>
+        <h2>Merci pour votre message, je vous répondrez au plus vite !!!</h2>
     </div>
 </main>
 
