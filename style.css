@@ -378,22 +378,18 @@ body {
     gap: 5em;
     margin: 6em;
 }
+ 
 
-.archive-contenu-titre {
+.archive-contenu-titre {        
     font-family: 'Helvetica';
     color: #2C2C2C;
     font-weight: bold;
     -webkit-text-stroke: 1px #FF6347;
-
 }
 
 .archive-contenu-text {
     font-family: 'Segoe UI';
-    color: #6C6C6C;
-    margin-bottom: 1em;
-    font-weight: bold;
-    -webkit-text-stroke: 1px #2C2C2C;
-    white-space: pre-line;
+    color: #6C6C6C;     
 }
 
 /* footer */
