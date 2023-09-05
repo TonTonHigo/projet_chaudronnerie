@@ -14,12 +14,9 @@ if (isset($_POST["form"])) {
         case "galerie":
             $inserted = $connexion->insert_galerie($_POST["photo"], $_POST['descriptif']);
             if ($inserted) {
-                // Retrieve the updated gallery data
-                $updatedGallery = $connexion->select("*", "galerie");
-
-                $response = array('success' => true, 'message' => 'Image added to the gallery.', 'gallery' => $updatedGallery);
+                $response = array('success' => true, 'message' => 'Message sent successfully.');
             } else {
-                $response = array('success' => false, 'message' => 'Failed to add image to the gallery.');
+                $response = array('success' => false, 'message' => 'Failed to send message.');
             }
             break;
         default:
