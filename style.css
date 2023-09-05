@@ -390,9 +390,10 @@ body {
 .archive-contenu-text {
     font-family: 'Segoe UI';
     color: #6C6C6C;
+    margin-bottom: 1em;
     font-weight: bold;
     -webkit-text-stroke: 1px #2C2C2C;
-    
+    white-space: pre-line;
 }
 
 /* footer */

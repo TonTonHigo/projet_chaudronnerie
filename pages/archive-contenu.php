@@ -33,7 +33,7 @@
             echo '<div class="card-body">';
             echo '<h1 class="archive-contenu-titre">' . $cartes["titre"] . '</h1>';
             echo '<div class="archive-contenu-text">';
-            echo '<p class="card-text">' . $cartes["contenu"] . '</p>';
+            echo '<p class="card-text">' . nl2br($cartes["contenu"]) . '</p>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
