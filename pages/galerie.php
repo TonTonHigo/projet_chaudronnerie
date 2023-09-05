@@ -40,7 +40,7 @@
                         </div>
                         <div class="modal-body">
                             <form id="send-photo">
-                                <input type="hidden" name="form" value="galerie">
+                                <input id="form" type="hidden" name="form" value="galerie">
                                 <div id="photoError" class="validation-error">Photo manquante</div>
                                 <input type="text" id="photo" name="photo" placeholder="Photo">
                                 <div id="descriptifError" class="validation-error">Descriptif manquant</div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                            <button type="button" class="btn enregistrer">Enregistrer</button>
+                            <button type="button" class="btn enregistrer" data-bs-dismiss="modal">Enregistrer</button>
                         </div>
                     </div>
                 </div>
@@ -61,13 +61,6 @@
             <?php
             $galerie = $connexion->select("*", "galerie");
             foreach ($galerie as $cartes) {
-                // $maxContentLength = 100; // Maximum de caractère a afficher 
-
-                // Raccourci le contenu trop long pour donner un effet prévu
-                // $truncatedContent = (strlen($cartes['descriptif']) > $maxContentLength) ?
-                // substr($cartes['descriptif'], 0, $maxContentLength) . "..." :
-                // $cartes['descriptif'];
-
                 echo '                   
                 
             <div class="cadre-photo" style="background-image: url(' . $cartes["photo"] . ')">
@@ -97,20 +90,16 @@
                 $(this).find('.text-galerie').slideUp("slow");
             });
 
+            $('.validation-error').hide();
+            $('#enregistrer').click(function(){
 
-
-            $('.enregistrer').click(function() {
-                // Gather form data
-                var formData = {
+                var formData= {
                     photo: $('#photo').val(),
                     descriptif: $('#descriptif').val(),
-                    form: 'galerie' // Add the form field
+                    form: $('#form').val()
                 };
 
-                // Reset validation messages
-                $('.validation-error').hide();
 
-                // Check if any of the input fields is empty
                 var hasErrors = false;
                 if (formData.photo.trim() === '') {
                     $('#photoError').show();
@@ -125,26 +114,22 @@
                     // Send AJAX request
                     $.ajax({
                         type: 'POST',
-                        url: '../controller.php',
+                        url: '../controller.php', // Update the URL to your PHP script
                         data: formData,
-                        dataType: 'json',
-                        success: function(response) {
-                            // Append the updated gallery content based on the response
-                            for (var i = 0; i < response.gallery.length; i++) {
-                                $('.grid-galerie').append(`
-                                    <div class="cadre-photo" style="background-image: url(${response.gallery[i]['photo']})">
-                                        <p id="text-galerie${response.gallery[i]['id_galerie']}" class="text-galerie">${response.gallery[i]['descriptif']}</p>
-                                    </div> 
-                                `);
-                            }
+                        dataType: 'json', // You can specify the data type based on your server's response
+                        success: function (response) {
+                            // Hide the form and display the "Thank you" message
+                            alert("photo bien envoyé");
                         },
-                        error: function(xhr, status, error) {
+                        error: function (xhr, status, error) {
                             // Handle errors here
                             console.error(error);
                         }
                     });
                 }
             });
+            // mdr refait cette merde
+
         });
     </script>
 </body>
