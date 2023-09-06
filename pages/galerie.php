@@ -39,7 +39,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="send-photo">
+                            <form id="send-photo" method="POST" action="../controller.php">
                                 <input id="form" type="hidden" name="form" value="galerie">
                                 <div id="photoError" class="validation-error">Photo manquante</div>
                                 <input type="text" id="photo" name="photo" placeholder="Photo">
@@ -49,7 +49,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                            <button type="button" class="btn enregistrer" data-bs-dismiss="modal">Enregistrer</button>
+                            <button type="button" class="btn enregistrer">Enregistrer</button>
                         </div>
                     </div>
                 </div>
@@ -83,6 +83,7 @@
         $(document).ready(function() {
             // galerie
             $('.text-galerie').hide();
+            $('.validation-error').hide();
 
             $('.cadre-photo').hover(function() {
                 $(this).find('.text-galerie').slideDown("slow");
@@ -90,45 +91,24 @@
                 $(this).find('.text-galerie').slideUp("slow");
             });
 
-            $('.validation-error').hide();
-            $('#enregistrer').click(function(){
+           $('.enregistrer').click(function(){
 
-                var formData= {
-                    photo: $('#photo').val(),
-                    descriptif: $('#descriptif').val(),
-                    form: $('#form').val()
-                };
+            if($('#photo').val() === ''){
+                $('#photoError').show("slow");
+            }else{
+                $('#photoError').hide("slow");
+            }
+            if($('#descriptif').val() === ''){
+                $('#descriptifError').show("slow");
+            }else{
+                $('#descriptifError').hide("slow");
+            }
 
+            if($('#photo').val()!== '' && $('#descriptif').val() !== ''){
+                $('#send-photo').submit();
+            }
 
-                var hasErrors = false;
-                if (formData.photo.trim() === '') {
-                    $('#photoError').show();
-                    hasErrors = true;
-                }
-                if (formData.descriptif.trim() === '') {
-                    $('#descriptifError').show();
-                    hasErrors = true;
-                }
-
-                if (!hasErrors) {
-                    // Send AJAX request
-                    $.ajax({
-                        type: 'POST',
-                        url: '../controller.php', // Update the URL to your PHP script
-                        data: formData,
-                        dataType: 'json', // You can specify the data type based on your server's response
-                        success: function (response) {
-                            // Hide the form and display the "Thank you" message
-                            alert("photo bien envoyé");
-                        },
-                        error: function (xhr, status, error) {
-                            // Handle errors here
-                            console.error(error);
-                        }
-                    });
-                }
-            });
-            // mdr refait cette merde
+           });
 
         });
     </script>
