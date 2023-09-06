@@ -151,7 +151,7 @@ body {
     padding: 10px 20px;
     margin-top: 20px;
     border: 2px solid #2C2C2C;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .btn-contact:hover {
@@ -357,6 +357,7 @@ body {
     animation: drydry 4s linear infinite;
     border: 2px solid #2C2C2C;
     border-radius: 10px;
+  
 }
 
 @keyframes drydry {
@@ -371,16 +372,14 @@ body {
     }
 }
 
-.archive-contenu-grid {
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: space-around;
-    gap: 5em;
-    margin: 6em;
+.archive-contenu-grid {  
+    gap: 25em;
+    margin: 6em;    
 }
- 
 
-.archive-contenu-titre {        
+.archive-contenu-titre {
+    text-align: center;
+    padding: 50px;
     font-family: 'Helvetica';
     color: #2C2C2C;
     font-weight: bold;
@@ -389,7 +388,7 @@ body {
 
 .archive-contenu-text {
     font-family: 'Segoe UI';
-    color: #6C6C6C;     
+    color: #6C6C6C;
 }
 
 /* footer */
