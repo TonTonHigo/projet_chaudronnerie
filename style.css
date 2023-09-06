@@ -202,12 +202,12 @@ body {
 }
 
 /* galerie */
-.ajout-photo {
+.button-galerie {
     background-color: #2C2C2C;
     color: #FFEBCD;
 }
 
-.ajout-photo:hover {
+.button-galerie:hover {
     background-color: #6C6C6C;
     color: #FFEBCD;
 }
@@ -243,19 +243,19 @@ body {
     color: #FFEBCD;
 }
 
-#send-photo {
+.forme-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#send-photo input {
+.forme-form input {
     background-color: #FFEBCD;
     margin-bottom: 10px;
     border: none;
 }
 
-#send-photo textarea {
+.forme-form textarea {
     background-color: #FFEBCD;
     border: none;
 }
@@ -299,6 +299,16 @@ body {
     50% {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
+}
+
+.carte-ordonne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.nico{
+    margin-right: 40px;
 }
 
 /* archive */
