@@ -99,7 +99,20 @@ body {
     text-align: right;
     padding-right: 20px;
 }
-
+.button-user{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+.button-compte{
+    background-color: #2C2C2C;
+    color: #FFEBCD;
+    transition: .5s ease;
+}
+.button-compte:hover{
+    background-color: #F4A460;
+}
 /* main */
 
 /* à propos */

@@ -40,7 +40,7 @@
                         </div>
                         <div class="modal-body">
                             <form class="crud forme-form" method="POST" action="../controller.php">
-                                <input id="form" type="hidden" name="form" value="galerie">
+                                <input class="form" type="hidden" name="form" value="galerie">
                                 <div class="validation-error photoError">Photo manquante</div>
                                 <input type="text" id="photo" name="photo" placeholder="Photo">
                                 <div class="validation-error descriptifError">Descriptif manquant</div>
@@ -85,7 +85,13 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                
+                                <form class="crud forme-form" method="POST" action="../controller.php">
+                                    <input class="form" type="hidden" name="form" value="galerie">
+                                    <div class="validation-error photoError">Photo manquante</div>
+                                    <input type="text" id="photo" name="photo" placeholder="Photo">
+                                    <div class="validation-error descriptifError">Descriptif manquant</div>
+                                    <textarea id="descriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
@@ -104,7 +110,13 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                
+                                <form class="crud forme-form" method="POST" action="../controller.php">
+                                    <input class="form" type="hidden" name="form" value="galerie">
+                                    <div class="validation-error photoError">Photo manquante</div>
+                                    <input type="text" id="photo" name="photo" placeholder="Photo">
+                                    <div class="validation-error descriptifError">Descriptif manquant</div>
+                                    <textarea id="descriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
