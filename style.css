@@ -414,6 +414,22 @@ body {
     color: #6C6C6C;
 }
 
+/* Dashboard */
+.table-dash{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.table-dash,th,td{
+    border: 3px solid #2C2C2C;
+}
+table caption{
+    text-align: center;
+    color: #FFEBCD;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
 /* footer */
 
 footer {
