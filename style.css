@@ -121,8 +121,10 @@ body {
     filter: brightness(70px);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 5% 5%;
+    padding: 5% 5%;  
+    font-family: 'Helvetica';
     color: #FFEBCD;
+    -webkit-text-stroke: 0.4px #2c2c2c;
 }
 
 #propos div {
@@ -130,7 +132,7 @@ body {
 
 }
 
-#propos p {
+#propos p {    
     font-size: 25px;
     line-height: 1.5;
     margin-bottom: 20px;
