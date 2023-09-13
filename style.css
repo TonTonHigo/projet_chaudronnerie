@@ -174,12 +174,17 @@ body {
 }
 
 /* contact form */
+#titre-contact{
+    margin: 50px 0;
+    color: #FFEBCD;
+}
 #contact_form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 90%;
+    margin: 20px 0;
 }
 
 #contact_form input {
