@@ -22,9 +22,9 @@ body {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: url("image/image1a.jpg") no-repeat center center;
+    background: url("image/image19.jpg") no-repeat center center;
     background-size: cover;
-    filter: blur(5px) brightness(80%);
+   /*filter: blur(5px) brightness(80%);*/
     z-index: 1;
 }
 
@@ -34,11 +34,11 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     z-index: 2;
 }
 
-#logopreload {
+#logopreload { 
     text-align: center;
     color: #FF6347;
     font-family: 'Wallpoet', cursive;
@@ -47,7 +47,8 @@ body {
 }
 
 #logopreload img {
-    width: 350px;
+   /* width: 350px; */
+    width: 100px;
 }
 
 #logopreload img:hover {
