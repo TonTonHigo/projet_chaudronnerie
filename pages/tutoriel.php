@@ -23,13 +23,14 @@
   <main>
 
     <div class="image-tutoriel">
-      
+
       <?php
 
       $tutoriel = $connexion->select("*", "tutoriel");
       foreach ($tutoriel as $cartes) {
         echo '<div class="image-tutoriel-">';
-        echo '<img src="' . $cartes["image"] . '" class="cadre-tutoriel">';
+        echo '<div class="toggle-overlay" onclick="toggleGif(this)">Activez/Désactivez</div>';
+        echo '<img src="' . $cartes["image"] . '" class="cadre-tutoriel" id="gif" style="display: none;">'; /* Initialisé à display: none; */
         echo '<div class="card-body">';
         echo '<h1 class="tutoriel-contenu-titre">' . $cartes["titre"] . '</h1>';
         echo '<div class="tutoriel-contenu-text">';
@@ -40,15 +41,8 @@
       }
       ?>
 
+
     </div>
-
-
-
-
-
-
-
-
 
   </main>
 
@@ -58,7 +52,18 @@
   <!-- fichier js -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
   <script>
+    var isPlaying = false; // Variable qui va suivre l'état actuel (Activez/Désactivez)
+    var gif = document.getElementById('gif'); // Récupérer l'élément GIF
 
+    function toggleGif(overlay) {
+      isPlaying = !isPlaying; // Inverser l'état
+
+      if (isPlaying) {
+        gif.style.display = 'block'; // Afficher le GIF
+      } else {
+        gif.style.display = 'none'; // Masquer le GIF
+      }
+    }
   </script>
 </body>
 

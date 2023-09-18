@@ -100,20 +100,24 @@ body {
     text-align: right;
     padding-right: 20px;
 }
-.button-user{
+
+.button-user {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
 }
-.button-compte{
+
+.button-compte {
     background-color: #2C2C2C;
     color: #FFEBCD;
     transition: .5s ease;
 }
-.button-compte:hover{
+
+.button-compte:hover {
     background-color: #F4A460;
 }
+
 /* main */
 
 /* à propos */
@@ -122,7 +126,7 @@ body {
     filter: brightness(70px);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 5% 5%;  
+    padding: 5% 5%;
     font-family: 'Helvetica';
     color: #FFEBCD;
     -webkit-text-stroke: 0.4px #2c2c2c;
@@ -133,7 +137,7 @@ body {
 
 }
 
-#propos p {    
+#propos p {
     font-size: 25px;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -175,10 +179,11 @@ body {
 }
 
 /* contact form */
-#titre-contact{
+#titre-contact {
     margin: 50px 0;
     color: #FFEBCD;
 }
+
 #contact_form {
     display: flex;
     flex-direction: column;
@@ -328,6 +333,7 @@ body {
     align-items: center;
     gap: 50px;
 }
+
 .nico {
     margin-right: 40px;
 }
@@ -388,7 +394,7 @@ body {
     animation: drydry 4s linear infinite;
     border: 2px solid #2C2C2C;
     border-radius: 10px;
-  
+
 }
 
 @keyframes drydry {
@@ -403,9 +409,9 @@ body {
     }
 }
 
-.archive-contenu-grid {  
+.archive-contenu-grid {
     gap: 25em;
-    margin: 6em;    
+    margin: 6em;
 }
 
 .archive-contenu-titre {
@@ -444,7 +450,7 @@ body {
     animation: drydry 4s linear infinite;
     border: 2px solid #2C2C2C;
     border-radius: 10px;
-  
+
 }
 
 @keyframes drydry {
@@ -457,6 +463,20 @@ body {
     50% {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
+}
+
+.toggle-overlay {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    /* l'élément superposé est au-dessus du GIF */
+    color: #FF6347;
+    padding-inline-start: 6%;
+    font-family: 'Wallpoet';
+    display: block;
+    /* le bouton est toujours affiché */
+    visibility: visible;
+    /*  le bouton est toujours visible */
 }
 
 .tutoriel-contenu-titre {
@@ -474,14 +494,18 @@ body {
 }
 
 /* Dashboard */
-.table-dash{
+.table-dash {
     width: 100%;
     margin-bottom: 50px;
 }
-.table-dash,th,td{
+
+.table-dash,
+th,
+td {
     border: 3px solid #2C2C2C;
 }
-table caption{
+
+table caption {
     text-align: center;
     color: #FFEBCD;
     font-weight: bold;
