@@ -18,6 +18,8 @@
 
 </head>
 <body>
+
+<?php include "../composants/header.php" ?>
     <main>
 
         <table class="table-dash">
@@ -43,13 +45,17 @@
                     foreach ($galerie as $cartes) {
                         echo ' 
                         <tr>
+                        <form id="formModif'. $cartes["id_galerie"] . '" class="forme-form" method="POST" action="../controller.php">
+                            <input class="form" type="hidden" name="form" value="galerieModif">
+                            <input class="form" type="hidden" name="id_galerie" value="'. $cartes["id_galerie"] . '">
                             <td>
                                 <!-- image -->
-                                <img src="'. $cartes["photo"] . '" width="50">
+                                <img src="'. $cartes["photo"] . '" width="150">
+                                <textarea type="text" name="photo">' . $cartes['photo'] . '</textarea>
                             </td>
                             <td>
                                 <!-- descriptif -->
-                                <p class="text-galerie">' . $cartes['descriptif'] . '</p> 
+                                <textarea cols="100" rows="10" type="text" name="descriptif">' . $cartes['descriptif'] . '</textarea>
                             </td>
                             <td>
                                 <!-- modifier -->
@@ -63,7 +69,7 @@
                                     Supprimer
                                 </button>
                             </td>                  
-
+                        </form>
                         </tr>
 
                         <!-- Modal MODIF -->
@@ -75,17 +81,11 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form class=" forme-form" method="POST" action="../controller.php">
-                                            <input class="form" type="hidden" name="form" value="galerie">
-                                            <div class="validation-error photoError">Photo manquante</div>
-                                            <input type="text" id="photo" name="photo" placeholder="Photo">
-                                            <div class="validation-error descriptifError">Descriptif manquant</div>
-                                            <textarea id="descriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
-                                        </form>
+                                        <h4> Es-tu sûr de vouloir modifier? </h4>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                                        <button type="button" class="btn enregistrer">Enregistrer</button>
+                                        <button type="submit" class="btn enregistrer" form="formModif'. $cartes["id_galerie"] . '">Enregistrer</button>
                                     </div>
                                 </div>
                             </div>
@@ -100,17 +100,18 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form class=" forme-form" method="POST" action="../controller.php">
-                                            <input class="form" type="hidden" name="form" value="galerie">
-                                            <div class="validation-error photoError">Photo manquante</div>
-                                            <input type="text" id="photo" name="photo" placeholder="Photo">
-                                            <div class="validation-error descriptifError">Descriptif manquant</div>
-                                            <textarea id="descriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
+                                        <form id="formSupp'. $cartes["id_galerie"] .'" class="forme-form" method="POST" action="../controller.php">
+                                            <input class="form" type="hidden" name="form" value="galerieSupp">
+                                            <input name="id_galerie" type="hidden" value="'. $cartes["id_galerie"] .'">
                                         </form>
+                                        <h4>Supprimer la photo suivante?</h4>
+                                        <img src="'. $cartes["photo"] .'" width="300">
+                                        <h4> Et son descriptif? </h4>
+                                        <p>'. $cartes["descriptif"] .'</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                                        <button type="button" class="btn enregistrer">Enregistrer</button>
+                                        <button type="submit" class="btn enregistrer" form="formSupp'. $cartes["id_galerie"] .'">Supprimer</button>
                                     </div>
                                 </div>
                             </div>
@@ -138,17 +139,17 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="crud forme-form" method="POST" action="../controller.php">
+                        <form id="formAjoutGalerie" class="forme-form" method="POST" action="../controller.php">
                             <input class="form" type="hidden" name="form" value="galerie">
-                            <div class="validation-error photoError">Photo manquante</div>
-                            <input type="text" id="photo" name="photo" placeholder="Photo">
-                            <div class="validation-error descriptifError">Descriptif manquant</div>
-                            <textarea id="descriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
+                            <div class="validationError photoError">Photo manquante</div>
+                            <input type="text" id="ajoutPhoto" name="photo" placeholder="Photo">
+                            <div class="validationError descriptifError">Descriptif manquant</div>
+                            <textarea id="ajoutDescriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn enregistrer">Enregistrer</button>
+                        <button type="button" class="btn color" id="addBtn">Enregistrer</button>
                     </div>
                 </div>
             </div>
@@ -186,32 +187,34 @@
         
     </main>
 
+<?php include "../composants/footer.php" ?>
+
+
     <!-- fichier js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             // galerie
-            $('.validation-error').hide();
+            $('.validationError').hide();
 
-           $('.enregistrer').click(function(){
+            $('#addBtn').click(function(event) {
 
-            if($('#photo').val() === ''){
-                $('.photoError').show("slow");
-            }else{
-                $('.photoError').hide("slow");
+            if ($('#ajoutPhoto').val() === '') {
+                $('.photoError').show();
+            } else {
+                $('.photoError').hide();
             }
-            if($('#descriptif').val() === ''){
-                $('.descriptifError').show("slow");
-            }else{
-                $('.descriptifError').hide("slow");
-            }
-
-            if($('#photo').val()!== '' && $('#descriptif').val() !== ''){
-                $('.crud').submit();
+            if ($('#ajoutDescriptif').val() === '') {
+                $('.descriptifError').show();
+            } else {
+                $('.descriptifError').hide();
             }
 
-           });
+            if ($('#ajoutPhoto').val() !== '' && $('#ajoutDescriptif').val() !== '') {
+                $('#formAjoutGalerie').submit();
+            }
+        });
 
         });
     </script>

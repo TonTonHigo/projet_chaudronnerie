@@ -14,9 +14,19 @@ if (isset($_POST["form"])) {
 
         case "galerie":
             $inserted = $connexion->insert_galerie($_POST["photo"], $_POST['descriptif']);
-            header('location: pages/galerie.php');
+            header('location: pages/dashboard.php');
             break;
 
+        case "galerieModif":
+            $inserted = $connexion->update_galerie($_POST["id_galerie"], $_POST["photo"], $_POST["descriptif"]);
+            header('location: pages/dashboard.php');
+            break;
+
+        case "galerieSupp":
+            $inserted = $connexion->delete_galerie($_POST["id_galerie"]);
+            header('location: pages/dashboard.php');
+            break;
+                
         default:
             $response = array('success' => false, 'message' => 'Invalid form type.');
             break;
