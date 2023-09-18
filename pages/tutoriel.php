@@ -1,3 +1,4 @@
+<?php include "../composants/connexion.php" ?>
 <html lang="en">
 
 <head>
@@ -20,7 +21,34 @@
   <?php include "../composants/header.php" ?>
 
   <main>
-    
+
+    <div class="image-tutoriel">
+      
+      <?php
+
+      $tutoriel = $connexion->select("*", "tutoriel");
+      foreach ($tutoriel as $cartes) {
+        echo '<div class="image-tutoriel-">';
+        echo '<img src="' . $cartes["image"] . '" class="cadre-tutoriel">';
+        echo '<div class="card-body">';
+        echo '<h1 class="tutoriel-contenu-titre">' . $cartes["titre"] . '</h1>';
+        echo '<div class="tutoriel-contenu-text">';
+        echo '<p class="card-text">' . nl2br($cartes["contenu"]) . '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+      }
+      ?>
+
+    </div>
+
+
+
+
+
+
+
+
 
   </main>
 

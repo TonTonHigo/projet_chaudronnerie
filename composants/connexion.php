@@ -71,6 +71,7 @@ class ma_connexion{
     }
 
 
+
     // INSERTION contact 
     public function insert_contact($pseudonyme, $email, $sujet, $message) { 
         try {
