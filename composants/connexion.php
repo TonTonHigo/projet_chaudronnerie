@@ -125,6 +125,22 @@ class ma_connexion{
             echo "Erreur: " . $e->getMessage();
         }
     }
+    // UPDATE GALERIE
+    public function update_galerie($id, $photo, $descriptif) {
+
+        try {
+            $update = "UPDATE `galerie` SET photo = ?, descriptif = ? WHERE `id_galerie` = ?";
+    
+            $requete = $this->connexionPDO->prepare($update);
+            $requete->bindValue(1, $photo, PDO::PARAM_STR);
+            $requete->bindValue(2, $descriptif, PDO::PARAM_STR);
+            $requete->bindValue(3, $id, PDO::PARAM_INT);
+    
+            $requete->execute();
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
 
 
     // DELETE
@@ -132,6 +148,21 @@ class ma_connexion{
 
         try {
             $delete = "DELETE FROM `contacts` WHERE `id_contacts` = ?";
+    
+            $requete = $this->connexionPDO->prepare($delete);
+            $requete->bindValue(1, $id);
+
+            $requete->execute();
+
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+    // DELETE GALERIE
+    public function delete_galerie($id) {
+
+        try {
+            $delete = "DELETE FROM `galerie` WHERE `id_galerie` = ?";
     
             $requete = $this->connexionPDO->prepare($delete);
             $requete->bindValue(1, $id);
