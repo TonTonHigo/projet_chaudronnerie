@@ -228,13 +228,26 @@ body {
     color: #FFEBCD;
 }
 
+#merci-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+#merci-contact h2{
+    font-size: 2em;
+    color: #2C2C2C;
+}
+
 /* galerie */
-.button-galerie {
+.button {
     background-color: #2C2C2C;
     color: #FFEBCD;
 }
 
-.button-galerie:hover {
+.button:hover {
     background-color: #6C6C6C;
     color: #FFEBCD;
 }
@@ -500,11 +513,11 @@ body {
     margin-bottom: 50px;
 }
 
-.table-dash,
-th,
-td {
+.table-dash,th,td {
     border: 3px solid #2C2C2C;
 }
+
+
 
 table caption {
     text-align: center;
@@ -512,7 +525,9 @@ table caption {
     font-weight: bold;
     font-size: 30px;
 }
-
+#corps-dash{
+    margin: 10% 0;
+}
 
 /* footer */
 

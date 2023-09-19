@@ -41,6 +41,7 @@
     <div id="merci-contact">
         <h2>Merci pour votre message, je vous répondrez au plus vite !!!</h2>
     </div>
+
 </main>
 
 <?php include "../composants/footer.php" ?>
@@ -94,17 +95,22 @@
                     dataType: 'json', // You can specify the data type based on your server's response
                     success: function (response) {
                         // Hide the form and display the "Thank you" message
-                        $("#titre-contact").slideUp("slow");
                         $("#contact_form").slideUp("slow");
-                        $('#merci-contact').show("slide", { direction: "top" }, 1000);
+                        $('#merci-contact').show("slide", {direction:"top"},1000);
+                        $('#pseudonyme').val("");
+                        $('#email').val("");
+                        $('#sujet').val("");
+                        $('#message').val("");
                     },
                     error: function (xhr, status, error) {
                         // Handle errors here
                         console.error(error);
+                        console.log(xhr.responseText); // Log the detailed error message.
                     }
                 });
             }
         });
+
     });
 </script>
 </body>
