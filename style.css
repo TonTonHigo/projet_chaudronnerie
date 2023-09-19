@@ -529,10 +529,9 @@ footer a {
 
 /* Style général pour le texte des mentions légales */
 
-.mentions {
+.mentions {    
     font-family:'Segoe UI';
-    font-size: 16px;
-    line-height: 1.5;   
+    font-size: 16px;     
     color: #6C6C6C;
   }
   
@@ -551,6 +550,7 @@ footer a {
   /* Style pour les définitions et les éléments de liste */
   
   .mention p {
+    padding-right: 5em;
     font-family:'Helvetica';
     margin-bottom: 10px;
     padding-inline-start: 6%;
@@ -569,7 +569,7 @@ b {
 
 span {
     font-family:'Helvetica';    
-    padding-inline-start: 35%;    
+    padding-inline-start: 30%;    
     -webkit-text-stroke: 1px #2C2C2C; 
 }
 
