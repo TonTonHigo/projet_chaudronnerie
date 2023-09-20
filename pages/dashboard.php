@@ -210,7 +210,9 @@
                     <tr>
                         <td>'. $msg["titre"] . '</td>
                         <td>'. $msg["contenu"] . '</td>
-                        <td><img src="'. $msg["image"] . '" width="150"></td>
+                        <td>
+                            <img src="'. $msg["image"] . '" width="150">
+                        </td>
                     </tr>
                     ';
                     }
