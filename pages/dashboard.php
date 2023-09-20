@@ -194,6 +194,8 @@
                         <th>Titre</th>
                         <th>Contenu</th>
                         <th>Image</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
                         <th>
                             <!-- Button AJOUTER article -->
                             <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#ajout-article">
@@ -210,7 +212,21 @@
                     <tr>
                         <td>'. $msg["titre"] . '</td>
                         <td>'. $msg["contenu"] . '</td>
-                        <td><img src="'. $msg["image"] . '" width="150"></td>
+                        <td>
+                            <img src="'. $msg["image"] . '" width="150">
+                        </td>
+                        <td>
+                            <!-- modifier -->
+                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-modal'. $msg["id_article"] . '">
+                                Mofifier
+                            </button>
+                        </td>
+                        <td>
+                            <!-- supprimer -->
+                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-modal'. $msg["id_article"] . '">
+                                Supprimer
+                            </button>
+                        </td> 
                     </tr>
                     ';
                     }
@@ -254,6 +270,8 @@
                         <th>Contenu</th>
                         <th>Image</th>
                         <th>Image2</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
                         <th>
                             <!-- Button AJOUTER tuto -->
                             <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#ajout-tuto">
@@ -270,8 +288,24 @@
                     <tr>
                         <td>'. $msg["titre"] . '</td>
                         <td>'. $msg["contenu"] . '</td>
-                        <td><img src="'. $msg["image"] . '" width="150"></td>
-                        <td><img src="'. $msg["image2"] . '" width="150"></td>
+                        <td>
+                            <img src="'. $msg["image"] . '" width="150">
+                        </td>
+                        <td>
+                            <img src="'. $msg["image2"] . '" width="150">
+                        </td>
+                        <td>
+                            <!-- modifier -->
+                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-modal'. $msg["id_tutoriel"] . '">
+                                Mofifier
+                            </button>
+                        </td>
+                        <td>
+                            <!-- supprimer -->
+                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-modal'. $msg["id_tutoriel"] . '">
+                                Supprimer
+                            </button>
+                        </td> 
                     </tr>
                     ';
                     }
@@ -313,6 +347,8 @@
                     <tr>
                         <th>Pseudonyme</th>
                         <th>Email</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
                         <th>
                             <!-- Button AJOUTER photo -->
                             <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#ajout-user">
@@ -329,6 +365,18 @@
                     <tr>
                         <td>'. $msg["pseudonyme"] . '</td>
                         <td>'. $msg["email"] . '</td>
+                        <td>
+                            <!-- modifier -->
+                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-modal'. $msg["id_utilisateur"] . '">
+                                Mofifier
+                            </button>
+                        </td>
+                        <td>
+                            <!-- supprimer -->
+                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-modal'. $msg["id_utilisateur"] . '">
+                                Supprimer
+                            </button>
+                        </td>        
                     </tr>
                     ';
                     }
