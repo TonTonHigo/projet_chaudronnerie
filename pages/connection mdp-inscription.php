@@ -25,41 +25,7 @@
 
     <main>
 
-        <?php
-        $user = $connexion->select("*", "utilisateur");
-        foreach ($user as $msg) {
-            echo '
-                    <tr>
-                        <td>' . $msg["pseudonyme"] . '</td>                        
-                        <td>' . $msg["mdp"] . '</td>                       
-                    </tr>
-                    ';
-        }
-        ?>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">pseudonyme</th>
-                    <th scope="col">mdp</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-                <?php
-                foreach ($utilisateurs as $user) {
-                    echo '<tr>';
-                    echo '<td>' . $user["pseudonyme"] . '</td>';
-                    echo '<td>' . $user["mdp"] . '</td>';
-                    echo '</tr>';
-                }
-
-                ?>
-
-            </tbody>
-
-        </table>
+        
 
     </main>
 
@@ -74,48 +40,7 @@
 
 
 
-    <!-- script pour gérer la connexion -->
-
-    <script>
-        function handleConnexion() {
-            const pseudo = document.getElementById('pseudonyme').value;
-            const mdp = document.getElementById('mdp').value;
-
-            if (!pseudo || !mdp) {
-                alert('Veuillez remplir tous les champs.');
-                return;
-            }
-
-            const formData = {
-                pseudo,
-                mdp
-            };
-
-            // Envoye les données au serveur pour la connexion
-
-            $.ajax({
-                url: '../composants/connexion.php', 
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(formData),
-                success: function(response) {
-                    alert('Connexion réussie !');
-                    $('#conn-modal').modal('hide');
-                },
-                error: function(error) {
-                    console.error('Erreur:', error);
-                    alert('Une erreur est survenue lors de la connexion.');
-                }
-            });
-        }
-
-        // Associer la fonction handleConnexion au clic du bouton "Enregistrer" dans le modal de connexion
-        $(document).ready(function() {
-            $('#conn-modal .enregistrer').click(function() {
-                handleConnexion();
-            });
-        });
-    </script>
+    
 
 
 
