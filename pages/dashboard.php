@@ -130,7 +130,7 @@
             </table>
         
 
-            <!-- Modal -->
+            <!-- Modal galerie -->
             <div class="modal fade" id="ajout-photo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -142,14 +142,14 @@
                             <form id="formAjoutGalerie" class="forme-form" method="POST" action="../controller.php">
                                 <input class="form" type="hidden" name="form" value="galerie">
                                 <div class="validationError photoError">Photo manquante</div>
-                                <input type="text" id="ajoutPhoto" name="photo" placeholder="Photo">
+                                <input type="text" id="galeriePhoto" name="photo" placeholder="Photo">
                                 <div class="validationError descriptifError">Descriptif manquant</div>
-                                <textarea id="ajoutDescriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
+                                <textarea id="galerieDescriptif" cols="30" rows="10" type="text" name="descriptif" placeholder="Descriptif"></textarea>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                            <button type="button" class="btn color" id="addBtn">Enregistrer</button>
+                            <button type="button" class="btn color" id="addPhoto">Enregistrer</button>
                         </div>
                     </div>
                 </div>
@@ -209,28 +209,108 @@
                     $article = $connexion->select("*", "article");
                     foreach ($article as $msg) {
                     echo '
+                    <form id="articleModif'. $msg["id_article"] . '" action="../controller.php" method="POST">
+                    <input name="form" value="articleModif" type="hidden">
+                    <input name="id_article" value="'. $msg["id_article"] . '" type="hidden">
                     <tr>
-                        <td>'. $msg["titre"] . '</td>
-                        <td>'. $msg["contenu"] . '</td>
+                        <td><textarea cols="40" name="titreModif">'. $msg["titre"] . '</textarea></td>
+                        <td><textarea cols="100" rows="10" type="text" name="contenuModif">'. $msg["contenu"] . '</textarea></td>
                         <td>
                             <img src="'. $msg["image"] . '" width="150">
+                            <textarea cols="40" name="imageModif">
+                            <img src="'. $msg["image"] . '" width="150">
+                            </textarea>
+
                         </td>
                         <td>
                             <!-- modifier -->
-                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-modal'. $msg["id_article"] . '">
+                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-article'. $msg["id_article"] . '">
                                 Mofifier
                             </button>
                         </td>
                         <td>
                             <!-- supprimer -->
-                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-modal'. $msg["id_article"] . '">
+                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-article'. $msg["id_article"] . '">
                                 Supprimer
                             </button>
                         </td> 
                     </tr>
+                    </form>
+                    <!-- Modal MODIF -->
+                            <div class="modal fade" id="modif-article'. $msg["id_article"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modification de l\'article</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4> Es-tu sûr de vouloir modifier? </h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="submit" class="btn enregistrer" form="articleModif'. $msg["id_article"] . '">Enregistrer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+
+                            <!-- Modal SUPP -->
+                            <div class="modal fade" id="supp-article'. $msg["id_article"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression de l\'article</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="articleSupp'. $msg["id_article"] .'" class="forme-form" method="POST" action="../controller.php">
+                                                <input class="form" type="hidden" name="form" value="articleSupp">
+                                                <input name="id_article" type="hidden" value="'. $msg["id_article"] .'">
+                                            </form>
+                                            <h4>Supprimer l\'article suivant?</h4>
+                                            <p>'. $msg["titre"] .'</p>
+                                            <img src="'. $msg["image"] .'" width="300">
+                                            <h4> Et son descriptif? </h4>
+                                            <p>'. $msg["contenu"] .'</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="submit" class="btn enregistrer" form="articleSupp'. $msg["id_article"] .'">Supprimer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                     ';
                     }
                 ?>
+            <!-- modal ajout article -->
+            <div class="modal fade" id="ajout-article" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Nouvelle article</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formAjoutArticle" class="forme-form" method="POST" action="../controller.php">
+                                <input class="form" type="hidden" name="form" value="article">
+                                <div class="validationError titreError">Titre manquant</div>
+                                <input type="text" id="articleTitre" name="titre" placeholder="Titre">
+                                <div class="validationError imageError">Image manquante</div>
+                                <input type="text" id="articleImage" name="image" placeholder="Image">
+                                <div class="validationError contenuError">Contenu manquant</div>
+                                <textarea id="articleContenu" cols="30" rows="10" type="text" name="contenu" placeholder="Contenu"></textarea>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn color" id="addArticle">Enregistrer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
                 </tbody>
             </table>
 
@@ -274,7 +354,7 @@
                         <th>Supprimer</th>
                         <th>
                             <!-- Button AJOUTER tuto -->
-                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#ajout-tuto">
+                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#ajout-tutoriel">
                                 Ajouter
                             </button>
                         </th>
@@ -282,36 +362,127 @@
                 </thead>
                 <tbody>
                 <?php
-                    $tuto = $connexion->select("*", "tutoriel");
-                    foreach ($tuto as $msg) {
+                    $tutoriel = $connexion->select("*", "tutoriel");
+                    foreach ($tutoriel as $msg) {
                     echo '
+                    <form id="tutorielModif'. $msg["id_tutoriel"] . '" action="../controller.php" method="POST">
+                    <input name="form" value="tutorielModif" type="hidden">
+                    <input name="id_tutoriel" value="'. $msg["id_tutoriel"] . '" type="hidden">
                     <tr>
-                        <td>'. $msg["titre"] . '</td>
-                        <td>'. $msg["contenu"] . '</td>
+                        <td><textarea cols="40" name="titreModif">'. $msg["titre"] . '</textarea></td>
+                        <td><textarea cols="100" rows="10" type="text" name="contenuModif">'. $msg["contenu"] . '</textarea></td>
                         <td>
                             <img src="'. $msg["image"] . '" width="150">
+                            <textarea cols="40" name="imageModif">
+                            <img src="'. $msg["image"] . '" width="150">
+                            </textarea>
+
                         </td>
                         <td>
                             <img src="'. $msg["image2"] . '" width="150">
+                            <textarea cols="40" name="image2Modif">
+                            <img src="'. $msg["image2"] . '" width="150">
+                            </textarea>
+
                         </td>
                         <td>
                             <!-- modifier -->
-                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-modal'. $msg["id_tutoriel"] . '">
+                            <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-tutoriel'. $msg["id_tutoriel"] . '">
                                 Mofifier
                             </button>
                         </td>
                         <td>
                             <!-- supprimer -->
-                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-modal'. $msg["id_tutoriel"] . '">
+                            <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-tutoriel'. $msg["id_tutoriel"] . '">
                                 Supprimer
                             </button>
                         </td> 
                     </tr>
+                    </form>
+                    <!-- Modal MODIF -->
+                            <div class="modal fade" id="modif-tutoriel'. $msg["id_tutoriel"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modification de l\'article</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4> Es-tu sûr de vouloir modifier? </h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="submit" class="btn enregistrer" form="tutorielModif'. $msg["id_tutoriel"] . '">Enregistrer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+
+                            <!-- Modal SUPP -->
+                            <div class="modal fade" id="supp-tutoriel'. $msg["id_tutoriel"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression de l\'article</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="tutorielSupp'. $msg["id_tutoriel"] .'" class="forme-form" method="POST" action="../controller.php">
+                                                <input class="form" type="hidden" name="form" value="tutorielSupp">
+                                                <input name="id_tutoriel" type="hidden" value="'. $msg["id_tutoriel"] .'">
+                                            </form>
+                                            <h4>Supprimer le tuto suivant?</h4>
+                                            <p>'. $msg["titre"] .'</p>
+                                            <img src="'. $msg["image"] .'" width="300">
+                                            <img src="'. $msg["image2"] .'" width="300">
+                                            <h4> Et son Contenu? </h4>
+                                            <p>'. $msg["contenu"] .'</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                                            <button type="submit" class="btn enregistrer" form="tutorielSupp'. $msg["id_tutoriel"] .'">Supprimer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                     ';
                     }
                 ?>
                 </tbody>
             </table>
+
+            <!-- modal ajout tutoriel -->
+            <div class="modal fade" id="ajout-tutoriel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Nouvelle article</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formAjoutTutoriel" class="forme-form" method="POST" action="../controller.php">
+                                <input class="form" type="hidden" name="form" value="tutoriel">
+                                <div class="validationError titreError">Titre manquant</div>
+                                <input type="text" id="tutorielTitre" name="titre" placeholder="Titre">
+                                <div class="validationError imageError">Image manquante</div>
+                                <input type="text" id="tutorielImage" name="image" placeholder="Image">
+                                <div class="validationError image2Error">Image2 manquante</div>
+                                <input type="text" id="tutorielImage2" name="image2" placeholder="Image2">
+                                <div class="validationError contenuError">Contenu manquant</div>
+                                <textarea id="tutorielContenu" cols="30" rows="10" type="text" name="contenu" placeholder="Contenu"></textarea>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn color" id="addTutoriel">Enregistrer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                </tbody>
+            </table>
+
 
             <!-- Commentaire tuto -->
             <table class="table-dash">
@@ -399,24 +570,77 @@
             // galerie
             $('.validationError').hide();
 
-            $('#addBtn').click(function(event) {
+            // form galerie
+            $('#addPhoto').click(function(event) {
 
-            if ($('#ajoutPhoto').val() === '') {
+            if ($('#galeriePhoto').val() === '') {
                 $('.photoError').show();
             } else {
                 $('.photoError').hide();
             }
-            if ($('#ajoutDescriptif').val() === '') {
+            if ($('#galerieDescriptif').val() === '') {
                 $('.descriptifError').show();
             } else {
                 $('.descriptifError').hide();
             }
 
-            if ($('#ajoutPhoto').val() !== '' && $('#ajoutDescriptif').val() !== '') {
+            if ($('#galeriePhoto').val() !== '' && $('#galerieDescriptif').val() !== '') {
                 $('#formAjoutGalerie').submit();
             }
             });
 
+            // form article
+            $('#addArticle').click(function(event) {
+
+            if ($('#articleTitre').val() === '') {
+                $('.titreError').show();
+            } else {
+                $('.titreError').hide();
+            }
+            if ($('#articleImage').val() === '') {
+                $('.imageError').show();
+            } else {
+                $('.imageError').hide();
+            }
+            if ($('#articleContenu').val() === '') {
+                $('.contenuError').show();
+            } else {
+                $('.contenuError').hide();
+            }
+
+            if ($('#articleTitre').val() !== '' && $('#articleImage').val() !== '' && $('#articleContenu').val() !== '') {
+                $('#formAjoutArticle').submit();
+            }
+            });
+
+            // form tutoriel
+            $('#addTutoriel').click(function(event) {
+
+            if ($('#tutorielTitre').val() === '') {
+                $('.titreError').show();
+            } else {
+                $('.titreError').hide();
+            }
+            if ($('#tutorielImage').val() === '') {
+                $('.imageError').show();
+            } else {
+                $('.imageError').hide();
+            }
+            if ($('#tutorielImage2').val() === '') {
+                $('.image2Error').show();
+            } else {
+                $('.image2Error').hide();
+            }
+            if ($('#tutorielContenu').val() === '') {
+                $('.contenuError').show();
+            } else {
+                $('.contenuError').hide();
+            }
+
+            if ($('#tutorielitre').val() !== '' && $('#tutorielImage').val() !== '' && $('#tutorielContenu').val() !== ''&& $('#tutorielImage2').val() !== '') {
+                $('#formAjoutTutoriel').submit();
+            }
+            });
         });
     </script>
 </body>

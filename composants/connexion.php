@@ -86,16 +86,51 @@ class ma_connexion{
             echo "Erreur : " . $e->getMessage();
         } 
     }
+    // INSERTION article 
+    public function insert_article($titre, $contenu ,$image) { 
+        try {
+            $insert = "INSERT INTO `article` (titre, contenu, image) VALUES (?, ?, ?)";
+            $requete = $this->connexionPDO->prepare($insert);
+            $requete->bindValue(1, $titre, PDO::PARAM_STR);
+            $requete->bindValue(2, $contenu, PDO::PARAM_STR);
+            $requete->bindValue(3, $image, PDO::PARAM_STR);
+            $requete->execute();
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        } 
+    }
     // INSERTION galerie 
     public function insert_galerie($photo, $descriptif){ 
 
             try {
 
-                $insert = "INSERT INTO  `galerie`( photo, descriptif)  VALUES (?, ?)";
+                $insert = "INSERT INTO  `galerie` ( photo, descriptif)  VALUES (?, ?)";
     
                 $requete = $this -> connexionPDO -> prepare($insert);
                 $requete->bindValue(1, $photo, PDO::PARAM_STR);
                 $requete->bindValue(2, $descriptif, PDO::PARAM_STR);
+    
+            
+                $requete->execute();
+    
+            } catch (PDOException $e) {
+    
+                echo "Erreur : " . $e->getMessage();
+    
+            }
+    }
+    // INSERTION tutoriel 
+    public function insert_tutoriel($titre, $contenu, $image, $image2){ 
+
+            try {
+
+                $insert = "INSERT INTO  `tutoriel` (titre, contenu, image, image2)  VALUES (?, ?, ?, ?)";
+    
+                $requete = $this -> connexionPDO -> prepare($insert);
+                $requete->bindValue(1, $titre, PDO::PARAM_STR);
+                $requete->bindValue(2, $contenu, PDO::PARAM_STR);
+                $requete->bindValue(3, $image, PDO::PARAM_STR);
+                $requete->bindValue(4, $image2, PDO::PARAM_STR);
     
             
                 $requete->execute();
@@ -142,6 +177,43 @@ class ma_connexion{
         }
     }
 
+    // UPDATE article
+    public function update_article($id, $titre, $contenu, $image) {
+
+        try {
+            $update = "UPDATE `article` SET titre = ?, contenu = ?, image = ? WHERE `id_article` = ?";
+    
+            $requete = $this->connexionPDO->prepare($update);
+            $requete->bindValue(1, $titre, PDO::PARAM_STR);
+            $requete->bindValue(2, $contenu, PDO::PARAM_STR);
+            $requete->bindValue(3, $image, PDO::PARAM_STR);
+            $requete->bindValue(4, $id, PDO::PARAM_INT);
+    
+            $requete->execute();
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+
+    // UPDATE tutoriel
+    public function update_tutoriel($id, $titre, $contenu, $image, $image2) {
+
+        try {
+            $update = "UPDATE `tutoriel` SET titre = ?, contenu = ?, image = ?, image2 = ? WHERE `id_tutoriel` = ?";
+    
+            $requete = $this->connexionPDO->prepare($update);
+            $requete->bindValue(1, $titre, PDO::PARAM_STR);
+            $requete->bindValue(2, $contenu, PDO::PARAM_STR);
+            $requete->bindValue(3, $image, PDO::PARAM_STR);
+            $requete->bindValue(4, $image2, PDO::PARAM_STR);
+            $requete->bindValue(5, $id, PDO::PARAM_INT);
+    
+            $requete->execute();
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+
 
     // DELETE
     public function delete($id) {
@@ -163,6 +235,36 @@ class ma_connexion{
 
         try {
             $delete = "DELETE FROM `galerie` WHERE `id_galerie` = ?";
+    
+            $requete = $this->connexionPDO->prepare($delete);
+            $requete->bindValue(1, $id);
+
+            $requete->execute();
+
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+    // DELETE article
+    public function delete_article($id) {
+
+        try {
+            $delete = "DELETE FROM `article` WHERE `id_article` = ?";
+    
+            $requete = $this->connexionPDO->prepare($delete);
+            $requete->bindValue(1, $id);
+
+            $requete->execute();
+
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+    // DELETE tutoriel
+    public function delete_tutoriel($id) {
+
+        try {
+            $delete = "DELETE FROM `tutoriel` WHERE `id_tutoriel` = ?";
     
             $requete = $this->connexionPDO->prepare($delete);
             $requete->bindValue(1, $id);
