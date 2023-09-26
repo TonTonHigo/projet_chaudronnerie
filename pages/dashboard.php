@@ -8,6 +8,9 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -579,6 +582,10 @@
         
         </div>
         
+        <div>
+            <a href="#" id="icon"><i class="fa-solid fa-circle-arrow-up fa-3x" style="color: #2C2C2C;"></i></i></a>
+        </div>
+
     </main>
 
 <?php include "../composants/footer.php" ?>
@@ -594,6 +601,21 @@
 
             $('.dashTable').hide();
 
+            $('#icon').hide();
+            // quand on scroll vers le bas la petite flêche apparaît
+            $(document).scroll(function(){
+                if ($(this).scrollTop() > 0) {
+                    $('#icon').fadeIn("slow");
+                    $('#icon').hover(function(){
+                        $(this).css("bottom","60px");
+                    },function(){
+                        $(this).css("bottom","50px");
+                    });          
+                } else {           
+                    $('#icon').fadeOut("slow");            
+                }
+                
+            }); 
             // btn pour choisir le tableau que l'on veut voir
             $('.btnCont').click(function(){
                 $('.galerieTable').hide("slow");
