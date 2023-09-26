@@ -190,16 +190,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90%;
     margin: 20px 0;
 }
 
 #contact_form input {
     background-color: #FFEBCD;
     border: none;
+    border-radius: 10px;
     padding: 20px;
     width: 1000px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 #contact_form input::placeholder {
@@ -208,7 +208,8 @@ body {
 
 #contact_form textarea {
     border: none;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 50px;
     width: 1000px;
     margin-bottom: 100px;
     background-color: #FFEBCD;
@@ -227,7 +228,9 @@ body {
     background-color: #6C6C6C;
     color: #FFEBCD;
 }
-
+#send_contact{
+    margin-bottom: 20px;
+}
 #merci-contact{
     display: flex;
     justify-content: center;
@@ -311,7 +314,7 @@ body {
 .text-galerie {
     text-align: center;
     color: #FFEBCD;
-    font-size: 24px;
+    font-size: 20px;
     background-color: #2C2C2C;
 }
 
@@ -320,9 +323,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 400px;
+    width: 300px;
     height: 571px;
     display: flex;
+    justify-content: center;
     align-items: end;
     backdrop-filter: brightness(80%);
     border-radius: 10px;
@@ -366,7 +370,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 500px;
+    width: 300px;
     height: 571px;
     display: flex;
     align-items: end;
@@ -509,14 +513,13 @@ body {
 
 /* Dashboard */
 .table-dash {
-    width: 100%;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 .table-dash,th,td {
     border: 3px solid #2C2C2C;
 }
-
 
 
 table caption {
@@ -527,6 +530,19 @@ table caption {
 }
 #corps-dash{
     margin: 10% 0;
+}
+#btndash{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+.btnDashboard{
+    background-color: #2C2C2C;
+    color: #FFEBCD;
+    transition: .5s;
 }
 
 /* footer */
