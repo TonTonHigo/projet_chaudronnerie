@@ -19,6 +19,9 @@
             <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#inscri-modal">
                 Inscription
             </button>
+            <button  id="lien_dashboard" type="button" class="btn button-compte">
+                    Dasboard
+            </button>
         </div>
     </div>
 
