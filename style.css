@@ -194,24 +194,25 @@ body {
 /* à propos */
 #propos {
     background: url("image/image7a.png");
-    filter: brightness(70px);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5% 5%;
-    font-family: 'Helvetica';
-    color: #FFEBCD;
-    -webkit-text-stroke: 0.4px #2c2c2c;
+    color: #F4A460;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 0.5px #000000;
 }
+
 
 #propos div {
     text-align: center;
-
 }
 
 #propos p {
-    font-size: 25px;
+    font-size: 25px;    
+    font-weight: bold;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    text-rendering: optimizeLegibility;
 }
 
 .introduction {
@@ -229,7 +230,7 @@ body {
 
 /* citations */
 .citation {
-    font-style: italic;
+    font-style: italic;    
     color: #FF6347;
 }
 
@@ -474,7 +475,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 600px;
+    width: 40%;
     height: 600px;
     display: flex;
     align-items: end;
