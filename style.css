@@ -122,10 +122,54 @@ body {
     padding: 0 20px;
 }
 
+.centered-links a {   
+    background-image: linear-gradient(to right, #FF6347, rgba(255, 99, 71, 0.3), #FF6347); 
+    background-size: 0% 3px; 
+    background-repeat: no-repeat;
+    background-position: 0 100%; 
+}
+
+.centered-links a:hover {
+    background-size: 100% 3px; 
+    transition: background-size 0.3s ease-in-out; 
+}
+
+.centered-links a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF6347; 
+}
+
 .navbar .contact {
     flex: 1;
-    text-align: right;
-    padding-right: 20px;
+    text-align: center;
+
+}
+
+.contact a {   
+    background-image: linear-gradient(to right, #FF6347, rgba(255, 99, 71, 0.3), #FF6347); 
+    background-size: 0% 3px; 
+    background-repeat: no-repeat;
+    background-position: 0 100%; 
+}
+
+.contact a:hover {
+    background-size: 100% 3px; 
+    transition: background-size 0.3s ease-in-out; 
+}
+
+.contact a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF6347; 
 }
 
 .button-user {
@@ -396,8 +440,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 300px;
-    height: 571px;
+    width: 500px;
+    height: 550px;
     display: flex;
     align-items: end;
     backdrop-filter: brightness(80%);
