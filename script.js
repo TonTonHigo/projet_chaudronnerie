@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    var url = window.location.pathname.split('/').pop();
+    var url = window.location.pathname;
 
-    if (url = 'index.php') {
+    if (url === '/projet_chaudronnerie/Index.php') {
         $('#logo').attr('src', 'image/Logo.png');
-        $('#lien_index').attr('href', 'index.php');
+        $('#lien_index').attr('href', 'Index.php');
         $('#lien_archive').attr('href', 'pages/archive.php');
         $('#lien_tutoriel').attr('href', 'pages/tutoriel.php');
         $('#lien_galerie').attr('href', 'pages/galerie.php');
@@ -12,7 +12,7 @@ $(document).ready(function () {
         $('#lien_dashboard').click(function(){
             window.location.href = 'pages/dashboard.php';
         });
-    }
+    }   
 
     $('.logowow').hover(function () {
         $(this).animate({ width: '400px' }, 400);
