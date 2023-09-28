@@ -26,6 +26,7 @@
 <body>
 
 <?php include "../composants/header.php" ?>
+
     <main>
         <div id="corps-dash">
 
@@ -599,6 +600,7 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
+ 
             // galerie
             $('.validationError').hide();
 
@@ -620,37 +622,87 @@
                 
             }); 
             // btn pour choisir le tableau que l'on veut voir
+            // $('.btnDashboard').removeClass("cool");
             $('.btnCont').click(function(){
+                $(this).addClass("cool");
+                $('.btnArt').removeClass("cool");
+                $('.btnComArt').removeClass("cool");
+                $('.btnTuto').removeClass("cool");
+                $('.btnComTuto').removeClass("cool");
+                $('.btnUtil').removeClass("cool");
+                $('.btnGal').removeClass("cool");
                 $('.galerieTable').hide("slow");
                 $('.dashtable').hide("slow");
                 $('.contactTable').show("slow");
             });
             $('.btnArt').click(function(){
+                $(this).addClass("cool");
+                $('.btnCont').removeClass("cool");
+                $('.btnComArt').removeClass("cool");
+                $('.btnTuto').removeClass("cool");
+                $('.btnComTuto').removeClass("cool");
+                $('.btnUtil').removeClass("cool");
+                $('.btnGal').removeClass("cool");
                 $('.galerieTable').hide("slow");
                 $('.dashtable').hide("slow");
                 $('.articleTable').show("slow");
             });
             $('.btnComArt').click(function(){
+                $(this).addClass("cool");
+                $('.btnCont').removeClass("cool");
+                $('.btnArt').removeClass("cool");
+                $('.btnTuto').removeClass("cool");
+                $('.btnComTuto').removeClass("cool");
+                $('.btnUtil').removeClass("cool");
+                $('.btnGal').removeClass("cool");
                 $('.galerieTable').hide("slow");
                 $('.dashtable').hide("slow");
                 $('.comArtTable').show("slow");
             });
             $('.btnTuto').click(function(){
+                $(this).addClass("cool");
+                $('.btnCont').removeClass("cool");
+                $('.btnArt').removeClass("cool");
+                $('.btnComArt').removeClass("cool");
+                $('.btnComTuto').removeClass("cool");
+                $('.btnUtil').removeClass("cool");
+                $('.btnGal').removeClass("cool");
                 $('.galerieTable').hide("slow");
                 $('.dashtable').hide("slow");
                 $('.tutorielTable').show("slow");
             });
             $('.btnComTuto').click(function(){
+                $(this).addClass("cool");
+                $('.btnCont').removeClass("cool");
+                $('.btnArt').removeClass("cool");
+                $('.btnComArt').removeClass("cool");
+                $('.btnTuto').removeClass("cool");
+                $('.btnUtil').removeClass("cool");
+                $('.btnGal').removeClass("cool");
                 $('.galerieTable').hide("slow");
                 $('.dashtable').hide("slow");
                 $('.comTutoTable').show("slow");
             });
             $('.btnUtil').click(function(){
+                $(this).addClass("cool");
+                $('.btnCont').removeClass("cool");
+                $('.btnArt').removeClass("cool");
+                $('.btnComArt').removeClass("cool");
+                $('.btnTuto').removeClass("cool");
+                $('.btnComTuto').removeClass("cool");
+                $('.btnGal').removeClass("cool");
                 $('.galerieTable').hide("slow");
                 $('.dashtable').hide("slow");
                 $('.utilTable').show("slow");
             });
             $('.btnGal').click(function(){
+                $(this).addClass("cool");
+                $('.btnCont').removeClass("cool");
+                $('.btnArt').removeClass("cool");
+                $('.btnComArt').removeClass("cool");
+                $('.btnTuto').removeClass("cool");
+                $('.btnComTuto').removeClass("cool");
+                $('.btnUtil').removeClass("cool");
                 $('.galerieTable').show("slow");
                 $('.dashtable').hide("slow");
                 $('.dashtable').hide("slow");
@@ -727,9 +779,15 @@
                 $('#formAjoutTutoriel').submit();
             }
             });
-            
+
             $('#lien_dashboard').click(function(){
             window.location.href = 'dashboard.php';
+            });
+
+            $('#logo').hover(function(){
+                $(this).css('filter','brightness(2)');
+            }, function () {
+                $(this).css('filter','none');;
             });
         });
     </script>

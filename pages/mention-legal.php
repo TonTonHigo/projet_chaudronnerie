@@ -26,6 +26,7 @@
 
     <?php include "../composants/header.php" ?>
 
+
     <main>
         <div class="mention">
 
@@ -306,6 +307,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
+
         $('#icon').hide();
         // quand on scroll vers le bas la petite flêche apparaît
         $(document).scroll(function(){
@@ -325,6 +327,13 @@
             $('#lien_dashboard').click(function(){
             window.location.href = 'dashboard.php';
             });
+            
+            $('#logo').hover(function(){
+                $(this).css('filter','brightness(2)');
+            }, function () {
+                $(this).css('filter','none');;
+            });
+
         });
         
   </script>

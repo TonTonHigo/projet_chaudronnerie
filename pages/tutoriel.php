@@ -26,6 +26,7 @@
 
   <?php include "../composants/header.php" ?>
 
+
   <main>
 
     <div class="image-tutoriel">
@@ -78,6 +79,7 @@
     }
 
     $(document).ready(function(){
+
       $('#icon').hide();
       // quand on scroll vers le bas la petite flêche apparaît
       $(document).scroll(function(){
@@ -97,6 +99,13 @@
       $('#lien_dashboard').click(function(){
             window.location.href = 'dashboard.php';
       });
+
+      $('#logo').hover(function(){
+        $(this).css('filter','brightness(2)');
+      }, function () {
+          $(this).css('filter','none');;
+      });
+
     });
     
   </script>

@@ -36,8 +36,8 @@
 
   <?php include "composants/header.php"; ?>
 
+  
   <main>
-
     <section id="propos">
 
       <div class="introduction">
@@ -102,6 +102,7 @@
   <script src="script.js"></script>
   <script>
     $(document).ready(function(){
+
       $('#icon').hide();
       // quand on scroll vers le bas la petite flêche apparaît
       $(document).scroll(function(){

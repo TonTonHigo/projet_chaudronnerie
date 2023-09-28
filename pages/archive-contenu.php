@@ -78,6 +78,12 @@
             $('#lien_dashboard').click(function(){
             window.location.href = 'dashboard.php';
             });
+
+            $('#logo').hover(function(){
+                $(this).css('filter','brightness(2)');
+            }, function () {
+                $(this).css('filter','none');;
+            });
         });
     </script>
 

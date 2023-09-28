@@ -33,5 +33,11 @@ $(document).ready(function () {
         $('.containerlogo').fadeOut('slow');
         $('main').show();
     });
+
+    $('#logo').hover(function(){
+        $(this).css('filter','brightness(2)');
+    }, function () {
+        $(this).css('filter','none');;
+    });
 });
 
