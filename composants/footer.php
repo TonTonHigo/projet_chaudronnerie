@@ -1,3 +1,3 @@
 <footer>
-    <a href="mention-legal.php">Mentions légales - Tous droits réservés</a>
+    <a id="lienMention" href="mention-legal.php">Mentions légales - Tous droits réservés</a>
 </footer>

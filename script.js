@@ -3,6 +3,7 @@ $(document).ready(function () {
     var url = window.location.pathname;
 
     if (url === '/projet_chaudronnerie/Index.php') {
+        $('#lienMention').attr('href','pages/mention-legal.php');
         $('#logo').attr('src', 'image/Logo.png');
         $('#lien_index').attr('href', 'Index.php');
         $('#lien_archive').attr('href', 'pages/archive.php');
