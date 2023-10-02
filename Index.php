@@ -69,7 +69,7 @@
         </p>
         <br>
         <p class="citation">
-          "Chaque pièce de métal a une histoire à raconter, un rêve à réaliser."
+          <strong>"Chaque pièce de métal a une histoire à raconter, un rêve à réaliser."</strong>
         </p>
         <br>
         <p>
