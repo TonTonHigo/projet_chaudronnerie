@@ -64,50 +64,49 @@
    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-  <script>
-    var isPlaying = false; // Variable qui va suivre l'état actuel (Activez/Désactivez)
-    var gif = document.getElementById('gif'); // Récupérer l'élément GIF
-
-    function toggleGif(overlay) {
-      isPlaying = !isPlaying; // Inverser l'état
-
-      if (isPlaying) {
-        gif.style.display = 'block'; // Afficher le GIF
-      } else {
-        gif.style.display = 'none'; // Masquer le GIF
-      }
-    }
-
+  <script>   
     $(document).ready(function(){
 
-      $('#icon').hide();
-      // quand on scroll vers le bas la petite flêche apparaît
-      $(document).scroll(function(){
-        if ($(this).scrollTop() > 0) {
-              $('#icon').fadeIn("slow");
-              $('#icon').hover(function(){
-                  $(this).css("bottom","60px");
-              },function(){
-                  $(this).css("bottom","50px");
-              });          
-          } else {           
-              $('#icon').fadeOut("slow");            
-          }
-          
-      });
+      var isPlaying = false; // Variable qui va suivre l'état actuel (Activez/Désactivez)
+      var gif = document.getElementById('gif'); // Récupérer l'élément GIF
+
+      function toggleGif(overlay) {
+        isPlaying = !isPlaying; // Inverser l'état
+
+        if (isPlaying) {
+          gif.style.display = 'block'; // Afficher le GIF
+        } else {
+          gif.style.display = 'none'; // Masquer le GIF
+        }
+      }
 
       $('#lien_dashboard').click(function(){
             window.location.href = 'dashboard.php';
       });
 
       $('#logo').hover(function(){
-        $(this).css('filter','brightness(2)');
-      }, function () {
-          $(this).css('filter','none');;
+            $(this).css('filter','brightness(2)');
+        }, function () {
+            $(this).css('filter','none');;
       });
 
+      $('#icon').hide();
+    // quand on scroll vers le bas la petite flêche apparaît
+    $(document).scroll(function(){
+        if ($(this).scrollTop() > 0) {
+            $('#icon').fadeIn("slow");
+            $('#icon').hover(function(){
+                $(this).css("bottom","60px");
+            },function(){
+                $(this).css("bottom","50px");
+            });          
+        } else {           
+            $('#icon').fadeOut("slow");            
+        }
+        
     });
-    
+
+    });    
   </script>
 </body>
 

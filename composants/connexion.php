@@ -275,6 +275,47 @@ class ma_connexion{
             echo "Erreur: " . $e->getMessage();
         }
     }
+
+     // connexion
+     public function connexion($colonne, $table){
+        try {
+
+            $select = "SELECT $colonne FROM $table";
+
+            $requete = $this -> connexionPDO -> prepare($select);
+            $requete -> execute();
+            $afficher = $requete -> fetchAll(PDO::FETCH_ASSOC);
+
+            return $afficher;
+
+        } catch (PDOException $e) {
+
+            echo "Erreur : " . $e->getMessage();
+
+        }
+    }
+     // inscription
+     public function inscription($pseudonyme, $email, $mdp){ 
+
+        try {
+
+            $insert = "INSERT INTO  `utilisateur` (pseudonyme, email, mdp, id_role)  VALUES (?, ?, ?, ?)";
+
+            $requete = $this -> connexionPDO -> prepare($insert);
+            $requete->bindValue(1, $pseudonyme, PDO::PARAM_STR);
+            $requete->bindValue(2, $email, PDO::PARAM_STR);
+            $requete->bindValue(3, $mdp, PDO::PARAM_STR);
+            $requete->bindValue(4, "1", PDO::PARAM_INT);
+
+        
+            $requete->execute();
+
+        } catch (PDOException $e) {
+
+            echo "Erreur : " . $e->getMessage();
+
+        }
+}
     
     
 }     

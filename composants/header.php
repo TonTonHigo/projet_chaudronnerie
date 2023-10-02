@@ -64,11 +64,11 @@
                             <div class="validation-error pseudoinsError">Pseudonyme manquant</div>
                             <input type="text" id="pseudoins" name="pseudoins" placeholder="Pseudonyme">
                             <div class="validation-error emailError">Email manquant</div>
-                            <input type="text" id="emailins" name="email" placeholder="Email">
+                            <input type="text" id="emailins" name="emailins" placeholder="Email">
                             <div class="validation-error mdpinsError">Mdp manquant</div>
                             <input type="password" id="mdpins" name="mdpins" placeholder="Mdp">
                             <div class="validation-error confirmError">Mdp manquant</div>
-                            <input type="password" id="confirm" name="confirm" placeholder="Confirmer Mdp">
+                            <input type="password" id="confirm" name="confirmins" placeholder="Confirmer Mdp">
                         </form>
                     </div>
                     <div class="modal-footer">

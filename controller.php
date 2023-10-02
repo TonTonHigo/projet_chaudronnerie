@@ -57,6 +57,20 @@ if (isset($_POST["form"])) {
             header('location: pages/dashboard.php');
             break;
 
+        // inscription
+        case "inscription":
+            $inserted = $connexion->inscription($_POST["pseudoins"], $_POST["emailins"], $_POST["mdpins"]);
+            header('location: pages/dashboard.php');
+            break;
+
+        // connexion
+        case "connexion":
+            $pseudo = $_POST["pseudoco"];
+            $mdp = $_POST["mdpco"];
+            $inserted = $connexion->connexion("*", "utilisateur");
+            header('location: pages/dashboard.php');
+            break;
+
 
         default:
             $response = array('success' => false, 'message' => 'Invalid form type.');
