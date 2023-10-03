@@ -34,7 +34,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="crud forme-form" method="POST" action="../controller.php">
+                        <form id="form-co" class="crud forme-form" method="POST" action="../controller.php">
                             <input class="form" type="hidden" name="form" value="connexion">
                             <div class="validation-error pseudocoError">Pseudonyme manquant</div>
                             <input type="text" id="pseudoco" name="pseudoco" placeholder="Pseudonyme">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn enregistrer">Enregistrer</button>
+                        <button type="submit" class="btn enregistrer" form="form-co">Enregistrer</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="crud forme-form" method="POST" action="../controller.php">
+                        <form id="form-ins" class="crud forme-form" method="POST" action="../controller.php">
                         <input class="form" type="hidden" name="form" value="inscription">
                             <div class="validation-error pseudoinsError">Pseudonyme manquant</div>
                             <input type="text" id="pseudoins" name="pseudoins" placeholder="Pseudonyme">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn enregistrer">Enregistrer</button>
+                        <button type="submit" class="btn enregistrer" form="form-ins">Enregistrer</button>
                     </div>
                 </div>
             </div>

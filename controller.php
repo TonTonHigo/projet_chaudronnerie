@@ -60,7 +60,13 @@ if (isset($_POST["form"])) {
         // inscription
         case "inscription":
             $inserted = $connexion->inscription($_POST["pseudoins"], $_POST["emailins"], $_POST["mdpins"]);
-            header('location: pages/dashboard.php');
+            // RENVOYE JSON AU AJAX
+            // if ($inserted) {
+            //     $response = array('success' => true, 'message' => 'Message sent successfully.');
+            // } else {
+            //     $response = array('success' => false, 'message' => 'Failed to send message.');
+            // }
+            header('location: pages/tutoriel.php');
             break;
 
         // connexion
@@ -68,7 +74,15 @@ if (isset($_POST["form"])) {
             $pseudo = $_POST["pseudoco"];
             $mdp = $_POST["mdpco"];
             $inserted = $connexion->connexion("*", "utilisateur");
-            header('location: pages/dashboard.php');
+            foreach($inserted as $compare){
+                if($pseudo === $compare["pseudonyme"] && $mdp === $compare["mdp"]){
+                    header('location: pages/tutoriel.php');
+                    // $response = array('success' => true, 'message' => 'Message sent successfully.');
+                }else{
+                    header('location: index.php');
+                    // $response = array('success' => false, 'message' => 'Failed to send message.');
+                }
+            }
             break;
 
 
