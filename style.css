@@ -189,6 +189,9 @@ body {
     background-color: #F4A460;
 }
 
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 /* main */
 
 /* à propos */
@@ -620,6 +623,9 @@ table caption {
     border: 2px solid #FFEBCD;
 }
 
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 /* footer */
 
 footer {
@@ -699,5 +705,119 @@ ul {
   
   .mention a:hover {
     text-decoration: underline;
+  }
+
+
+                                                /* responsive */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////// */
+  
+
+/* acceuil */
+
+/* Styles pour les écrans larges (desktops, ordinateurs portables) */
+@media (min-width: 1024px) {
+    /* Ajoutez vos styles pour les grands écrans ici */
+  }
+  
+  /* Styles pour les tablettes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajoutez vos styles pour les tablettes ici */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 767px) {
+    /* Ajoutez vos styles pour les mobiles ici */
+  }
+
+                            /* archive */ 
+  /* /////////////////////////////////////////////////////////// */
+
+/* Styles pour les écrans larges (desktops, ordinateurs portables) */
+@media (min-width: 1024px) {
+    /* Ajoutez vos styles pour les grands écrans ici */
+  }
+  
+  /* Styles pour les tablettes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajoutez vos styles pour les tablettes ici */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 767px) {
+    /* Ajoutez vos styles pour les mobiles ici */
+  }
+  
+                            /* tutoriel */
+  /* /////////////////////////////////////////////////////////// */
+
+/* Styles pour les écrans larges (desktops, ordinateurs portables) */
+@media (min-width: 1024px) {
+    /* Ajoutez vos styles pour les grands écrans ici */
+  }
+  
+  /* Styles pour les tablettes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajoutez vos styles pour les tablettes ici */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 767px) {
+    /* Ajoutez vos styles pour les mobiles ici */
+  }
+  
+                            /* galerie */
+  /* /////////////////////////////////////////////////////////// */
+
+/* Styles pour les écrans larges (desktops, ordinateurs portables) */
+@media (min-width: 1024px) {
+    /* Ajoutez vos styles pour les grands écrans ici */
+  }
+  
+  /* Styles pour les tablettes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajoutez vos styles pour les tablettes ici */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 767px) {
+    /* Ajoutez vos styles pour les mobiles ici */
+  }
+  
+                            /* contact */
+  /* /////////////////////////////////////////////////////////// */
+
+
+
+/* Styles pour les écrans larges (desktops, ordinateurs portables) */
+@media (min-width: 1024px) {
+    /* Ajoutez vos styles pour les grands écrans ici */
+  }
+  
+  /* Styles pour les tablettes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajoutez vos styles pour les tablettes ici */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 767px) {
+    /* Ajoutez vos styles pour les mobiles ici */
+  }
+
+                            /* dashboard */
+  /* /////////////////////////////////////////////////////////// */
+  
+/* Styles pour les écrans larges (desktops, ordinateurs portables) */
+@media (min-width: 1024px) {
+    /* Ajoutez vos styles pour les grands écrans ici */
+  }
+  
+  /* Styles pour les tablettes */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajoutez vos styles pour les tablettes ici */
+  }
+  
+  /* Styles pour les appareils mobiles */
+  @media (max-width: 767px) {
+    /* Ajoutez vos styles pour les mobiles ici */
   }
   
