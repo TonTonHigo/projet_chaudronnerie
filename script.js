@@ -36,8 +36,10 @@ $(document).ready(function () {
 
     $('.logowow').hover(function () {
         $(this).animate({ width: '250px' }, 400);
+        $(this).css('filter','brightness(2)');
     }, function () {
         $(this).animate({ width: '150px' }, 400);
+        $(this).css('filter','none');
     });
 
     $('.textintro').css('font-size', '50px');
@@ -57,7 +59,7 @@ $(document).ready(function () {
     $('#logo').hover(function(){
         $(this).css('filter','brightness(2)');
     }, function () {
-        $(this).css('filter','none');;
+        $(this).css('filter','none');
     });
     
 });

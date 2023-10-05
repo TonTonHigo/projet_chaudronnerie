@@ -26,6 +26,7 @@
 
 <body>
 
+<!-- Préface cliquable par l'utilisateur -->
   <div class="preload"></div>
   <div class="containerlogo">
     <div id="logopreload">

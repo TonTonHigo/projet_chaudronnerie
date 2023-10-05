@@ -56,6 +56,7 @@ body {
 
 #logopreload img {
     width: 150px;
+    transition: .5s;
 }
 
 #logopreload img:hover {
