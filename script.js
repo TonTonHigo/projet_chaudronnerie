@@ -35,16 +35,16 @@ $(document).ready(function () {
     }   
 
     $('.logowow').hover(function () {
-        $(this).animate({ width: '400px' }, 400);
+        $(this).animate({ width: '250px' }, 400);
     }, function () {
-        $(this).animate({ width: '350px' }, 400);
+        $(this).animate({ width: '150px' }, 400);
     });
 
-    $('.textintro').css('font-size', '70px');
+    $('.textintro').css('font-size', '50px');
     $('.textintro').hover(function () {
-        $(this).animate({ fontSize: '75px' }, 400);
+        $(this).animate({ fontSize: '65px' }, 400);
     }, function () {
-        $(this).animate({ fontSize: '70px' }, 400);
+        $(this).animate({ fontSize: '50px' }, 400);
     });
 
     $('main').hide();

@@ -20,18 +20,7 @@ body {
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
 }
-.loading{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #2C2C2C;
-    background-size: cover;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 #icon{
     position: fixed;
     bottom: 50px;
@@ -44,7 +33,6 @@ body {
     height: 100vh;
     background: url("image/image19.jpg") no-repeat center center;
     background-size: cover;
-   /*filter: blur(5px) brightness(80%);*/
     z-index: 1;
 }
 
@@ -67,8 +55,7 @@ body {
 }
 
 #logopreload img {
-   /* width: 350px; */
-    width: 100px;
+    width: 150px;
 }
 
 #logopreload img:hover {
