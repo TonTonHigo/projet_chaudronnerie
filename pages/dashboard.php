@@ -622,7 +622,6 @@
                 
             }); 
             // btn pour choisir le tableau que l'on veut voir
-            // $('.btnDashboard').removeClass("cool");
             $('.btnCont').click(function(){
                 $(this).addClass("cool");
                 $('.btnArt').removeClass("cool");

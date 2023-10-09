@@ -22,9 +22,6 @@ class ma_connexion{
             $this-> connexionPDO = new PDO($dsn, $this-> user, $this-> password);
             $this-> connexionPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            // echo "<style> body{background-color: lightcyan; color: darkbrown;} </style>";
-            // echo "connexion réussi" . "<br>" ."↜(╰ •ω•)╯!" . "<br>";
-
         } catch (PDOException $e) {
 
             echo "connexion pas marché!" . "<br>" ."(╥╯⌒╰╥๑)" . "<br>";
