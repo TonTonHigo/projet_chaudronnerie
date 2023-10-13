@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 26 sep. 2023 à 09:01
+-- Généré le : ven. 13 oct. 2023 à 04:53
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.1.13
 
@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `bdd_chaudronnerie`
 --
-  CREATE DATABASE bdd_chaudronnerie;
-  USE bdd_chaudronnerie;
+
 -- --------------------------------------------------------
 
 --
@@ -35,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `contenu` text NOT NULL,
   `image` varchar(200) NOT NULL,
   PRIMARY KEY (`id_article`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `article`
@@ -64,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   PRIMARY KEY (`id_commentaire`),
   KEY `Commentaire_fk0` (`id_article`),
   KEY `Commentaire_fk1` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -81,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `commentaire_1` (
   PRIMARY KEY (`id_commentaire_1`),
   KEY `Commentaire_1_fk0` (`id_tutoriel`),
   KEY `Commentaire_1_fk1` (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -99,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `id_utilisateur` int NOT NULL,
   PRIMARY KEY (`id_contact`),
   KEY `Contact_fk0` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `contact`
@@ -121,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `galerie` (
   `photo` varchar(100) NOT NULL,
   `descriptif` text NOT NULL,
   PRIMARY KEY (`id_galerie`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `galerie`
@@ -143,7 +142,15 @@ CREATE TABLE IF NOT EXISTS `role` (
   `id_role` int NOT NULL AUTO_INCREMENT,
   `type` varchar(20) NOT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `role`
+--
+
+INSERT INTO `role` (`id_role`, `type`) VALUES
+(1, 'Abonné'),
+(2, 'Admin');
 
 -- --------------------------------------------------------
 
@@ -159,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `tutoriel` (
   `image` varchar(200) NOT NULL,
   `image2` varchar(200) NOT NULL,
   PRIMARY KEY (`id_tutoriel`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `tutoriel`
@@ -183,7 +190,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_role` int NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
   KEY `Utilisateur_fk0` (`id_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `pseudonyme`, `email`, `mdp`, `id_role`) VALUES
+(1, 'hugo', 'hugz@daofhdhf.dapihfd', 'hugo', 1),
+(2, 'coba', 'lad@dihz.dpjd', 'josjf', 1),
+(3, 'tang', 'tang@tang.com', 'tang', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
