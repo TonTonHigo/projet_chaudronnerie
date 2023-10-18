@@ -1,7 +1,7 @@
 <header>
     <div class="navbar">
         <div class="logo">
-            <a id="lien_index" href="../Index.php" ><img id="logo" src="../image/Logo.png" alt="Logo"></a>
+            <a id="lien_index" href="../index.php" ><img id="logo" src="../image/Logo.png" alt="Logo"></a>
         </div>
         <div class="centered-links">
             <a id="lien_archive" href="archive.php">Archive</a>
