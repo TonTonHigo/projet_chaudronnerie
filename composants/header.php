@@ -9,7 +9,7 @@
             <a id="lien_galerie" href="galerie.php">Galerie</a>
         </div>
         <div class="contact">
-            <a id="lien_formulaire" href="formulaire.php">Contact</a>
+            <a id="lien_formulaire" href="contact.php">Contact</a>
             <!-- Button connexion et inscription -->
         </div>
         <div class="button-user">

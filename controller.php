@@ -59,14 +59,30 @@ if (isset($_POST["form"])) {
 
         // inscription
         case "inscription":
-            $inserted = $connexion->inscription($_POST["pseudoins"], $_POST["emailins"], $_POST["mdpins"]);
+            $pseudo = $_POST["pseudoins"];            
+            $email = $_POST["emailins"];
+            $mdp = $_POST["mdpins"];
+            $confmdp = $_POST["confirmins"];
+
+            $pattern = '/^[a-zA-Z0-9_]+$/';
+
+            if(preg_match($pattern, $pseudo)){
+    
+                if($mdp === $confmdp){
+                    $mdp_hash = password_hash($mdp, PASSWORD_ARGON2I);
+                
+                    $inserted = $connexion->inscription($pseudo, $email, $mdp_hash);
+                    header("Location: pages/contact.php");
+                    exit();
+                }
+            }      
+            
             // RENVOYE JSON AU AJAX
             // if ($inserted) {
             //     $response = array('success' => true, 'message' => 'Message sent successfully.');
             // } else {
             //     $response = array('success' => false, 'message' => 'Failed to send message.');
             // }
-            header('location: pages/tutoriel.php');
             break;
 
         // connexion
@@ -75,7 +91,7 @@ if (isset($_POST["form"])) {
             $mdp = $_POST["mdpco"];
             $inserted = $connexion->connexion("*", "utilisateur");
             foreach($inserted as $compare){
-                if($pseudo === $compare["pseudonyme"] && $mdp === $compare["mdp"]){
+                if($pseudo === $compare["pseudonyme"] && password_verify($mdp,$compare["mdp"])){
                     header('location: pages/tutoriel.php');
                     // $response = array('success' => true, 'message' => 'Message sent successfully.');
                 }else{

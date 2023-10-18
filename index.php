@@ -83,9 +83,6 @@
          Une branche industrielle qui regroupe plusieurs secteurs d’activité, tels que l’alimentaire, la chimie, l’énergie, l’aéronautique, la navale, l’automobile ou la menuiserie. La chaudronnerie s’adapte en permanence aux évolutions technologiques et aux besoins du marché. Elle utilise des matériaux divers, comme l’acier, l’inox, le cuivre, l’aluminium, le titane ou les matières plastiques.
         </p>
         <br>
-        <p>
-          <a href=".\pages\formulaire.php" class="btn-contact">Message ici</a>
-        </p>
       </div>
     </section>
 

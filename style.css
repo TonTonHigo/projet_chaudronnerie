@@ -226,20 +226,6 @@ body {
 }
 
 /* contact */
-.btn-contact {
-    display: inline-block;
-    background-color: #6C6C6C;
-    color: #FFEBCD;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: 2px solid #2C2C2C;
-    border-radius: 10px;
-}
-
-.btn-contact:hover {
-    background-color: transparent;
-}
 
 /* contact form */
 #titre-contact {

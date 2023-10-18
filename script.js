@@ -20,19 +20,23 @@ $(document).ready(function () {
     $('.validation-error').hide();
 
     var currentURL = window.location.href;
+    console.log(currentURL);
 
     // Extract the path from the URL
     var path = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+    console.log(path);
     
     // Check if the path matches your desired path
-    if (path === 'index.php') {
+    if (path === '' || path === 'index.php') {
+        $('#form-co').attr('action','controller.php');
+        $('#form-ins').attr('action','controller.php');
         $('#lienMention').attr('href','pages/mention-legal.php');
         $('#logo').attr('src', 'image/Logo.png');
         $('#lien_index').attr('href', 'index.php');
         $('#lien_archive').attr('href', 'pages/archive.php');
         $('#lien_tutoriel').attr('href', 'pages/tutoriel.php');
         $('#lien_galerie').attr('href', 'pages/galerie.php');
-        $('#lien_formulaire').attr('href', 'pages/formulaire.php');
+        $('#lien_formulaire').attr('href', 'pages/contact.php');
         $('#lien_dashboard').click(function(){
             window.location.href = 'pages/dashboard.php';
         });
