@@ -1,4 +1,8 @@
-<?php include "../composants/connexion.php"; ?>
+<?php 
+// On ouvre notre session
+session_start();
+include "../composants/connexion.php";
+ ?>
 <html lang="en">
 
 <head>

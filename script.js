@@ -30,6 +30,7 @@ $(document).ready(function () {
     if (path === '' || path === 'index.php') {
         $('#form-co').attr('action','controller.php');
         $('#form-ins').attr('action','controller.php');
+        $('#form-deco').attr('action','controller.php');
         $('#lienMention').attr('href','pages/mention-legal.php');
         $('#logo').attr('src', 'image/Logo.png');
         $('#lien_index').attr('href', 'index.php');

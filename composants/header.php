@@ -13,15 +13,45 @@
             <!-- Button connexion et inscription -->
         </div>
         <div class="button-user">
-            <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#conn-modal">
+            <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#conn-modal"
+            <?php
+            if(isset($_SESSION["role"])){
+                echo'hidden';
+            }
+            ?>
+            >
                 Connexion
             </button>
-            <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#inscri-modal">
+            <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#inscri-modal"
+            <?php
+            if(isset($_SESSION["role"])){
+                echo'hidden';
+            }
+            ?>
+            >
                 Inscription
             </button>
+            <?php
+            if(isset($_SESSION["role"]) && $_SESSION["role"] == 1){
+            echo'
             <button  id="lien_dashboard" type="button" class="btn button-compte">
                     Dasboard
+            </button>';
+            }
+            ?>
+
+            <!-- bouton déconnexion -->
+            <?php
+            if(isset($_SESSION["role"])){
+            echo'
+            <form id="form-deco" action="../controller.php" method="post">
+            <input type="hidden" name="form" value="deco">
+            <button type="submit" class="btn button-compte">
+                    Déconnexion
             </button>
+            </form>';
+            }
+            ?>
         </div>
     </div>
 

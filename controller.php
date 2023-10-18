@@ -1,4 +1,6 @@
 <?php
+// On ouvre notre session
+session_start();
 include "composants/connexion.php";
 
 if (isset($_POST["form"])) {
@@ -92,13 +94,28 @@ if (isset($_POST["form"])) {
             $inserted = $connexion->connexion("*", "utilisateur");
             foreach($inserted as $compare){
                 if($pseudo === $compare["pseudonyme"] && password_verify($mdp,$compare["mdp"])){
-                    header('location: pages/tutoriel.php');
+                    // On enregistre l'id de l'auteur dans $_SESSION['id'] 
+                    $_SESSION['id'] = $compare['id_utilisateur'];
+                    // On enregistre role de l'auteur dans $_SESSION['role'] 
+                    $_SESSION['role'] = $compare['id_role'];
+                    // On enregistre nom de l'auteur dans $_SESSION['nom'] 
+                    $_SESSION['nom'] = $compare['pseudonyme'];
+                    header('location: pages/contact.php');
                     // $response = array('success' => true, 'message' => 'Message sent successfully.');
                 }else{
                     header('location: index.php');
                     // $response = array('success' => false, 'message' => 'Failed to send message.');
                 }
             }
+            break;
+
+        // déconnexion
+        case "deco":
+            session_start();
+            session_unset();
+            session_destroy();        
+            header('Location: index.php');
+
             break;
 
 

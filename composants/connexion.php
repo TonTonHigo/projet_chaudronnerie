@@ -302,7 +302,7 @@ class ma_connexion{
             $requete->bindValue(1, $pseudonyme, PDO::PARAM_STR);
             $requete->bindValue(2, $email, PDO::PARAM_STR);
             $requete->bindValue(3, $mdp, PDO::PARAM_STR);
-            $requete->bindValue(4, "1", PDO::PARAM_INT);
+            $requete->bindValue(4, "2", PDO::PARAM_INT);
 
         
             $requete->execute();

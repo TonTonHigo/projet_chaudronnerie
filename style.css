@@ -177,6 +177,39 @@ body {
     background-color: #F4A460;
 }
 
+/* Responsive de la navbar */
+/* Tablet*/
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .navbar a {
+        padding: 10px 0; /* Reduce horizontal padding */
+        font-size: 1.5em; /* Adjust font size */
+    }
+
+    .navbar .centered-links {
+        flex-direction: column; /* Stack links vertically */
+        padding: 0;
+    }
+
+    .centered-links a::before {
+        bottom: 0; /* Adjust underline position */
+    }
+
+    .navbar .contact {
+        text-align: center;
+        padding: 10px 0; /* Reduce horizontal padding */
+    }
+}
+
+/* Phone screens */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 1.2em; /* Further reduce font size for phones */
+    }
+}
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -224,6 +257,44 @@ body {
     font-style: italic;    
     color: #FF6347;
 }
+/* Responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+    #propos {
+        padding: 3% 3%; /* Reduce padding for smaller screens */
+    }
+
+    .introduction,
+    .histoire {
+        padding: 15px; /* Slightly reduce padding */
+    }
+
+    .introduction p,
+    .histoire p {
+        font-size: 20px; /* Slightly reduce font size for tablets */
+        margin-bottom: 20px; /* Slightly reduce margin */
+    }
+}
+
+/* Phone */
+@media (max-width: 768px) {
+    #propos {
+        padding: 2% 2%; /* Further reduce padding for phones */
+    }
+
+    .introduction,
+    .histoire {
+        padding: 10px; /* Reduce padding for phones */
+    }
+
+    .introduction p,
+    .histoire p {
+        font-size: 18px; /* Further reduce font size for phones */
+        margin-bottom: 15px; /* Reduce margin for phones */
+    }
+}
+
+
 
 /* contact */
 
@@ -246,8 +317,9 @@ body {
     border: none;
     border-radius: 10px;
     padding: 20px;
-    width: 1000px;
+    width: 800px;
     margin-bottom: 20px;
+    transition: .5s;
 }
 
 #contact_form input::placeholder {
@@ -258,9 +330,11 @@ body {
     border: none;
     border-radius: 10px;
     padding: 50px;
-    width: 1000px;
+    width: 800px;
     margin-bottom: 100px;
     background-color: #FFEBCD;
+    transition: .5s;
+
 }
 
 #contact_form textarea::placeholder {
@@ -291,6 +365,64 @@ body {
     font-size: 2em;
     color: #2C2C2C;
 }
+/* Responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+    #titre-contact {
+        font-size: 1.5em; /* Reduce font size for tablets */
+        margin: 10px 0; /* Reduce top margin for tablets */
+    }
+
+    #contact_form input,
+    #contact_form textarea {
+        width: 500px;
+        padding: 8px; /* Further reduce padding for tablets */
+        margin-bottom: 10px; /* Further reduce margin for tablets */
+    }
+
+    #contact_form button {
+        padding: 8px; /* Reduce button padding for tablets */
+    }
+
+    #send_contact {
+        margin-bottom: 10px; /* Reduce margin for tablets */
+    }
+
+    #merci-contact h2 {
+        font-size: 1.2em; /* Further reduce font size for tablets */
+        margin-bottom: 10px; /* Reduce margin for tablets */
+    }
+}
+
+/* Phone */
+@media (max-width: 768px) {
+    #titre-contact {
+        font-size: 1.2em; /* Further reduce font size for phones */
+        margin: 5px 0; /* Reduce top margin for phones */
+    }
+
+    #contact_form input,
+    #contact_form textarea {
+        width: auto;
+        padding: 6px; /* Further reduce padding for phones */
+        margin-bottom: 5px; /* Reduce margin for phones */
+    }
+
+    #contact_form button {
+        padding: 6px; /* Reduce button padding for phones */
+    }
+
+    #send_contact {
+        margin-bottom: 5px; /* Reduce margin for phones */
+    }
+
+    #merci-contact h2 {
+        font-size: 1em; /* Further reduce font size for phones */
+        margin-bottom: 5px; /* Reduce margin for phones */
+    }
+}
+
+
 
 /* galerie */
 .button {
@@ -392,6 +524,47 @@ body {
         box-shadow: 0 0 5px #6C6C6C, 0 0 15px #6C6C6C, 0 0 25px #6C6C6C;
     }
 }
+/* Responsive */
+/* Tablet (landscape) and smaller screens */
+@media (max-width: 1240px) {
+    .button {
+        padding: 8px 16px; /* Reduce button padding for tablets */
+    }
+
+    .grid-galerie {
+        grid-template-columns: auto auto;
+        margin: 1em 0; /* Reduce margin for tablets */
+    }
+
+    .text-galerie {
+        font-size: 14px; /* Reduce font size for tablets */
+    }
+}
+
+/* Phone screens */
+@media (max-width: 768px) {
+    .button {
+        padding: 6px 12px; /* Further reduce button padding for phones */
+    }
+
+    .grid-galerie {
+        grid-template-columns: auto; /* Single column for better mobile display */
+        gap: 0.5em; /* Reduce gap for phones */
+        margin: 1em 0; /* Reduce margin for phones */
+    }
+
+    .text-galerie {
+        font-size: 12px; /* Further reduce font size for phones */
+        padding: 8px; /* Reduce padding for phones */
+    }
+}
+
+
+.nico {
+    margin-right: 40px;
+}
+
+/* archive */
 
 .carte-ordonne {
     display: flex;
@@ -400,26 +573,21 @@ body {
     gap: 50px;
 }
 
-.nico {
-    margin-right: 40px;
-}
-
-/* archive */
 
 .image-grid {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-around;
-    gap: 5em;
-    margin: 6em;
+    gap: 20px;
+    margin: 20px;
 }
 
 .cadre-archive {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 500px;
-    height: 550px;
+    width: 300px;
+    height: 571px;
     display: flex;
     align-items: end;
     backdrop-filter: brightness(80%);
@@ -445,14 +613,47 @@ body {
     color: #FFEBCD;
     font-size: 24px;
 }
+/* Responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: auto auto; /* Adjust item size for tablets */
+        gap: 1em; /* Reduce gap for tablets */
+        margin: 1em; /* Reduce margin for tablets */
+    }
+
+    .cadre-archive {
+        height: 250px; /* Adjust height for tablets */
+    }
+
+    .text-archive {
+        font-size: 18px; /* Reduce font size for tablets */
+    }
+}
+
+/* Phone screens */
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: auto; /* Adjust item size for phones */
+        gap: 0.5em; /* Reduce gap for phones */
+        margin: 0.5em; /* Reduce margin for phones */
+    }
+
+    .cadre-archive {
+        height: 200px; /* Adjust height for phones */
+    }
+
+    .text-archive {
+        font-size: 16px; /* Reduce font size for phones */
+    }
+}
+
+
 
 /* archive contenu */
 
 .cadre-archive-contenu {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 40%;
+    width: auto;
     height: 600px;
     display: flex;
     align-items: end;
@@ -493,6 +694,38 @@ body {
     font-family: 'Segoe UI';
     color: #6C6C6C;
 }
+/* Responsive */
+/* Tablet (landscape) and smaller screens */
+@media (max-width: 1024px) {
+    .archive-contenu-grid {
+        gap: 2em; /* Reduce gap for tablets */
+        margin: 2em; /* Reduce margin for tablets */
+    }
+
+    .archive-contenu-titre {
+        padding: 15px; /* Reduce padding for tablets */
+    }
+}
+
+/* Phone screens */
+@media (max-width: 840px) {
+    .cadre-archive-contenu {
+        height: 250px; /* Adjust height for phones */
+    }
+
+    .archive-contenu-grid {
+        gap: 1em; /* Reduce gap for phones */
+        margin: 1em; /* Reduce margin for phones */
+    }
+
+    .archive-contenu-titre {
+        font-size: 24px; /* Reduce font size for phones */
+        padding: 10px; /* Reduce padding for phones */
+    }
+}
+
+
+
 
 /* Tutoriel */
 
@@ -558,6 +791,31 @@ body {
     font-family: 'Segoe UI';
     color: #6C6C6C;
 }
+/* Responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+    .cadre-tutoriel {
+        max-height: 300px; /* Adjust max height for tablets */
+    }
+
+    .tutoriel-contenu-titre {
+        padding: 15px; /* Reduce padding for tablets */
+    }
+}
+
+/* Phone screens */
+@media (max-width: 768px) {
+    .cadre-tutoriel {
+        max-height: 250px; /* Adjust max height for phones */
+    }
+
+    .tutoriel-contenu-titre {
+        font-size: 18px; /* Reduce font size for phones */
+        padding: 10px; /* Reduce padding for phones */
+    }
+}
+
+
 
 /* Dashboard */
 .table-dash {
@@ -597,7 +855,37 @@ table caption {
     border: 2px solid #FFEBCD;
     transition: .5s;
 }
+/* Responsive */
+/* Media query for tablets*/
+@media (max-width: 768px) {
+    #corps-dash {
+        margin: 5% 0; /* Adjust margin for smaller screens */
+    }
+    #btndash {
+        flex-direction: column; /* Stack buttons vertically for small screens */
+    }
+    .table-dash {
+        overflow-x: auto;
+        font-size: 14px; /* Adjust font size for readability on small screens */
+    }
+    /* Add any other necessary adjustments for tablets */
+}
 
+/* Media query for phones*/
+@media (max-width: 480px) {
+    #corps-dash {
+        margin: 2% 0; /* Further reduce margin for phones */
+    }
+    #btndash {
+        flex-direction: column; /* Stack buttons vertically for small screens */
+        gap: 10px; /* Increase the gap between buttons */
+    }
+    .table-dash {
+        overflow-x: auto;
+        font-size: 12px; /* Further adjust font size for phones */
+    }
+    /* Add any other necessary adjustments for phones */
+}
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -616,6 +904,20 @@ footer a {
 }
 footer a:hover {
     color: #2c2c2c;
+}
+/* Responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+    footer {
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* Phone */
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8em; /* Reduce font size for phones */
+    }
 }
 
 /* Style général pour le texte des mentions légales */
