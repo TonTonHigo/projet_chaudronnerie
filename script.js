@@ -19,9 +19,13 @@ $(document).ready(function () {
 
     $('.validation-error').hide();
 
-    var url = window.location.pathname;
+    var currentURL = window.location.href;
 
-    if (url === '/projet_chaudronnerie/') {
+    // Extract the path from the URL
+    var path = currentURL.substring(currentURL.lastIndexOf('/') + 1);
+    
+    // Check if the path matches your desired path
+    if (path === 'index.php') {
         $('#lienMention').attr('href','pages/mention-legal.php');
         $('#logo').attr('src', 'image/Logo.png');
         $('#lien_index').attr('href', 'index.php');
