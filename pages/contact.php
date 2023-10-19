@@ -48,7 +48,7 @@ session_start();
     </form>
 
     <div id="merci-contact">
-        <h2>Merci pour votre message, je vous répondrez au plus vite !!!</h2>
+        <h2>Merci pour votre message, je vous répondrai au plus vite !!!</h2>
     </div>
 
     <div>
@@ -70,19 +70,17 @@ session_start();
         $('.validation-error').hide();
 
         $('#send_contact').click(function () {
-            // Gather form data
             var formData = {
                 pseudonyme: $('#pseudonyme').val(),
                 email: $('#email').val(),
                 sujet: $('#sujet').val(),
                 message: $('#message').val(),
-                form: 'contact' // Add the form field
+                form: 'contact' 
             };
 
-            // Reset validation messages
             $('.validation-error').hide();
 
-            // Check if any of the input fields is empty
+            // Regarde si les champs sont vides
             var hasErrors = false;
             if (formData.pseudonyme.trim() === '') {
                 $('#pseudonymeError').show();
