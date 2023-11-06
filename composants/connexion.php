@@ -310,11 +310,7 @@ class ma_connexion{
 }
     
     
-}     
- 
-
-        
-
+}   
 
 
 $connexion = new ma_connexion("localhost", "bdd_chaudronnerie", "root", "");
