@@ -44,50 +44,53 @@ session_start();
   
   <main>
     <section id="propos">
+      <div id="teinte">
+        
+        <div class="introduction">
+          <p>
+            <strong> Dans le monde fascinant de la chaudronnerie, un art ancien qui a façonné notre histoire depuis des siècles.
+          </p>
+          <p>
+            Imaginez un atelier empli du doux crépitement de la forge, où le métal chaud prend forme sous les mains habiles d'un chaudronnier passionné.
+          </p>
+          <br>
+          <p>
+            C'est ici que commence notre histoire.</strong>
+          </p>
+          <br>
+        </div>
+        <div class="histoire">
+          <p>
+            <strong>La Naissance de l'Art :</strong><br>
+            La chaudronnerie, c'est l'art de donner vie au métal. Elle a vu le jour bien avant nos machines modernes, lorsque les chaudronniers utilisaient le feu, le marteau et l'enclume pour créer des objets magiques.
+          </p>
+          <p>
+            <strong>Le Métal en Transformation :</strong><br>
+            La chaudronnerie, c'est la transformation du métal en quelque chose de plus grand, de plus utile, de plus beau. Chaque pièce forgée est une œuvre d'art en soi, une symphonie de formes et de textures métalliques.
+          </p>
+          <br>
+          <p>
+            <strong>L'Héritage du Passé :</strong><br>
+            De génération en génération, cet art précieux a été transmis. Les secrets de la chaudronnerie, les techniques et le savoir-faire se sont perpétués.
+          </p>
+          <br>
+          <p class="citation">
+            <strong>"Chaque pièce de métal a une histoire à raconter, un rêve à réaliser."</strong>
+          </p>
+          <br>
+          <p>
+            <strong>Un Art Vivant Aujourd'hui :</strong><br>
+            Le chaudronnier est un artisan qui maîtrise les techniques de traçage, de découpe, de mise en forme et d’assemblage des métaux en feuilles, des tubes et des profilés. Il réalise des pièces variées, allant du chaudron domestique au réservoir industriel, en passant par la charpente métallique, la tuyauterie ou le mobilier.
+          </p>
+          <br>
+          <p>
+            <strong>La Chaudronnerie :</strong><br>
+           Une branche industrielle qui regroupe plusieurs secteurs d’activité, tels que l’alimentaire, la chimie, l’énergie, l’aéronautique, la navale, l’automobile ou la menuiserie. La chaudronnerie s’adapte en permanence aux évolutions technologiques et aux besoins du marché. Elle utilise des matériaux divers, comme l’acier, l’inox, le cuivre, l’aluminium, le titane ou les matières plastiques.
+          </p>
+          <br>
+        </div>
+      </div>
 
-      <div class="introduction">
-        <p>
-          <strong> Dans le monde fascinant de la chaudronnerie, un art ancien qui a façonné notre histoire depuis des siècles.
-        </p>
-        <p>
-          Imaginez un atelier empli du doux crépitement de la forge, où le métal chaud prend forme sous les mains habiles d'un chaudronnier passionné.
-        </p>
-        <br>
-        <p>
-          C'est ici que commence notre histoire.</strong>
-        </p>
-        <br>
-      </div>
-      <div class="histoire">
-        <p>
-          <strong>La Naissance de l'Art :</strong><br>
-          La chaudronnerie, c'est l'art de donner vie au métal. Elle a vu le jour bien avant nos machines modernes, lorsque les chaudronniers utilisaient le feu, le marteau et l'enclume pour créer des objets magiques.
-        </p>
-        <p>
-          <strong>Le Métal en Transformation :</strong><br>
-          La chaudronnerie, c'est la transformation du métal en quelque chose de plus grand, de plus utile, de plus beau. Chaque pièce forgée est une œuvre d'art en soi, une symphonie de formes et de textures métalliques.
-        </p>
-        <br>
-        <p>
-          <strong>L'Héritage du Passé :</strong><br>
-          De génération en génération, cet art précieux a été transmis. Les secrets de la chaudronnerie, les techniques et le savoir-faire se sont perpétués.
-        </p>
-        <br>
-        <p class="citation">
-          <strong>"Chaque pièce de métal a une histoire à raconter, un rêve à réaliser."</strong>
-        </p>
-        <br>
-        <p>
-          <strong>Un Art Vivant Aujourd'hui :</strong><br>
-          Le chaudronnier est un artisan qui maîtrise les techniques de traçage, de découpe, de mise en forme et d’assemblage des métaux en feuilles, des tubes et des profilés. Il réalise des pièces variées, allant du chaudron domestique au réservoir industriel, en passant par la charpente métallique, la tuyauterie ou le mobilier.
-        </p>
-        <br>
-        <p>
-          <strong>La Chaudronnerie :</strong><br>
-         Une branche industrielle qui regroupe plusieurs secteurs d’activité, tels que l’alimentaire, la chimie, l’énergie, l’aéronautique, la navale, l’automobile ou la menuiserie. La chaudronnerie s’adapte en permanence aux évolutions technologiques et aux besoins du marché. Elle utilise des matériaux divers, comme l’acier, l’inox, le cuivre, l’aluminium, le titane ou les matières plastiques.
-        </p>
-        <br>
-      </div>
     </section>
 
     <div>
