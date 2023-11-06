@@ -1,6 +1,5 @@
 <?php
 
-
 class ma_connexion{
 
     private $host;
@@ -23,11 +22,7 @@ class ma_connexion{
             $this-> connexionPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch (PDOException $e) {
-
-            echo "connexion pas marché!" . "<br>" ."(╥╯⌒╰╥๑)" . "<br>";
-            echo "<style> body{background-color: #FB4640; color: white;} </style>";
             echo "Erreur : " . $e->getMessage();
-
         }
     }
 
