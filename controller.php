@@ -1,6 +1,4 @@
 <?php
-// On ouvre notre session
-session_start();
 include "composants/connexion.php";
 
 if (isset($_POST["form"])) {
@@ -84,6 +82,8 @@ if (isset($_POST["form"])) {
             $inserted = $connexion->connexion("*", "utilisateur");
             foreach($inserted as $compare){
                 if($pseudo === $compare["pseudonyme"] && password_verify($mdp,$compare["mdp"])){
+                    // On ouvre notre session
+                    session_start();
                     // On enregistre l'id de l'auteur dans $_SESSION['id'] 
                     $_SESSION['id'] = $compare['id_utilisateur'];
                     // On enregistre role de l'auteur dans $_SESSION['role'] 

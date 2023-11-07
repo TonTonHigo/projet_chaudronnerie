@@ -40,7 +40,6 @@ include "../composants/connexion.php"
       $tutoriel = $connexion->select("*", "tutoriel");
       foreach ($tutoriel as $cartes) {
         echo '<div class="image-tutoriel-">';
-        echo '<div class="toggle-overlay" onclick="toggleGif(this)">Activez/Désactivez</div>';
         echo '<img src="' . $cartes["image"] . '" class="cadre-tutoriel" id="gif" style="display: none;">'; /* Initialisé à display: none; */
         echo '<div class="card-body">';
         echo '<h1 class="tutoriel-contenu-titre">' . $cartes["titre"] . '</h1>';
@@ -71,18 +70,6 @@ include "../composants/connexion.php"
   <script>   
     $(document).ready(function(){
 
-      var isPlaying = false; // Variable qui va suivre l'état actuel (Activez/Désactivez)
-      var gif = document.getElementById('gif'); // Récupérer l'élément GIF
-
-      function toggleGif(overlay) {
-        isPlaying = !isPlaying; // Inverser l'état
-
-        if (isPlaying) {
-          gif.style.display = 'block'; // Afficher le GIF
-        } else {
-          gif.style.display = 'none'; // Masquer le GIF
-        }
-      }
 
       $('#lien_dashboard').click(function(){
             window.location.href = 'dashboard.php';
