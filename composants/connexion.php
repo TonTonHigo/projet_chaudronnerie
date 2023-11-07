@@ -36,7 +36,6 @@ class ma_connexion{
         try {
 
             $select = "SELECT $colonne FROM $table";
-
             $requete = $this -> connexionPDO -> prepare($select);
             $requete -> execute();
             $afficher = $requete -> fetchAll(PDO::FETCH_ASSOC);
