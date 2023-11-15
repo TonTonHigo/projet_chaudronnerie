@@ -41,9 +41,9 @@ include "../composants/connexion.php";
                     <button class="btn btnDashboard btnGal">Galerie</button>
                     <button class="btn btnDashboard btnCont">Contact</button>
                     <button class="btn btnDashboard btnArt">Article</button>
-                    <button class="btn btnDashboard btnComArt">Commentaires articles</button>
-                    <button class="btn btnDashboard btnTuto">Tutoriels</button>
-                    <button class="btn btnDashboard btnComTuto">Comentaires Tutoriels</button>
+                    <button class="btn btnDashboard btnComArt">Commentaires Articles</button>
+                    <button class="btn btnDashboard btnTuto">Tutoriel</button>
+                    <button class="btn btnDashboard btnComTuto">Comentaires Tutoriel</button>
                     <button class="btn btnDashboard btnUtil">Utilisateurs</button>
                 </div>
             </div>
@@ -346,11 +346,11 @@ include "../composants/connexion.php";
             <div class="dashtable comArtTable">
                 <!-- Commentaires articles-->
                 <table class="table-dash">
-                    <caption>Commentaires articles</caption>
+                    <caption>Commentaires Articles</caption>
                     <thead>
                         <tr>
                             <th>Message</th>
-                            <th>Tutoriel</th>
+                            <th>Article</th>
                             <th>Utilisateur</th>
                         </tr>
                     </thead>
@@ -372,9 +372,9 @@ include "../composants/connexion.php";
             </div>
 
             <div class="dashtable tutorielTable">
-                <!-- Tutoriels -->
+                <!-- Tutoriel -->
                 <table class="table-dash">
-                    <caption>Tutoriels</caption>
+                    <caption>Tutoriel</caption>
                     <thead>
                         <tr>
                             <th>Titre</th>
@@ -517,7 +517,7 @@ include "../composants/connexion.php";
             <div class="dashtable comTutoTable">                
                 <!-- Commentaire tuto -->
                 <table class="table-dash">
-                    <caption>Comentaires Tutoriels</caption>
+                    <caption>Comentaires Tutoriel</caption>
                     <thead>
                         <tr>
                             <th>Message</th>
@@ -550,7 +550,6 @@ include "../composants/connexion.php";
                         <tr>
                             <th>Pseudonyme</th>
                             <th>Email</th>
-                            <th>Modifier</th>
                             <th>Supprimer</th>
                             <th>
                                 <!-- Button AJOUTER photo -->
@@ -569,18 +568,36 @@ include "../composants/connexion.php";
                             <td>'. $msg["pseudonyme"] . '</td>
                             <td>'. $msg["email"] . '</td>
                             <td>
-                                <!-- modifier -->
-                                <button type="button" class="btn button nico" data-bs-toggle="modal" data-bs-target="#modif-modal'. $msg["id_utilisateur"] . '">
-                                    Mofifier
-                                </button>
-                            </td>
-                            <td>
                                 <!-- supprimer -->
-                                <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#supp-modal'. $msg["id_utilisateur"] . '">
+                                <button type="button" class="btn button" data-bs-toggle="modal" data-bs-target="#user-supp'. $msg["id_utilisateur"] . '">
                                     Supprimer
                                 </button>
                             </td>        
                         </tr>
+
+                        <!-- Modal SUPP -->
+                        <div class="modal fade" id="user-supp'. $msg["id_utilisateur"] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression de l\'article</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="userSupp'. $msg["id_utilisateur"] .'" class="forme-form" method="POST" action="../controller.php">
+                                            <input class="form" type="hidden" name="form" value="userSupp">
+                                            <input name="id_utilisateur" type="hidden" value="'. $msg["id_utilisateur"] .'">
+                                        </form>
+                                        <h4>Supprimer l\'utilisateur suivant?</h4>
+                                        <p>'. $msg["pseudonyme"] .'</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
+                                        <button type="submit" class="btn enregistrer" form="userSupp'. $msg["id_utilisateur"] .'">Supprimer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
                         ';
                         }
                     ?>

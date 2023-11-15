@@ -71,11 +71,11 @@ session_start();
 
         $('#send_contact').click(function () {
             var formData = {
-                pseudonyme: $('#pseudonyme').val(),
-                email: $('#email').val(),
-                sujet: $('#sujet').val(),
-                message: $('#message').val(),
-                form: 'contact' 
+                pseudonyme: encodeURIComponent($('#pseudonyme').val()),
+                email: encodeURIComponent($('#email').val()),
+                sujet: encodeURIComponent($('#sujet').val()),
+                message: encodeURIComponent($('#message').val()),
+                form: 'contact'
             };
 
             $('.validation-error').hide();

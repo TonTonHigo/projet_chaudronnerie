@@ -94,7 +94,7 @@ session_start();
     </section>
 
     <div>
-        <a href="#" id="icon"><i class="fa-solid fa-circle-arrow-up fa-3x" style="color: #2C2C2C;"></i></i></a>
+        <a href="#" id="icon"><i class="fa-solid fa-circle-arrow-up fa-3x" style="color: #FF6347;"></i></i></a>
     </div>
 
   </main>

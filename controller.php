@@ -47,6 +47,26 @@ if (isset($_POST["form"])) {
             header('location: pages/dashboard.php');
             break;
 
+        // commentaire_article
+        case "commentaire_article":
+            $inserted = $connexion->insert_com($_POST["id_utilisateur"], $_POST["id_article"], $_POST["message"]);
+            header('location: pages/archive-contenu.php');
+            break;
+        case "commentaire_update":
+            $inserted = $connexion->update_com($_POST['id_comdupdate'], $_POST['message']);
+            header('location: pages/archive-contenu.php');
+            break;
+        case "commentaire_delete":
+            $inserted = $connexion->delete_com($_POST["id_comdelete"]);
+            header('location: pages/archive-contenu.php');
+            break;
+
+        // utilisateur
+        case "userSupp":
+            $inserted = $connexion->delete_user($_POST["id_utilisateur"]);
+            header('location: pages/dashboard.php');
+            break;
+
         // inscription
         case "inscription":
             $pseudo = $_POST["pseudoins"];            
@@ -66,13 +86,7 @@ if (isset($_POST["form"])) {
                     exit();
                 }
             }      
-            
-            // RENVOYE JSON AU AJAX
-            // if ($inserted) {
-            //     $response = array('success' => true, 'message' => 'Message sent successfully.');
-            // } else {
-            //     $response = array('success' => false, 'message' => 'Failed to send message.');
-            // }
+
             break;
 
         // connexion
@@ -90,11 +104,14 @@ if (isset($_POST["form"])) {
                     $_SESSION['role'] = $compare['id_role'];
                     // On enregistre nom de l'auteur dans $_SESSION['nom'] 
                     $_SESSION['nom'] = $compare['pseudonyme'];
+                    // On créer une variable session article 
+                    $_SESSION['article'] = "";
+                    // On créer une variable session tutoriel 
+                    $_SESSION['tutoriel'] = "";
                     header('location: pages/contact.php');
-                    // $response = array('success' => true, 'message' => 'Message sent successfully.');
+                    break;
                 }else{
                     header('location: index.php');
-                    // $response = array('success' => false, 'message' => 'Failed to send message.');
                 }
             }
             break;

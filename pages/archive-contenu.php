@@ -33,10 +33,19 @@ include "../composants/connexion.php";
 
     <main>
 
+        <!-- SI il y une session article alors $articles prend la valeur de la session article
+            SINON $articles prend la valeur su post id_article et la session prend la valeur de $articles
+            se sera utile quand on commentera pour que la page ne perde pas l'id de l'article afficher -->
         <?php
+        if(isset($_SESSION['article'])){
+            $article = $_SESSION['article'];
 
-        $post = $_POST['resume'];
-        $archivecontenu = $connexion->select_where($post);
+        }else{
+            $article = $_POST['id_article'];
+            $_SESSION['article'] = $article;
+        }
+
+        $archivecontenu = $connexion->select_where($article);
         foreach ($archivecontenu as $cartes) {
             echo '<div class="archive-contenu-grid">';
             echo '<img src="' . $cartes["image"] . '" class="cadre-archive-contenu">';
@@ -47,7 +56,190 @@ include "../composants/connexion.php";
             echo '</div>';
             echo '</div>';
             echo '</div>';
+            echo '
+
+            <!-- Section pour les commentaires -->
+            <h3>Commentaires</h3>
+            <div class="comment-section">
+
+                ';            
+
+            // On affiche les commentaire
+            $commentaires = $connexion->select_where_commentaire("commentaire", "*", $article);
+            if ($commentaires != null) {
+                foreach ($commentaires as $coms) {
+                    if ($coms['id_article'] == $article) {
+
+                        echo '
+                            <small>';
+
+                            $comauteur = $connexion->select_where_utilisateur("utilisateur", "*", $coms['id_utilisateur']);
+                            foreach ($comauteur as $nomaut) {
+                                echo $nomaut['pseudonyme'];
+                            }
+                            echo ' ' . $coms['date'] . '</small>
+                                    <p>' . $coms['message'] . '</p>';
+
+                                // SI une session est en cours alors on fait le switch
+                                if(isset($_SESSION['role'])){
+                                    // Le switch regarde deux cas différent pour le role de la session
+                                    switch ($_SESSION['role']) {
+                                        // Si le role est 1(admin) alors un boutton pour SUPPRIMER le commentaire s'affichera
+                                        case 1:
+            
+                                            echo '
+                                                    <button type="button" class="button_com" data-bs-toggle="modal" data-bs-target="#delete' . $coms['id_commentaire'] . '"><span>DELETE</span></button>
+                                                ';
+                                            echo '
+                                                <!-- Modal DELETE -->
+                                                    <div class="modal fade" id="delete' . $coms['id_commentaire'] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer un article</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">';
+            
+                                            echo 'Veut-tu vraiment supprimer le commentaire "' . $coms['message'] . '" id: ' . $coms['id_commentaire'] . ' de '. $nomaut['pseudonyme'] . ' id: '. $coms['id_utilisateur'] .' ?';
+                                            echo '
+                    
+                                                                <!-- form codepen -->
+                                                                <div class="login-page">
+                                        
+                                                                <div class="form">
+                                        
+                                                                    <form  method="POST" action="../controller.php" id="delete_commentaire' . $coms['id_commentaire'] . '">
+                                                                        <input name="form" type="hidden" value="commentaire_delete">                                                   
+                                                                        <input name="id_comdelete" type="hidden" value="' . $coms['id_commentaire'] . '">                                                        
+                                                                    </form>
+                                        
+                                                                </div>
+                                                            </div>
+                                        
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                            <button form="delete_commentaire' . $coms['id_commentaire'] . '" type="submit" class="btn btn-primary">Supprimer le commentaire</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>';
+                                            break;
+            
+                                        // Si le role est 2(abonné) alors un boutton pour UPDATE et SUPPRIMER le commentaire s'affichera
+                                        // Seulement si l'id de la session est égale à l'id du commentaire 
+                                        case 2:
+                                            if (isset($_SESSION['id']) && ($_SESSION['id'] == $coms['id_utilisateur'])) {
+                                                echo '
+                                                    <div id="mdr">
+                                                        <button type="button" class="button_com" data-bs-toggle="modal" data-bs-target="#update' . $coms['id_commentaire'] . '">UPDATE</button>
+                                                        <button type="button" class="button_com" data-bs-toggle="modal" data-bs-target="#delete' . $coms['id_commentaire'] . '">DELETE</button>
+                                                    </div>      
+                                                            ';
+
+                                                    echo '
+                                                            <!-- Modal Update -->
+                                                                <div class="modal fade" id="update' . $coms['id_commentaire'] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer un article</h1>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">';
+                
+                                                    echo 'Veut-tu vraiment changer ton commentaire ' . $coms['message'] . ' ?';
+                                                    echo '
+
+                                                                        <div class="login-page">
+                                                    
+                                                                            <div class="form">
+                                                    
+                                                                                    <form  method="POST" action="../controller.php" id="update_commentaire' . $coms['id_commentaire'] . '">
+                                                                                        <input name="form" type="hidden" value="commentaire_update">                                                        
+                                                                                        <input name="id_comdupdate" type="hidden" value="' . $coms['id_commentaire'] . '">
+                                                                                        <textarea name="message" placeholder="Votre commentaire" required></textarea>                                                        
+                                                                                    </form>
+                                                    
+                                                                            </div>
+                                                                        </div>
+                                                    
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                        <button form="update_commentaire' . $coms['id_commentaire'] . '" type="submit" class="btn btn-primary">Changer le commentaire</button>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                </div>';
+                                                
+                                                echo '
+                                                        <!-- Modal DELETE -->
+                                                            <div class="modal fade" id="delete' . $coms['id_commentaire'] . '" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer un article</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">';
+            
+                                                echo 'Veut-tu vraiment supprimer ton commentaire ' . $coms['message'] . ' ?';
+                                                echo '
+
+                                                                    <div class="login-page">
+                                                
+                                                                        <div class="form">
+                                                
+                                                                                <form  method="POST" action="../controller.php" id="delete_commentaire' . $coms['id_commentaire'] . '">
+                                                                                    <input name="form" type="hidden" value="commentaire_delete">                                                        
+                                                                                    <input name="id_comdelete" type="number" value="' . $coms['id_commentaire'] . '" hidden>                                                        
+                                                                                </form>
+                                                
+                                                                        </div>
+                                                                    </div>
+                                                
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                                                    <button form="delete_commentaire' . $coms['id_commentaire'] . '" type="submit" class="btn btn-primary">Supprimer le commentaire</button>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>';
+                                            }
+            
+                                            break;
+                                    }
+                                }
+                        
+                    }
+                }
+            }
+            
+            // Enfin on affiche un formulaire pour envoyer un commentaire si il y a une session de lancé
+            if (isset($_SESSION['role'])) {
+                echo '
+                            <form id="com_form" class="comment-form" method="POST" action="../controller.php">
+                                <input name="form" type="hidden" value="commentaire_article">
+                                <input name="id_article" type="hidden" value="'.$article.'">
+                                <input name="id_utilisateur" type="hidden" value="' . $_SESSION['id'] . '">
+                                <textarea name="message" placeholder="Votre commentaire" required></textarea>
+                                <button type="submit">Poster le commentaire</button>
+                            </form>
+                            
+                            ';
+            }
+
+            echo '
+                        </div>
+                    </div>';
         }
+            
+            
+            
+        
         ?>
 
         <div>

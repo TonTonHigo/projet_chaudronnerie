@@ -33,12 +33,21 @@ $(document).ready(function () {
         $('#form-deco').attr('action','controller.php');
         $('#lienMention').attr('href','pages/mention-legal.php');
         $('#logo').attr('src', 'image/Logo.png');
+        $('#logoburger').attr('src', 'image/Logo.png');
         $('#lien_index').attr('href', 'index.php');
+        $('#lien_indexburger').attr('href', 'index.php');
         $('#lien_archive').attr('href', 'pages/archive.php');
+        $('#lien_archiveburger').attr('href', 'pages/archive.php');
         $('#lien_tutoriel').attr('href', 'pages/tutoriel.php');
+        $('#lien_tutorielburger').attr('href', 'pages/tutoriel.php');
         $('#lien_galerie').attr('href', 'pages/galerie.php');
+        $('#lien_galerieburger').attr('href', 'pages/galerie.php');
         $('#lien_formulaire').attr('href', 'pages/contact.php');
+        $('#lien_formulaireburger').attr('href', 'pages/contact.php');
         $('#lien_dashboard').click(function(){
+            window.location.href = 'pages/dashboard.php';
+        });
+        $('#lien_dashboardburger').click(function(){
             window.location.href = 'pages/dashboard.php';
         });
     }   

@@ -52,7 +52,10 @@
             </form>';
             }
             ?>
-        </div>
+
+
+    </div>
+        <i class="fa-solid fa-bars fa-2xl" style="color: #000000;" id="burger" data-bs-toggle="modal" data-bs-target="#modalburger"></i>
     </div>
 
     <!-- Modal connexion -->
@@ -104,6 +107,69 @@
                     <div class="modal-footer">
                         <button type="button" class="btn annuler" data-bs-dismiss="modal">Annuler</button>
                         <button type="submit" class="btn enregistrer" form="form-ins">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal pour le burger -->
+        <div class="modal fade" id="modalburger" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="navbar">
+                            <div class="lien_burger">
+                                <a id="lien_archiveburger" href="archive.php">Archive</a>
+                                <a id="lien_tutorielburger" href="tutoriel.php">Tutoriel</a>
+                                <a id="lien_galerieburger" href="galerie.php">Galerie</a>
+                            </div>
+                            <div class="contactburger">
+                                <a id="lien_formulaireburger" href="contact.php">Contact</a>
+                                <!-- Button connexion et inscription -->
+                            </div>
+                            <div class="button-userburger">
+                                <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#conn-modal"
+                                <?php
+                                if(isset($_SESSION["role"])){
+                                    echo'hidden';
+                                }
+                                ?>
+                                >
+                                    Connexion
+                                </button>
+                                <button type="button" class="btn button-compte" data-bs-toggle="modal" data-bs-target="#inscri-modal"
+                                <?php
+                                if(isset($_SESSION["role"])){
+                                    echo'hidden';
+                                }
+                                ?>
+                                >
+                                    Inscription
+                                </button>
+                                <?php
+                                if(isset($_SESSION["role"]) && $_SESSION["role"] == 1){
+                                echo'
+                                <button  id="lien_dashboardburger" type="button" class="btn button-compte">
+                                        Dasboard
+                                </button>';
+                                }
+                                ?>
+
+                                <!-- bouton déconnexion -->
+                                <?php
+                                if(isset($_SESSION["role"])){
+                                echo'
+                                <form id="form-deco" action="../controller.php" method="post">
+                                <input type="hidden" name="form" value="deco">
+                                <button type="submit" class="btn button-compte">
+                                        Déconnexion
+                                </button>
+                                </form>';
+                                }
+                                ?>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

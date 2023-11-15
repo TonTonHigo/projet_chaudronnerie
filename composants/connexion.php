@@ -61,7 +61,29 @@ class ma_connexion{
         }
     }
 
+    public function select_where_commentaire($table, $column, $id) {
+        try {
+            $requete = "SELECT $column FROM $table WHERE id_article = $id";
+            $resultat = $this->connexionPDO->query($requete);
+            $resultat = $resultat->fetchAll(PDO::FETCH_ASSOC); // Fetch the result of the query into an associative array
 
+            return $resultat;
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
+    }
+
+    public function select_where_utilisateur($table, $column, $id) {
+        try {
+            $requete = "SELECT $column FROM $table WHERE id_utilisateur = $id";
+            $resultat = $this->connexionPDO->query($requete);
+            $resultat = $resultat->fetchAll(PDO::FETCH_ASSOC); // Fetch the result of the query into an associative array
+
+            return $resultat;
+        } catch (PDOException $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
+    }
 
     // INSERTION contact 
     public function insert_contact($pseudonyme, $email, $sujet, $message) { 
@@ -131,6 +153,23 @@ class ma_connexion{
                 echo "Erreur : " . $e->getMessage();
     
             }
+    }
+
+    public function insert_com($id_utilisateur, $id_article, $message)
+    {
+        try {
+            $requete = "INSERT INTO `commentaire`(id_utilisateur, id_article, message) VALUES ( ?, ?, ?)";
+            $requete_preparee = $this->connexionPDO->prepare($requete);
+
+            $requete_preparee->bindValue(1, $id_utilisateur);
+            $requete_preparee->bindValue(2, $id_article);
+            $requete_preparee->bindValue(3, $message);
+
+            $requete_preparee->execute();
+
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
     }
 
     // UPDATE 
@@ -204,6 +243,21 @@ class ma_connexion{
             echo "Erreur: " . $e->getMessage();
         }
     }
+    // UPDATE commentaire
+    public function update_com($id, $message) {
+
+        try {
+            $update = "UPDATE `commentaire` SET message = ? WHERE `id_commentaire` = ?";
+    
+            $requete = $this->connexionPDO->prepare($update);
+            $requete->bindValue(1, $message, PDO::PARAM_STR);
+            $requete->bindValue(2, $id, PDO::PARAM_STR);    
+            $requete->execute();
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+
 
 
     // DELETE
@@ -211,6 +265,21 @@ class ma_connexion{
 
         try {
             $delete = "DELETE FROM `contacts` WHERE `id_contacts` = ?";
+    
+            $requete = $this->connexionPDO->prepare($delete);
+            $requete->bindValue(1, $id);
+
+            $requete->execute();
+
+        } catch (PDOException $e) {
+            echo "Erreur: " . $e->getMessage();
+        }
+    }
+
+    // DELETE
+    public function delete_user($id) {
+        try {
+            $delete = "DELETE FROM `utilisateur` WHERE `id_utilisateur` = ?";
     
             $requete = $this->connexionPDO->prepare($delete);
             $requete->bindValue(1, $id);
@@ -265,6 +334,21 @@ class ma_connexion{
         } catch (PDOException $e) {
             echo "Erreur: " . $e->getMessage();
         }
+    }
+
+    public function delete_com($cond){
+        try {
+            $requete = "DELETE FROM `commentaire` WHERE id_commentaire = ?";
+            $resultat = $this->connexionPDO->prepare($requete);
+            $resultat->bindValue(1, $cond);
+
+            $resultat->execute();
+
+            return $resultat;
+        
+        } catch (PDOException $e) {
+            echo "Erreur : ".$e->getMessage();
+        }    
     }
 
      // connexion

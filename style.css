@@ -11,14 +11,14 @@ font-family: 'Wallpoet', 'Segoe UI', 'Helvetica',
 
 */
 
-
-
-
 body {
     background-color: #F4A460;
     margin: 0;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #icon{
@@ -103,6 +103,7 @@ body {
 #logo{
     transition: .5s;
 }
+
 .navbar .centered-links {
     flex: 2;
     display: flex;
@@ -177,6 +178,16 @@ body {
     background-color: #F4A460;
 }
 
+#burger{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+.lien_burger{
+    display: flex;
+    flex-direction: column;
+}
 /* Responsive de la navbar */
 /* Tablet*/
 @media (max-width: 1024px) {
@@ -206,8 +217,18 @@ body {
 
 /* Phone screens */
 @media (max-width: 768px) {
-    .navbar a {
-        font-size: 1.2em; /* Further reduce font size for phones */
+    .centered-links a{
+        display: none;
+        /* font-size: 1.2em; Further reduce font size for phones */
+    }
+    .contact {
+        display: none;
+    }
+    .button-user {
+        display: none;
+    }
+    #burger{
+        display: block;
     }
 }
 
@@ -357,11 +378,10 @@ body {
 }
 #merci-contact{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    height: 100%;
+    text-align: center;
 }
 #merci-contact h2{
     font-size: 2em;
@@ -687,14 +707,14 @@ body {
     text-align: center;
     padding: 50px;
     font-family: 'Helvetica';
-    color: #2C2C2C;
+    color: black;
     font-weight: bold;
     -webkit-text-stroke: 1px #FF6347;
 }
 
 .archive-contenu-text {
     font-family: 'Segoe UI';
-    color: #6C6C6C;
+    color: black;
 }
 /* Responsive */
 /* Tablet (landscape) and smaller screens */
@@ -726,7 +746,78 @@ body {
     }
 }
 
+.comment-section{
+    text-align: center;
+    gap: 50px;
+}
+.button_com{
+    background-color: #2C2C2C;
+    color: #FFEBCD;
+    border-radius: 10px;
+}
 
+.button_com:hover {
+    background-color: #6C6C6C;
+    color: #FFEBCD;
+}
+
+#com_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#com_form textarea {
+    border: none;
+    border-radius: 10px;
+    padding: 50px;
+    width: 800px;
+    margin-bottom: 10px;
+    background-color: #FFEBCD;
+    transition: .5s;
+
+}
+
+#com_form textarea::placeholder {
+    color: #2C2C2C;
+
+}
+
+#com_form button {
+    border: none;
+    padding: 20px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #6C6C6C;
+    color: #FFEBCD;
+}
+
+@media (max-width: 1024px) {
+
+    #com_form textarea {
+        width: 500px;
+        padding: 8px; /* Further reduce padding for tablets */
+        margin-bottom: 10px; /* Further reduce margin for tablets */
+    }
+
+    #com_form button {
+        padding: 8px; /* Reduce button padding for tablets */
+    }
+}
+/* Phone */
+@media (max-width: 768px) {
+    #com_form textarea {
+        width: auto;
+        padding: 6px; /* Further reduce padding for phones */
+        margin-bottom: 5px; /* Reduce margin for phones */
+    }
+
+    #com_form button {
+        padding: 6px; /* Reduce button padding for phones */
+    }
+}
 
 
 /* Tutoriel */
@@ -784,14 +875,14 @@ body {
     text-align: center;
     padding: 50px;
     font-family: 'Helvetica';
-    color: #2C2C2C;
+    color: black;
     font-weight: bold;
     -webkit-text-stroke: 1px #FF6347;
 }
 
 .tutoriel-contenu-text {
     font-family: 'Segoe UI';
-    color: #6C6C6C;
+    color: black;
 }
 /* Responsive */
 /* Tablet */
@@ -897,6 +988,7 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #FFEBCD;
+    margin-top: auto;
 }
 
 footer a {
@@ -995,7 +1087,7 @@ ul {
 
 /* Styles pour les écrans larges (desktops, ordinateurs portables) */
 @media (min-width: 1024px) {
-    /* Ajoutez vos styles pour les grands écrans ici */
+
   }
   
   /* Styles pour les tablettes */

@@ -48,8 +48,19 @@ include "../composants/connexion.php";
                 echo
                 '<div class="cadre-archive" style="background-image: url(' . $cartes["image"] . ')">
                 <form action="archive-contenu.php" method="post">                
-                    <input name="resume" type="hidden" value="' . $cartes["id_article"] . '"> 
-                    <button type="submit" class="btn btn-transparent text-archive"><h2 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h2></button>
+                    <input name="id_article" type="hidden" value="';
+                    
+                    if(isset($_SESSION['article']) && $_SESSION['article'] == ""){
+                        $_SESSION['article'] = $cartes['id_article'];
+                        echo $cartes['id_article'];
+                   }else{
+                        unset($_SESSION['article']);
+                        echo $cartes['id_article'];
+                   }
+
+                    echo '"> 
+                    <button type="submit" class="btn btn-transparent text-archive"><h2 id="text-archive' . $cartes["id_article"] . '" class="text-archive">' . $truncatedContent . '</h2></button>           
+
                 </form>                 
                 </div>';
             }
