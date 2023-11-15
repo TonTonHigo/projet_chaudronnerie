@@ -71,7 +71,7 @@ include "../composants/connexion.php";
                     if ($coms['id_article'] == $article) {
 
                         echo '
-                            <small>';
+                            <br><br><small>';
 
                             $comauteur = $connexion->select_where_utilisateur("utilisateur", "*", $coms['id_utilisateur']);
                             foreach ($comauteur as $nomaut) {
@@ -88,7 +88,7 @@ include "../composants/connexion.php";
                                         case 1:
             
                                             echo '
-                                                    <button type="button" class="button_com" data-bs-toggle="modal" data-bs-target="#delete' . $coms['id_commentaire'] . '"><span>DELETE</span></button>
+                                                    <button type="button" class="button_com" data-bs-toggle="modal" data-bs-target="#delete' . $coms['id_commentaire'] . '">DELETE</button>
                                                 ';
                                             echo '
                                                 <!-- Modal DELETE -->
