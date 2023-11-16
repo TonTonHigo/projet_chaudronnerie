@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : mer. 18 oct. 2023 à 21:47
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Hôte : localhost:3306
+-- Généré le : jeu. 16 nov. 2023 à 01:13
+-- Version du serveur : 10.6.16-MariaDB
+-- Version de PHP : 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `bdd_chaudronnerie`
+-- Base de données : `sc3nuxz4136_dain-hugo.chaudronnerie`
 --
 
 -- --------------------------------------------------------
@@ -27,14 +27,12 @@ SET time_zone = "+00:00";
 -- Structure de la table `article`
 --
 
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE IF NOT EXISTS `article` (
-  `id_article` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `article` (
+  `id_article` int(11) NOT NULL,
   `titre` varchar(100) NOT NULL,
   `contenu` text NOT NULL,
-  `image` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_article`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `image` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `article`
@@ -53,16 +51,21 @@ INSERT INTO `article` (`id_article`, `titre`, `contenu`, `image`) VALUES
 -- Structure de la table `commentaire`
 --
 
-DROP TABLE IF EXISTS `commentaire`;
-CREATE TABLE IF NOT EXISTS `commentaire` (
-  `id_commentaire` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `commentaire` (
+  `id_commentaire` int(11) NOT NULL,
   `message` text NOT NULL,
-  `id_article` int NOT NULL,
-  `id_utilisateur` int NOT NULL,
-  PRIMARY KEY (`id_commentaire`),
-  KEY `Commentaire_fk0` (`id_article`),
-  KEY `Commentaire_fk1` (`id_utilisateur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `id_article` int(11) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `commentaire`
+--
+
+INSERT INTO `commentaire` (`id_commentaire`, `message`, `date`, `id_article`, `id_utilisateur`) VALUES
+(7, 'zaza', '2023-11-15 20:10:24', 1, 10),
+(9, 'massalé', '2023-11-15 20:13:08', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -70,16 +73,12 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
 -- Structure de la table `commentaire_1`
 --
 
-DROP TABLE IF EXISTS `commentaire_1`;
-CREATE TABLE IF NOT EXISTS `commentaire_1` (
-  `id_commentaire_1` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `commentaire_1` (
+  `id_commentaire_1` int(11) NOT NULL,
   `message` text NOT NULL,
-  `id_tutoriel` int NOT NULL,
-  `id_utilisateur` int NOT NULL,
-  PRIMARY KEY (`id_commentaire_1`),
-  KEY `Commentaire_1_fk0` (`id_tutoriel`),
-  KEY `Commentaire_1_fk1` (`id_utilisateur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_tutoriel` int(11) NOT NULL,
+  `id_utilisateur` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -87,17 +86,14 @@ CREATE TABLE IF NOT EXISTS `commentaire_1` (
 -- Structure de la table `contact`
 --
 
-DROP TABLE IF EXISTS `contact`;
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id_contact` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact` (
+  `id_contact` int(11) NOT NULL,
   `pseudonyme` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `sujet` varchar(50) NOT NULL,
   `message` text NOT NULL,
-  `id_utilisateur` int DEFAULT NULL,
-  PRIMARY KEY (`id_contact`),
-  KEY `Contact_fk0` (`id_utilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_utilisateur` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -105,13 +101,11 @@ CREATE TABLE IF NOT EXISTS `contact` (
 -- Structure de la table `galerie`
 --
 
-DROP TABLE IF EXISTS `galerie`;
-CREATE TABLE IF NOT EXISTS `galerie` (
-  `id_galerie` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `galerie` (
+  `id_galerie` int(11) NOT NULL,
   `photo` varchar(100) NOT NULL,
-  `descriptif` text NOT NULL,
-  PRIMARY KEY (`id_galerie`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `descriptif` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `galerie`
@@ -128,12 +122,10 @@ INSERT INTO `galerie` (`id_galerie`, `photo`, `descriptif`) VALUES
 -- Structure de la table `role`
 --
 
-DROP TABLE IF EXISTS `role`;
-CREATE TABLE IF NOT EXISTS `role` (
-  `id_role` int NOT NULL AUTO_INCREMENT,
-  `type` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_role`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `role` (
+  `id_role` int(11) NOT NULL,
+  `type` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `role`
@@ -149,15 +141,13 @@ INSERT INTO `role` (`id_role`, `type`) VALUES
 -- Structure de la table `tutoriel`
 --
 
-DROP TABLE IF EXISTS `tutoriel`;
-CREATE TABLE IF NOT EXISTS `tutoriel` (
-  `id_tutoriel` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tutoriel` (
+  `id_tutoriel` int(11) NOT NULL,
   `titre` varchar(100) NOT NULL,
   `contenu` text NOT NULL,
   `image` varchar(200) NOT NULL,
-  `image2` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_tutoriel`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `image2` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `tutoriel`
@@ -172,23 +162,155 @@ INSERT INTO `tutoriel` (`id_tutoriel`, `titre`, `contenu`, `image`, `image2`) VA
 -- Structure de la table `utilisateur`
 --
 
-DROP TABLE IF EXISTS `utilisateur`;
-CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `id_utilisateur` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `utilisateur` (
+  `id_utilisateur` int(11) NOT NULL,
   `pseudonyme` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `mdp` varchar(100) NOT NULL,
-  `id_role` int NOT NULL,
-  PRIMARY KEY (`id_utilisateur`),
-  KEY `Utilisateur_fk0` (`id_role`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id_role` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `pseudonyme`, `email`, `mdp`, `id_role`) VALUES
-(2, 'gogo', 'hugoh420@outlook.fr', '$argon2i$v=19$m=65536,t=4,p=1$NG5BWm5weDFDMThqRy9CRg$UFCChnVdq1UOBGFCZ9HX1nM9NQnBd6DJfuYyuqTHla0', 1);
+(2, 'gogo', 'hugoh420@outlook.fr', '$argon2i$v=19$m=65536,t=4,p=1$NG5BWm5weDFDMThqRy9CRg$UFCChnVdq1UOBGFCZ9HX1nM9NQnBd6DJfuYyuqTHla0', 1),
+(10, 'zaza', 'zaza@gmail.com', '$argon2i$v=19$m=65536,t=4,p=1$VVVGNEtBak05ekpRcGFxTw$ISDDueWM9+tOBOZu+Vq8SolTqQlExJCvm59q8VS1vwY', 2);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id_article`);
+
+--
+-- Index pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD PRIMARY KEY (`id_commentaire`),
+  ADD KEY `Commentaire_fk0` (`id_article`),
+  ADD KEY `Commentaire_fk1` (`id_utilisateur`);
+
+--
+-- Index pour la table `commentaire_1`
+--
+ALTER TABLE `commentaire_1`
+  ADD PRIMARY KEY (`id_commentaire_1`),
+  ADD KEY `Commentaire_1_fk0` (`id_tutoriel`),
+  ADD KEY `Commentaire_1_fk1` (`id_utilisateur`);
+
+--
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id_contact`),
+  ADD KEY `Contact_fk0` (`id_utilisateur`);
+
+--
+-- Index pour la table `galerie`
+--
+ALTER TABLE `galerie`
+  ADD PRIMARY KEY (`id_galerie`);
+
+--
+-- Index pour la table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id_role`);
+
+--
+-- Index pour la table `tutoriel`
+--
+ALTER TABLE `tutoriel`
+  ADD PRIMARY KEY (`id_tutoriel`);
+
+--
+-- Index pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`id_utilisateur`),
+  ADD KEY `Utilisateur_fk0` (`id_role`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `article`
+--
+ALTER TABLE `article`
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  MODIFY `id_commentaire` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `commentaire_1`
+--
+ALTER TABLE `commentaire_1`
+  MODIFY `id_commentaire_1` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id_contact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+
+--
+-- AUTO_INCREMENT pour la table `galerie`
+--
+ALTER TABLE `galerie`
+  MODIFY `id_galerie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `role`
+--
+ALTER TABLE `role`
+  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `tutoriel`
+--
+ALTER TABLE `tutoriel`
+  MODIFY `id_tutoriel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD CONSTRAINT `FK_commentaire_article` FOREIGN KEY (`id_article`) REFERENCES `article` (`id_article`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_commentaire_utilisateur` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `commentaire_1`
+--
+ALTER TABLE `commentaire_1`
+  ADD CONSTRAINT `FK_commentaire1_tutoriel` FOREIGN KEY (`id_tutoriel`) REFERENCES `tutoriel` (`id_tutoriel`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_commentaire1_utilisateur` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD CONSTRAINT `FK_contact_utilisateur` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
